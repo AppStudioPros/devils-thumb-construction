@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import FadeIn from '@/components/shared/FadeIn';
 
 const testimonials = [
   {
@@ -20,37 +21,44 @@ export default function Testimonials() {
     <section className="py-20 bg-white">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left column */}
-          <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#13251e] font-[Montserrat] mb-4">
-              Testimonials
-            </h2>
-            <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
-            <p className="text-[#5d6661] leading-relaxed text-lg">
-              Don&apos;t just take our word for it. Here&apos;s what our clients have to say about working with Devil&apos;s Thumb Construction.
-            </p>
-          </div>
+          <FadeIn>
+            <div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#13251e] font-[Montserrat] mb-4">
+                Testimonials
+              </h2>
+              <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
+              <p className="text-[#5d6661] leading-relaxed text-lg">
+                Don&apos;t just take our word for it. Here&apos;s what our clients have to say about working with Devil&apos;s Thumb Construction.
+              </p>
+            </div>
+          </FadeIn>
 
-          {/* Right top — Emily */}
-          <div className="bg-[#f5f3f0] rounded-lg p-8">
-            <p className="text-[#5d6661] leading-relaxed mb-4">{testimonials[0].text}</p>
-            <p className="font-bold text-[#13251e]">{testimonials[0].name}</p>
-          </div>
+          <FadeIn delay={100}>
+            <div className="bg-[#f5f3f0] rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+              <p className="text-[#5d6661] leading-relaxed mb-4">{testimonials[0].text}</p>
+              <p className="font-bold text-[#13251e]">{testimonials[0].name}</p>
+            </div>
+          </FadeIn>
         </div>
 
-        {/* Bottom row */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
-          <div className="bg-[#f5f3f0] rounded-lg p-8">
-            <p className="text-[#5d6661] leading-relaxed mb-4">{testimonials[1].text}</p>
-            <p className="font-bold text-[#13251e]">{testimonials[1].name}</p>
-          </div>
-          <div className="bg-[#f5f3f0] rounded-lg p-8">
-            <p className="text-[#5d6661] leading-relaxed mb-4">{testimonials[2].text}</p>
-            <p className="font-bold text-[#13251e]">{testimonials[2].name}</p>
-          </div>
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-            <Image src="/images/custom-home-2.jpg" alt="Custom home" fill className="object-cover" />
-          </div>
+          <FadeIn delay={200}>
+            <div className="bg-[#f5f3f0] rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+              <p className="text-[#5d6661] leading-relaxed mb-4">{testimonials[1].text}</p>
+              <p className="font-bold text-[#13251e]">{testimonials[1].name}</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={300}>
+            <div className="bg-[#f5f3f0] rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+              <p className="text-[#5d6661] leading-relaxed mb-4">{testimonials[2].text}</p>
+              <p className="font-bold text-[#13251e]">{testimonials[2].name}</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={400}>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/images/custom-home-2.jpg" alt="Custom home" fill className="object-cover transition-transform duration-500 ease-out hover:scale-105" />
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>

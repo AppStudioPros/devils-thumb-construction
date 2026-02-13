@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import PageHero from '@/components/shared/PageHero';
+import FadeIn from '@/components/shared/FadeIn';
 
 const services = [
   {
@@ -66,30 +67,34 @@ export default function ServicesPage() {
 
       <section className="py-20">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-          <p className="text-sm font-bold text-[#13251e] uppercase tracking-widest mb-2">Well Delivered</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#13251e] font-[Montserrat] mb-4">
-            Quality Services
-          </h2>
-          <div className="w-[60px] h-[3px] bg-[#2c4b40]" />
+          <FadeIn>
+            <p className="text-sm font-bold text-[#13251e] uppercase tracking-widest mb-2">Well Delivered</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#13251e] font-[Montserrat] mb-4">
+              Quality Services
+            </h2>
+            <div className="w-[60px] h-[3px] bg-[#2c4b40]" />
+          </FadeIn>
         </div>
 
         {services.map((service, i) => {
           const isEven = i % 2 === 1;
           const bg = isEven ? 'bg-[#f7f7f5]' : 'bg-white';
           return (
-            <div key={service.title} className={`${bg}`}>
+            <div key={service.title} className={`${bg} hover:bg-[#f0efe8] transition-colors duration-300`}>
               <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className={`grid grid-cols-1 lg:grid-cols-5 gap-12 items-center ${isEven ? '' : ''}`}>
-                  <div className={`relative aspect-[4/3] lg:col-span-2 ${isEven ? 'lg:order-2' : ''}`}>
-                    <Image src={service.image} alt={service.title} fill className="object-cover" />
+                <FadeIn delay={(i % 3) * 100}>
+                  <div className={`grid grid-cols-1 lg:grid-cols-5 gap-12 items-center`}>
+                    <div className={`relative aspect-[4/3] lg:col-span-2 overflow-hidden ${isEven ? 'lg:order-2' : ''}`}>
+                      <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-500 ease-out hover:scale-105" />
+                    </div>
+                    <div className={`lg:col-span-3 ${isEven ? 'lg:order-1' : ''}`}>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-[#13251e] mb-4 font-[Montserrat]">
+                        {service.title}
+                      </h3>
+                      <p className="text-[#5d6661] leading-relaxed text-lg">{service.description}</p>
+                    </div>
                   </div>
-                  <div className={`lg:col-span-3 ${isEven ? 'lg:order-1' : ''}`}>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-[#13251e] mb-4 font-[Montserrat]">
-                      {service.title}
-                    </h3>
-                    <p className="text-[#5d6661] leading-relaxed text-lg">{service.description}</p>
-                  </div>
-                </div>
+                </FadeIn>
               </div>
             </div>
           );
