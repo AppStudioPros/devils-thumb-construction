@@ -24,9 +24,9 @@ export default function ProjectsPreview() {
       </div>
 
       <FadeIn>
-        <div className="flex w-full h-[250px]">
+        <div className="flex w-full h-[200px] sm:h-[250px] overflow-x-auto md:overflow-x-visible">
           {images.map((img) => (
-            <div key={img} className="relative flex-1 min-w-0 overflow-hidden">
+            <div key={img} className="relative flex-shrink-0 w-[70vw] sm:w-auto sm:flex-1 min-w-0 overflow-hidden">
               <Image src={img} alt="" fill className="object-cover transition-transform duration-500 ease-out hover:scale-105" />
             </div>
           ))}

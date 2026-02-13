@@ -41,7 +41,7 @@ export default function Testimonials() {
           </FadeIn>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           <FadeIn delay={200}>
             <div className="bg-[#f5f3f0] rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
               <p className="text-[#5d6661] leading-relaxed mb-4">{testimonials[1].text}</p>

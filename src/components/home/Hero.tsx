@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[#13251e]/65" />
       <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 w-full py-32">
         <FadeIn>
-          <h1 className="text-5xl sm:text-6xl lg:text-[80px] font-bold text-white font-[Montserrat] leading-[1.1] mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] font-bold text-white font-[Montserrat] leading-[1.1] mb-6">
             Built To Last.<br />
             Crafted For<br />
             Colorado.
@@ -21,16 +21,16 @@ export default function Hero() {
           </p>
         </FadeIn>
         <FadeIn delay={400}>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4">
             <Link
               href="/contact"
-              className="inline-block bg-[#e09f18] text-white px-8 py-3 rounded-[30px] font-semibold hover:bg-[#c5860e] hover:scale-105 transition-all"
+              className="inline-block bg-[#e09f18] text-white px-8 py-3 rounded-[30px] font-semibold hover:bg-[#c5860e] hover:scale-105 transition-all text-center min-h-[44px]"
             >
               Get a Quote
             </Link>
             <Link
               href="/projects"
-              className="inline-block border-2 border-[#e09f18] text-[#e09f18] px-8 py-3 rounded-[30px] font-semibold hover:bg-[#e09f18] hover:text-white hover:scale-105 transition-all"
+              className="inline-block border-2 border-[#e09f18] text-[#e09f18] px-8 py-3 rounded-[30px] font-semibold hover:bg-[#e09f18] hover:text-white hover:scale-105 transition-all text-center min-h-[44px]"
             >
               View Projects
             </Link>

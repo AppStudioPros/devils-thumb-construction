@@ -29,7 +29,7 @@ export default function Footer() {
 
       {/* Tier 2 — CTA */}
       <div className="bg-[#13251e] py-16">
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center text-center lg:text-left">
           <div className="flex justify-center lg:justify-start">
             <Image src="/images/logo.png" alt="Devil's Thumb Construction" width={200} height={200} />
           </div>
@@ -58,7 +58,7 @@ export default function Footer() {
 
       {/* Tier 3 — Copyright */}
       <div className="bg-[#0f1a0f] py-6">
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-sm text-gray-400 text-center sm:text-left">
           <p>
             © 2025 Devil&apos;s Thumb Construction. All Rights Reserved. Proudly serving Denver, Colorado and surrounding areas.{' '}
             <Link href="/privacy" className="text-[#e09f18] hover:text-[#c5860e] transition-colors">

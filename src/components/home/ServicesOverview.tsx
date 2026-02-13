@@ -49,7 +49,7 @@ export default function ServicesOverview() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
             <FadeIn key={s.title} delay={i * 100}>
-              <div className="bg-white rounded-2xl p-8 flex flex-col h-full border-2 border-transparent hover:border-[#e09f18] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <div className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col h-full border-2 border-transparent hover:border-[#e09f18] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <h3 className="text-lg font-bold text-[#13251e] font-[Montserrat] mb-1">{s.title}</h3>
                 <p className="text-sm font-bold text-[#13251e] mb-3">{s.subtitle}</p>
                 <p className="text-[#5d6661] text-sm leading-relaxed mb-6 flex-1">{s.description}</p>

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const navLinks = [
   { href: '/', label: 'home' },
@@ -17,6 +17,7 @@ export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -24,10 +25,20 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-[#13251e]' : 'bg-transparent'
+        scrolled || mobileOpen ? 'bg-[#13251e]' : 'bg-transparent'
       }`}
     >
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
@@ -50,9 +61,9 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger / close */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-[#e09f18] min-h-[44px] min-w-[44px] flex items-center justify-center"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -67,22 +78,28 @@ export default function Header() {
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <nav className="md:hidden bg-[#13251e] px-4 pb-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className={`block py-3 text-sm font-medium ${
-                pathname === link.href ? 'text-[#e09f18]' : 'text-white'
-              }`}
-            >
-              {link.label}
-            </Link>
+      <div
+        ref={menuRef}
+        className="md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-[#13251e]"
+        style={{ maxHeight: mobileOpen ? `${navLinks.length * 64 + 32}px` : '0px' }}
+      >
+        <nav className="px-6 pb-6">
+          {navLinks.map((link, i) => (
+            <div key={link.href}>
+              {i > 0 && <div className="border-t border-white/10" />}
+              <Link
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className={`block py-4 text-base font-medium transition-colors ${
+                  pathname === link.href ? 'text-[#e09f18]' : 'text-white hover:text-[#e09f18]'
+                }`}
+              >
+                {link.label}
+              </Link>
+            </div>
           ))}
         </nav>
-      )}
+      </div>
     </header>
   );
 }

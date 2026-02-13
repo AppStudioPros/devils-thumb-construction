@@ -11,11 +11,11 @@ export default function AboutPage() {
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
             <FadeIn direction="right">
-              <div className="py-12 pr-8 lg:pr-16">
+              <div className="py-8 sm:py-12 pr-0 lg:pr-16">
                 <p className="text-sm font-bold text-[#13251e] uppercase tracking-widest mb-3">
                   Devil&apos;s Thumb Construction
                 </p>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#13251e] font-[Montserrat] leading-tight mb-4">
+                <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#13251e] font-[Montserrat] leading-tight mb-4">
                   Built Right.<br />Built Local.
                 </h2>
                 <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
@@ -31,7 +31,7 @@ export default function AboutPage() {
               </div>
             </FadeIn>
             <FadeIn direction="left">
-              <div className="relative min-h-[500px]">
+              <div className="relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
                 <Image src="/images/mountain-home.jpg" alt="Mountain home" fill className="object-cover" />
               </div>
             </FadeIn>
@@ -43,12 +43,12 @@ export default function AboutPage() {
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
             <FadeIn direction="right">
-              <div className="relative min-h-[500px]">
+              <div className="relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
                 <Image src="/images/living-room.jpg" alt="Living room" fill className="object-cover" />
               </div>
             </FadeIn>
             <FadeIn direction="left">
-              <div className="bg-[#f7f7f5] py-16 px-8 lg:px-16">
+              <div className="bg-[#f7f7f5] py-10 px-4 sm:py-16 sm:px-8 lg:px-16">
                 <p className="text-[#e09f18] font-semibold tracking-widest uppercase text-sm mb-3">
                   Our Mission
                 </p>

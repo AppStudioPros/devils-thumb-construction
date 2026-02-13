@@ -63,39 +63,39 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-[#5d6661] mb-1">Name *</label>
-                      <input type="text" id="name" name="name" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+                      <input type="text" id="name" name="name" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-[#5d6661] mb-1">Email *</label>
-                      <input type="email" id="email" name="email" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+                      <input type="email" id="email" name="email" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-[#5d6661] mb-1">Phone *</label>
-                      <input type="tel" id="phone" name="phone" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+                      <input type="tel" id="phone" name="phone" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
                     </div>
                     <div>
                       <label htmlFor="zip" className="block text-sm font-medium text-[#5d6661] mb-1">Zip *</label>
-                      <input type="text" id="zip" name="zip" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+                      <input type="text" id="zip" name="zip" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
                     </div>
                   </div>
                   <div>
                     <label htmlFor="callTime" className="block text-sm font-medium text-[#5d6661] mb-1">Schedule a phone call</label>
                     <div className="grid grid-cols-3 gap-3">
-                      <select id="callHour" name="callHour" className="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
+                      <select id="callHour" name="callHour" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
                         <option value="">Hour</option>
                         {Array.from({ length: 12 }, (_, i) => i + 1).map((h) => (
                           <option key={h} value={h}>{h}</option>
                         ))}
                       </select>
-                      <select id="callMinute" name="callMinute" className="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
+                      <select id="callMinute" name="callMinute" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
                         <option value="">Minute</option>
                         {['00', '15', '30', '45'].map((m) => (
                           <option key={m} value={m}>{m}</option>
                         ))}
                       </select>
-                      <select id="callAmPm" name="callAmPm" className="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
+                      <select id="callAmPm" name="callAmPm" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
                         <option value="AM">AM</option>
                         <option value="PM">PM</option>
                       </select>
@@ -103,11 +103,11 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-[#5d6661] mb-1">Message *</label>
-                    <textarea id="message" name="message" rows={5} required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40] resize-none" />
+                    <textarea id="message" name="message" rows={5} required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40] resize-none" />
                   </div>
                   <button
                     type="submit"
-                    className="bg-[#e09f18] text-white px-8 py-3 rounded-[30px] font-semibold hover:bg-[#c5860e] hover:scale-105 transition-all"
+                    className="bg-[#e09f18] text-white px-8 py-3 min-h-[48px] rounded-[30px] font-semibold hover:bg-[#c5860e] hover:scale-105 transition-all w-full sm:w-auto"
                   >
                     submit
                   </button>
