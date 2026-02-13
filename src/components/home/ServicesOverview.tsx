@@ -44,16 +44,16 @@ export default function ServicesOverview() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group bg-[#f5f3f0] rounded-lg p-8 hover:bg-[#13251e] transition-colors duration-300"
+              className="group bg-[#1e3a32] rounded-lg p-8 hover:bg-[#13251e] transition-colors duration-300"
             >
               <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-lg font-bold text-gray-900 group-hover:text-white mb-2 transition-colors font-[Montserrat]">
+              <h3 className="text-lg font-bold text-white mb-2 transition-colors font-[Montserrat]">
                 {service.title}
               </h3>
-              <p className="text-sm font-semibold text-[#13251e] group-hover:text-[#e09f18] mb-3 transition-colors">
+              <p className="text-sm font-semibold text-[#e09f18] mb-3 transition-colors">
                 {service.subtitle}
               </p>
-              <p className="text-sm text-[#5d6661] group-hover:text-gray-300 leading-relaxed transition-colors">
+              <p className="text-sm text-gray-300 leading-relaxed transition-colors">
                 {service.description}
               </p>
             </div>

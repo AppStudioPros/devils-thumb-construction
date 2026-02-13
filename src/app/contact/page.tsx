@@ -5,10 +5,11 @@ import Image from 'next/image';
 export default function ContactPage() {
   return (
     <>
-      <section className="relative bg-[#13251e] py-32 sm:py-40">
+      <section className="relative bg-[#13251e] min-h-[45vh] flex items-center">
         <Image src="/images/blueprints.jpg" alt="" fill className="object-cover opacity-20" />
-        <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-[40px] sm:text-[72px] lg:text-[112px] font-bold text-white font-[Montserrat] leading-[1.05]">
+        <div className="absolute inset-0 bg-[#13251e]/60" />
+        <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-[Montserrat] text-center">
             Contact
           </h1>
         </div>
