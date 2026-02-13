@@ -18,30 +18,33 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#f5f3f0] py-20 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#13251e] py-20 sm:py-24">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-[#1a2e1a] font-semibold tracking-widest uppercase text-sm mb-3">
+          <p className="text-[#e09f18] font-semibold tracking-widest uppercase text-sm mb-3">
             Testimonials
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 className="text-[45px] sm:text-[60px] lg:text-[75px] font-bold text-white font-[Montserrat] leading-tight mb-4">
             What Our Clients Say
           </h2>
+          <p className="text-gray-400 max-w-3xl mx-auto">
+            We&apos;re proud to earn the trust of homeowners and businesses across Colorado. Here&apos;s what a few of them had to share about their experience with Devil&apos;s Thumb Construction.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="bg-white rounded-lg p-8 shadow-sm border border-gray-100"
+              className="bg-[#1e3a32] rounded-lg p-8"
             >
-              <div className="text-[#c8a96e] text-4xl mb-4">&ldquo;</div>
-              <p className="text-gray-700 leading-relaxed mb-6 text-base">
+              <div className="text-[#e09f18] text-4xl mb-4">&ldquo;</div>
+              <p className="text-gray-300 leading-relaxed mb-6 text-base">
                 {t.quote}
               </p>
-              <div className="border-t border-gray-100 pt-4">
-                <p className="font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
+              <div className="border-t border-[#2c4b40] pt-4">
+                <p className="font-semibold text-white">{t.name}</p>
+                <p className="text-sm text-gray-400">{t.location}</p>
               </div>
             </div>
           ))}

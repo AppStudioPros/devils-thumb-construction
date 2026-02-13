@@ -1,48 +1,59 @@
+import Image from 'next/image';
+
 const projects = [
-  'Custom Home Build',
-  'Kitchen Remodel',
-  'Home Addition',
-  'Bathroom Renovation',
-  'Basement Finish',
-  'Exterior Update',
-  'Garage Build',
-  'Living Room Remodel',
-  'HVAC Installation',
+  { name: 'Custom Home Build', image: '/images/custom-home.png' },
+  { name: 'Kitchen Remodel', image: '/images/kitchen-white.jpg' },
+  { name: 'Home Addition', image: '/images/mountain-home.jpg' },
+  { name: 'Bathroom Renovation', image: '/images/kitchen-pendant.jpg' },
+  { name: 'Basement Finish', image: '/images/basement.jpg' },
+  { name: 'Exterior Update', image: '/images/cabin-exterior.jpg' },
+  { name: 'Garage Build', image: '/images/garage.jpg' },
+  { name: 'Living Room Remodel', image: '/images/living-room.jpg' },
+  { name: 'HVAC Installation', image: '/images/hvac-unit.jpg' },
 ];
 
 export default function ProjectsPage() {
   return (
     <>
-      <section className="bg-[#1a2e1a] py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#c8a96e] font-semibold tracking-widest uppercase text-sm mb-4">
-            Our Latest
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Our Latest Projects
+      <section className="relative bg-[#13251e] py-32 sm:py-40">
+        <Image src="/images/log-cabin-mountain.jpg" alt="" fill className="object-cover opacity-20" />
+        <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-[40px] sm:text-[72px] lg:text-[112px] font-bold text-white font-[Montserrat] leading-[1.05]">
+            Projects
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl">
-            A selection of recent work across the Colorado Front Range.
-          </p>
         </div>
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-[#e09f18] font-semibold tracking-widest uppercase text-sm mb-3">
+              See What We&apos;ve Built
+            </p>
+            <h2 className="text-[45px] sm:text-[60px] lg:text-[75px] font-bold text-gray-900 font-[Montserrat] leading-tight mb-4">
+              Our Recent Projects
+            </h2>
+            <p className="text-[#5d6661] max-w-3xl mx-auto leading-relaxed">
+              From custom homes to remodels and additions, every project we complete reflects our commitment to quality and detail. Explore our portfolio to see how Devil&apos;s Thumb Construction transforms ideas into spaces that are functional, beautiful, and built to last.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
               <div
-                key={project}
-                className="aspect-[4/3] bg-gray-200 rounded-lg flex items-center justify-center group relative overflow-hidden"
+                key={project.name}
+                className="aspect-[4/3] rounded-lg relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-[#1a2e1a]/0 group-hover:bg-[#1a2e1a]/70 transition-colors duration-300" />
-                <div className="z-10 text-center">
-                  <span className="text-gray-500 group-hover:text-white font-semibold transition-colors">
-                    {project}
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-[#13251e]/0 group-hover:bg-[#13251e]/70 transition-colors duration-300 flex items-center justify-center">
+                  <span className="text-white font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-[Montserrat]">
+                    {project.name}
                   </span>
-                  <p className="text-xs text-gray-400 group-hover:text-gray-300 mt-1 transition-colors">
-                    Coming Soon
-                  </p>
                 </div>
               </div>
             ))}
