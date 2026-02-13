@@ -1,72 +1,62 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const services = [
   {
     title: 'Custom Homes & Additions',
-    subtitle: 'Build & Expand with Confidence',
-    description: 'From new custom builds to seamless renovations and additions, we create spaces tailored to your lifestyle and vision.',
-    icon: '🏠',
+    subtitle: 'Design-Build Excellence',
+    description: 'From the ground up or expanding what you have, we deliver custom homes and additions built to last.',
   },
   {
     title: 'Remodeling & Interiors',
-    subtitle: 'Transform Every Room',
-    description: 'From kitchens and bathrooms to living spaces and basements, we remodel and finish interiors to be functional, modern, and inviting.',
-    icon: '🔨',
+    subtitle: 'Kitchens, Baths & More',
+    description: 'Transform your living spaces with expert remodeling that combines style, function, and quality craftsmanship.',
   },
   {
     title: 'Electrical & Plumbing',
-    subtitle: 'Licensed Expertise for Every Project',
-    description: 'From full installations to upgrades and repairs, our licensed electricians and plumbers keep your home running safely and efficiently.',
-    icon: '⚡',
+    subtitle: 'Licensed & Insured',
+    description: 'Safe, reliable electrical and plumbing services handled by licensed professionals for every project.',
   },
   {
     title: 'Residential & Commercial HVAC',
-    subtitle: 'Heating, Cooling & Comfort',
-    description: 'We design, install, and service residential and commercial HVAC systems. From furnaces and A/C to ventilation, we deliver energy-efficient comfort.',
-    icon: '❄️',
+    subtitle: 'Year-Round Comfort',
+    description: 'Licensed HVAC installation and service to keep your home or business comfortable in every season.',
   },
 ];
 
 export default function ServicesOverview() {
   return (
-    <section className="py-20 sm:py-24 bg-white">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24">
+      <Image src="/images/blueprint-bg.jpg" alt="" fill className="object-cover" />
+      <div className="absolute inset-0 bg-[#13251e]/85" />
+      <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-[#e09f18] font-semibold tracking-widest uppercase text-sm mb-3">
             What We Do Best
           </p>
-          <h2 className="text-[45px] sm:text-[60px] lg:text-[75px] font-bold text-gray-900 mb-4 font-[Montserrat] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-[Montserrat] mb-4">
             Our Services
           </h2>
+          <div className="w-[60px] h-[3px] bg-[#2c4b40] mx-auto mb-6" />
+          <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            From custom builds to licensed trade work, we deliver quality construction services across the Colorado Front Range.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="group bg-[#1e3a32] rounded-lg p-8 hover:bg-[#13251e] transition-colors duration-300"
-            >
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-lg font-bold text-white mb-2 transition-colors font-[Montserrat]">
-                {service.title}
-              </h3>
-              <p className="text-sm font-semibold text-[#e09f18] mb-3 transition-colors">
-                {service.subtitle}
-              </p>
-              <p className="text-sm text-gray-300 leading-relaxed transition-colors">
-                {service.description}
-              </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((s) => (
+            <div key={s.title} className="bg-white rounded-2xl p-8 flex flex-col">
+              <h3 className="text-lg font-bold text-[#13251e] font-[Montserrat] mb-1">{s.title}</h3>
+              <p className="text-sm font-bold text-[#13251e] mb-3">{s.subtitle}</p>
+              <p className="text-[#5d6661] text-sm leading-relaxed mb-6 flex-1">{s.description}</p>
+              <Link
+                href="/services"
+                className="inline-block bg-[#e09f18] text-white text-center px-6 py-2.5 rounded-[30px] text-sm font-semibold hover:bg-[#c5860e] transition-colors"
+              >
+                Learn More
+              </Link>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            href="/services"
-            className="inline-block bg-[#e09f18] text-white px-8 py-4 rounded-[30px] font-semibold lowercase hover:bg-[#c5860e] transition-colors"
-          >
-            view all services
-          </Link>
         </div>
       </div>
     </section>

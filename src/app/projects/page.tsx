@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import PageHero from '@/components/shared/PageHero';
 
 const projects = [
   { name: 'Custom Home Build', image: '/images/custom-home.png' },
   { name: 'Kitchen Remodel', image: '/images/kitchen-white.jpg' },
-  { name: 'Home Addition', image: '/images/mountain-home.jpg' },
+  { name: 'Mountain Home', image: '/images/mountain-home.jpg' },
   { name: 'Bathroom Renovation', image: '/images/kitchen-pendant.jpg' },
   { name: 'Basement Finish', image: '/images/basement.jpg' },
   { name: 'Exterior Update', image: '/images/cabin-exterior.jpg' },
@@ -15,35 +16,26 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <>
-      <section className="relative bg-[#13251e] min-h-[45vh] flex items-center">
-        <Image src="/images/log-cabin-mountain.jpg" alt="" fill className="object-cover opacity-20" />
-        <div className="absolute inset-0 bg-[#13251e]/60" />
-        <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-[Montserrat] text-center">
-            Projects
-          </h1>
-        </div>
-      </section>
+      <PageHero title="Projects" bgImage="/images/kitchen-island.jpg" />
 
       <section className="py-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-[#e09f18] font-semibold tracking-widest uppercase text-sm mb-3">
-              See What We&apos;ve Built
-            </p>
-            <h2 className="text-[45px] sm:text-[60px] lg:text-[75px] font-bold text-gray-900 font-[Montserrat] leading-tight mb-4">
-              Our Recent Projects
-            </h2>
-            <p className="text-[#5d6661] max-w-3xl mx-auto leading-relaxed">
-              From custom homes to remodels and additions, every project we complete reflects our commitment to quality and detail. Explore our portfolio to see how Devil&apos;s Thumb Construction transforms ideas into spaces that are functional, beautiful, and built to last.
-            </p>
-          </div>
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-bold text-[#13251e] uppercase tracking-widest mb-2">
+            See What We&apos;ve Built
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#13251e] font-[Montserrat] mb-4">
+            Our Recent Projects
+          </h2>
+          <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
+          <p className="text-[#5d6661] max-w-3xl leading-relaxed mb-12 text-lg">
+            From custom homes to remodels and additions, every project we complete reflects our commitment to quality and detail. Explore our portfolio to see how Devil&apos;s Thumb Construction transforms ideas into spaces that are functional, beautiful, and built to last.
+          </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
               <div
                 key={project.name}
-                className="aspect-[4/3] rounded-lg relative overflow-hidden group"
+                className="aspect-[4/3] relative overflow-hidden group"
               >
                 <Image
                   src={project.image}

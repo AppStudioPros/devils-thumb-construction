@@ -1,88 +1,67 @@
 import Image from 'next/image';
+import PageHero from '@/components/shared/PageHero';
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-[#13251e] min-h-[45vh] flex items-center">
-        <Image src="/images/blueprint-bg.jpg" alt="" fill className="object-cover opacity-20" />
-        <div className="absolute inset-0 bg-[#13251e]/60" />
-        <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-[Montserrat] text-center">
-            About
-          </h1>
-        </div>
-      </section>
+      <PageHero title="About" bgImage="/images/mountain-bg.jpg" />
 
       {/* Built Right */}
       <section className="py-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-[45px] sm:text-[60px] lg:text-[75px] font-bold text-gray-900 font-[Montserrat] leading-tight mb-8">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+            <div className="py-12 pr-8 lg:pr-16">
+              <p className="text-sm font-bold text-[#13251e] uppercase tracking-widest mb-3">
+                Devil&apos;s Thumb Construction
+              </p>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#13251e] font-[Montserrat] leading-tight mb-4">
                 Built Right.<br />Built Local.
               </h2>
+              <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
+              <p className="text-[#5d6661] leading-relaxed mb-8">
+                Devil&apos;s Thumb Construction delivers dependable, detail-driven building across the Colorado Front Range. Our design-build process keeps architects, trades, and owners aligned—so projects move efficiently and finish strong.
+              </p>
+              <ul className="space-y-3">
+                <li className="font-bold text-[#13251e]">Clarity: Transparent Scopes, Schedules, And Pricing.</li>
+                <li className="italic text-[#e09f18]">Craft: Quality Materials And Proven Methods.</li>
+                <li className="font-bold text-[#13251e]">Care: Jobsite Safety And Respect For Your Home And Neighbors.</li>
+                <li className="italic text-[#e09f18]">Colorado: Mountain-Ready Solutions For Weather, Drainage, And Energy Efficiency.</li>
+              </ul>
             </div>
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-              <Image src="/images/construction-framing.jpg" alt="Construction framing" fill className="object-cover" />
+            <div className="relative min-h-[500px]">
+              <Image src="/images/mountain-home.jpg" alt="Mountain home" fill className="object-cover" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Building with Integrity */}
-      <section className="py-20 bg-[#f5f3f0]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[#e09f18] font-semibold tracking-widest uppercase text-sm mb-3">
-            Devil&apos;s Thumb Construction
-          </p>
-          <h2 className="text-[30px] sm:text-[45px] lg:text-[60px] font-bold text-gray-900 font-[Montserrat] leading-tight mb-8">
-            Building with Integrity, Craft, and Care
-          </h2>
-          <p className="text-[#5d6661] text-lg leading-relaxed">
-            Devil&apos;s Thumb Construction delivers dependable, detail‑driven building across the
-            Colorado Front Range. Our design‑build process keeps architects, trades, and owners
-            aligned—so projects move efficiently and finish strong. We prioritize craftsmanship,
-            safety, and clear communication, backing every job with a professional warranty and
-            a clean, respectful jobsite.
-          </p>
-        </div>
-      </section>
-
       {/* Mission */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[#e09f18] font-semibold tracking-widest uppercase text-sm mb-3">
-            Our Mission
-          </p>
-          <h2 className="text-[30px] sm:text-[45px] lg:text-[60px] font-bold text-gray-900 font-[Montserrat] leading-tight mb-8">
-            Integrity in Every Step
-          </h2>
-          <p className="text-[#5d6661] text-lg leading-relaxed mb-12">
-            We believe in honest communication, clear expectations, and transparent pricing—so
-            our clients always know where their project stands.
-          </p>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-20 bg-[#13251e]">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-[30px] sm:text-[45px] font-bold text-white text-center mb-16 font-[Montserrat]">
-            Our Values
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <div className="bg-[#1e3a32] rounded-lg p-8 text-center">
-              <h3 className="text-xl font-bold text-[#e09f18] mb-3 font-[Montserrat]">Clarity</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">Transparent scopes, schedules, and pricing.</p>
+      <section className="bg-white">
+        <div className="max-w-[1240px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+            <div className="relative min-h-[500px]">
+              <Image src="/images/living-room.jpg" alt="Living room" fill className="object-cover" />
             </div>
-            <div className="bg-[#1e3a32] rounded-lg p-8 text-center">
-              <h3 className="text-xl font-bold text-[#e09f18] mb-3 font-[Montserrat]">Care</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">Jobsite safety and respect for your home and neighbors.</p>
-            </div>
-            <div className="bg-[#1e3a32] rounded-lg p-8 text-center">
-              <h3 className="text-xl font-bold text-[#e09f18] mb-3 font-[Montserrat]">Craftsmanship That Lasts</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">From foundation to finish, we use proven methods, quality materials, and skilled trades to deliver homes and spaces built for generations.</p>
+            <div className="bg-[#f7f7f5] py-16 px-8 lg:px-16">
+              <p className="text-[#e09f18] font-semibold tracking-widest uppercase text-sm mb-3">
+                Our Mission
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#13251e] font-[Montserrat] leading-tight mb-4">
+                Building With Integrity, Craft, And Care
+              </h2>
+              <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
+              <p className="italic text-[#e09f18] leading-relaxed mb-6">
+                We believe in honest communication, clear expectations, and transparent pricing—so our clients always know where their project stands.
+              </p>
+              <h3 className="text-xl font-bold text-[#13251e] font-[Montserrat] mb-3">
+                Craftsmanship That Lasts
+              </h3>
+              <p className="text-[#5d6661] leading-relaxed mb-6">
+                From foundation to finish, we use proven methods, quality materials, and skilled trades to deliver homes and spaces built for generations.
+              </p>
+              <p className="italic text-[#e09f18] leading-relaxed">
+                We care deeply about our clients, our community, and the lasting impact of every project we take on.
+              </p>
             </div>
           </div>
         </div>

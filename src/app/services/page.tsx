@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import PageHero from '@/components/shared/PageHero';
 
 const services = [
   {
@@ -62,60 +62,38 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative bg-[#13251e] min-h-[45vh] flex items-center">
-        <Image src="/images/blueprints.jpg" alt="" fill className="object-cover opacity-20" />
-        <div className="absolute inset-0 bg-[#13251e]/60" />
-        <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-[Montserrat] text-center">
-            Services
-          </h1>
+      <PageHero title="Services" bgImage="/images/construction-framing.jpg" />
+
+      <section className="py-20">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <p className="text-sm font-bold text-[#13251e] uppercase tracking-widest mb-2">Well Delivered</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#13251e] font-[Montserrat] mb-4">
+            Quality Services
+          </h2>
+          <div className="w-[60px] h-[3px] bg-[#2c4b40]" />
         </div>
-      </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-[#e09f18] font-semibold tracking-widest uppercase text-sm mb-3">
-              Well Delivered
-            </p>
-            <h2 className="text-[45px] sm:text-[60px] lg:text-[75px] font-bold text-gray-900 font-[Montserrat] leading-tight">
-              Quality Services
-            </h2>
-          </div>
-
-          <div className="space-y-16">
-            {services.map((service, i) => (
-              <div
-                key={service.title}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className={`relative aspect-[16/10] rounded-lg overflow-hidden ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <Image src={service.image} alt={service.title} fill className="object-cover" />
-                </div>
-                <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="flex items-start gap-4">
-                    <span className="text-[#e09f18] font-bold text-sm bg-[#13251e] text-white rounded-full w-10 h-10 flex items-center justify-center shrink-0 font-[Montserrat]">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3 font-[Montserrat]">{service.title}</h3>
-                      <p className="text-[#5d6661] leading-relaxed">{service.description}</p>
-                    </div>
+        {services.map((service, i) => {
+          const isEven = i % 2 === 1;
+          const bg = isEven ? 'bg-[#f7f7f5]' : 'bg-white';
+          return (
+            <div key={service.title} className={`${bg}`}>
+              <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div className={`grid grid-cols-1 lg:grid-cols-5 gap-12 items-center ${isEven ? '' : ''}`}>
+                  <div className={`relative aspect-[4/3] lg:col-span-2 ${isEven ? 'lg:order-2' : ''}`}>
+                    <Image src={service.image} alt={service.title} fill className="object-cover" />
+                  </div>
+                  <div className={`lg:col-span-3 ${isEven ? 'lg:order-1' : ''}`}>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#13251e] mb-4 font-[Montserrat]">
+                      {service.title}
+                    </h3>
+                    <p className="text-[#5d6661] leading-relaxed text-lg">{service.description}</p>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-16">
-            <Link
-              href="/contact"
-              className="inline-block bg-[#e09f18] text-white px-8 py-4 rounded-[30px] font-semibold lowercase hover:bg-[#c5860e] transition-colors"
-            >
-              get a free quote
-            </Link>
-          </div>
-        </div>
+            </div>
+          );
+        })}
       </section>
     </>
   );
