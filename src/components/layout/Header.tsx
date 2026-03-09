@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between pt-1 pb-2">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between pt-2 pb-2">
         <Link href="/">
           <Image src="/images/logo.png" alt="Devil's Thumb Construction" width={240} height={240} className="w-[160px] sm:w-[240px]" />
         </Link>
@@ -76,7 +76,7 @@ export default function Header() {
               <Link
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className={`block pt-1 pb-2 text-base font-medium transition-colors ${
+                className={`block pt-2 pb-2 text-base font-medium transition-colors ${
                   pathname === link.href ? 'text-[#e09f18]' : 'text-white hover:text-[#e09f18]'
                 }`}
               >
