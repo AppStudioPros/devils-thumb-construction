@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import FadeIn from '@/components/shared/FadeIn';
+import DiamondBG from '@/components/shared/DiamondBG';
 
 export default function AboutSection() {
   return (
-    <section className="relative pt-[108px] pb-20 bg-white overflow-hidden">
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-5">
-        <Image src="/images/geometric-bg.png" alt="" fill className="object-cover" />
-      </div>
+    <section className="relative pt-[108px] pb-20 bg-[#f7f7f5] overflow-hidden">
+      <DiamondBG />
       <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#13251e] font-[Montserrat] mb-4">
