@@ -41,9 +41,9 @@ export default function Header() {
         scrolled || mobileOpen ? 'bg-[#13251e]' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-28">
         <Link href="/">
-          <Image src="/images/logo.png" alt="Devil's Thumb Construction" width={120} height={120} className="w-[100px] sm:w-[120px]" />
+          <Image src="/images/logo.png" alt="Devil's Thumb Construction" width={240} height={240} className="w-[160px] sm:w-[240px]" />
         </Link>
 
         {/* Desktop nav */}
@@ -52,7 +52,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-[15.4px] font-medium transition-colors ${
                 pathname === link.href ? 'text-[#e09f18]' : 'text-white hover:text-[#e09f18]'
               }`}
             >
