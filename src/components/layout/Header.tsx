@@ -28,8 +28,8 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="relative z-50 bg-[#13251e]">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-6">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
         <Link href="/">
           <Image src="/images/logo.png" alt="Devil's Thumb Construction" width={240} height={240} className="w-[160px] sm:w-[240px]" />
         </Link>
