@@ -65,7 +65,7 @@ export default function ServicesPage() {
     <>
       <PageHero title="Services" bgImage="/images/construction-framing.jpg" />
 
-      <section className="py-20">
+      <section className="pt-[54px] pb-20">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <FadeIn>
             <p className="text-sm font-bold text-[#13251e] uppercase tracking-widest mb-2">Well Delivered</p>

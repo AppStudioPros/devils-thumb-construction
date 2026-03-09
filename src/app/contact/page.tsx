@@ -9,7 +9,7 @@ export default function ContactPage() {
     <>
       <PageHero title="Contact" bgImage="/images/kitchen-pendant.jpg" />
 
-      <section className="py-20 bg-white">
+      <section className="pt-[54px] pb-20 bg-white">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <FadeIn direction="right">

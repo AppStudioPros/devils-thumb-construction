@@ -3,7 +3,7 @@ import FadeIn from '@/components/shared/FadeIn';
 
 export default function AboutSection() {
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative pt-[54px] pb-20 bg-white overflow-hidden">
       <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-5">
         <Image src="/images/geometric-bg.png" alt="" fill className="object-cover" />
       </div>

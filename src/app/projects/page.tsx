@@ -19,7 +19,7 @@ export default function ProjectsPage() {
     <>
       <PageHero title="Projects" bgImage="/images/kitchen-island.jpg" />
 
-      <section className="py-20 bg-white">
+      <section className="pt-[54px] pb-20 bg-white">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-sm font-bold text-[#13251e] uppercase tracking-widest mb-2">
