@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    quality: 100,
+    qualities: [100],
   },
 };
 
