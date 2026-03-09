@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const navLinks = [
   { href: '/', label: 'home' },
@@ -15,17 +15,9 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = 'hidden';
@@ -36,12 +28,8 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        scrolled || mobileOpen ? 'bg-[#13251e]' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-28 pt-[54px]">
+    <header className="relative z-50 bg-[#13251e]">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-6">
         <Link href="/">
           <Image src="/images/logo.png" alt="Devil's Thumb Construction" width={240} height={240} className="w-[160px] sm:w-[240px]" />
         </Link>
@@ -61,7 +49,6 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile hamburger / close */}
         <button
           className="md:hidden text-[#e09f18] min-h-[44px] min-w-[44px] flex items-center justify-center"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -77,7 +64,6 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <div
         ref={menuRef}
         className="md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-[#13251e]"
