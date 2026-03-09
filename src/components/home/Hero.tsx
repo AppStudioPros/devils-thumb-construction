@@ -4,10 +4,10 @@ import FadeIn from '@/components/shared/FadeIn';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center">
+    <section className="relative min-h-0 flex items-center">
       <Image src="/images/mountain-bg.jpg" alt="" fill className="object-cover" priority />
-      <div className="absolute inset-0 bg-[#13251e]/65" />
-      <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 w-full py-32">
+      <div className="absolute inset-0 bg-[#13251e]/45" />
+      <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-16">
         <FadeIn>
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] font-bold text-white font-[Montserrat] leading-[1.1] mb-6">
             Built To Last.<br />
