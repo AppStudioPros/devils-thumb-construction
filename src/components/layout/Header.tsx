@@ -41,7 +41,7 @@ export default function Header() {
         scrolled || mobileOpen ? 'bg-[#13251e]' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-28">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-28 pt-3">
         <Link href="/">
           <Image src="/images/logo.png" alt="Devil's Thumb Construction" width={240} height={240} className="w-[160px] sm:w-[240px]" />
         </Link>
