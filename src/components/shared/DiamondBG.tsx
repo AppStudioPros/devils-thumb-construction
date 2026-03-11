@@ -6,41 +6,54 @@ interface Diamond {
   x: number;
   y: number;
   size: number;
+  baseOpacity: number;
   opacity: number;
-  rotation: number;
-  rotationSpeed: number;
+  fadePhase: number;
+  fadeSpeed: number;
   driftX: number;
   driftY: number;
-  color: string;
+  r: number;
+  g: number;
+  b: number;
 }
 
-const COLORS = [
-  'rgba(19, 37, 30, OPACITY)',   // #13251e dark forest
-  'rgba(44, 75, 64, OPACITY)',   // #2c4b40 mid green
-  'rgba(62, 100, 82, OPACITY)',  // lighter sage
+// Wide range: dark forest → mid green → sage → gray-green → silver → near-white
+const PALETTE: [number, number, number][] = [
+  [19, 37, 30],     // #13251e dark forest
+  [34, 60, 48],     // dark-mid green
+  [44, 75, 64],     // #2c4b40 mid green
+  [62, 100, 82],    // sage green
+  [80, 115, 100],   // muted sage
+  [110, 140, 125],  // gray-green
+  [140, 160, 150],  // light gray-green
+  [170, 185, 178],  // silver-green
+  [195, 205, 200],  // light silver
+  [215, 220, 218],  // near-white
 ];
 
 function createDiamond(canvasW: number, canvasH: number): Diamond {
-  const size = 60 + Math.random() * 140; // big: 60-200px
-  const colorTemplate = COLORS[Math.floor(Math.random() * COLORS.length)];
-  const opacity = 0.06 + Math.random() * 0.14; // 6-20% opacity
+  const size = 150 + Math.random() * 250; // 150-400px
+  const [r, g, b] = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+  const baseOpacity = 0.08 + Math.random() * 0.32; // 8-40%
   return {
     x: Math.random() * canvasW,
     y: Math.random() * canvasH,
     size,
-    opacity,
-    rotation: Math.random() * 360,
-    rotationSpeed: (Math.random() - 0.5) * 0.15, // very slow rotation
-    driftX: (Math.random() - 0.5) * 0.2,  // slow horizontal drift
-    driftY: (Math.random() - 0.5) * 0.15, // slow vertical drift
-    color: colorTemplate.replace('OPACITY', opacity.toString()),
+    baseOpacity,
+    opacity: baseOpacity * Math.random(),
+    fadePhase: Math.random() * Math.PI * 2,
+    fadeSpeed: 0.003 + Math.random() * 0.008, // slow pulse ~4-12s cycle
+    driftX: (Math.random() - 0.5) * 0.06, // barely perceptible
+    driftY: (Math.random() - 0.5) * 0.04,
+    r,
+    g,
+    b,
   };
 }
 
 function drawDiamond(ctx: CanvasRenderingContext2D, d: Diamond, canvasW: number, canvasH: number) {
-  // Fade at edges
   let edgeFade = 1;
-  const fadeZone = 80;
+  const fadeZone = 100;
   if (d.x < fadeZone) edgeFade = Math.min(edgeFade, d.x / fadeZone);
   if (d.x > canvasW - fadeZone) edgeFade = Math.min(edgeFade, (canvasW - d.x) / fadeZone);
   if (d.y < fadeZone) edgeFade = Math.min(edgeFade, d.y / fadeZone);
@@ -48,21 +61,16 @@ function drawDiamond(ctx: CanvasRenderingContext2D, d: Diamond, canvasW: number,
 
   ctx.save();
   ctx.translate(d.x, d.y);
-  ctx.rotate((d.rotation * Math.PI) / 180);
+  ctx.rotate(Math.PI / 4); // fixed 45° — static diamond, no spinning
   ctx.globalAlpha = d.opacity * Math.max(0, edgeFade);
 
-  // Diamond shape (rotated square)
   const half = d.size / 2;
   ctx.beginPath();
-  ctx.moveTo(0, -half);      // top
-  ctx.lineTo(half, 0);       // right
-  ctx.lineTo(0, half);       // bottom
-  ctx.lineTo(-half, 0);      // left
+  ctx.rect(-half, -half, d.size, d.size);
   ctx.closePath();
 
-  ctx.fillStyle = d.color;
+  ctx.fillStyle = `rgb(${d.r}, ${d.g}, ${d.b})`;
   ctx.fill();
-
   ctx.restore();
 }
 
@@ -85,10 +93,9 @@ export default function DiamondBG({ className = '' }: { className?: string }) {
       canvas.height = parent.offsetHeight * dpr;
       canvas.style.width = parent.offsetWidth + 'px';
       canvas.style.height = parent.offsetHeight + 'px';
-      ctx.scale(dpr, dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // Reinit diamonds on resize
-      const count = Math.max(8, Math.min(14, Math.floor(parent.offsetWidth / 100)));
+      const count = Math.max(10, Math.min(18, Math.floor(parent.offsetWidth / 80)));
       diamondsRef.current = Array.from({ length: count }, () =>
         createDiamond(parent.offsetWidth, parent.offsetHeight)
       );
@@ -106,12 +113,14 @@ export default function DiamondBG({ className = '' }: { className?: string }) {
       ctx.clearRect(0, 0, w, h);
 
       diamondsRef.current.forEach(d => {
-        // Drift
+        // Fade in/out pulse
+        d.fadePhase += d.fadeSpeed;
+        d.opacity = d.baseOpacity * (0.4 + 0.6 * ((Math.sin(d.fadePhase) + 1) / 2));
+
+        // Very slow drift
         d.x += d.driftX;
         d.y += d.driftY;
-        d.rotation += d.rotationSpeed;
 
-        // Wrap around (with buffer)
         const buf = d.size;
         if (d.x < -buf) d.x = w + buf;
         if (d.x > w + buf) d.x = -buf;
