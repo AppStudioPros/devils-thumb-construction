@@ -17,33 +17,33 @@ interface Diamond {
   b: number;
 }
 
-// Wide range: dark forest → mid green → sage → gray-green → silver → near-white
+// ALL greens — deep forest to mid green, no grays
 const PALETTE: [number, number, number][] = [
-  [19, 37, 30],     // #13251e dark forest
+  [12, 28, 20],     // deepest forest
+  [19, 37, 30],     // #13251e dark forest (hero color)
+  [25, 48, 38],     // dark forest
   [34, 60, 48],     // dark-mid green
   [44, 75, 64],     // #2c4b40 mid green
+  [38, 65, 52],     // rich forest
+  [52, 88, 72],     // woodland green
   [62, 100, 82],    // sage green
-  [80, 115, 100],   // muted sage
-  [110, 140, 125],  // gray-green
-  [140, 160, 150],  // light gray-green
-  [170, 185, 178],  // silver-green
-  [195, 205, 200],  // light silver
-  [215, 220, 218],  // near-white
+  [30, 55, 42],     // deep emerald
+  [48, 82, 66],     // hunter green
 ];
 
 function createDiamond(canvasW: number, canvasH: number): Diamond {
-  const size = 150 + Math.random() * 250; // 150-400px
+  const size = 200 + Math.random() * 400; // 200-600px (50% bigger max)
   const [r, g, b] = PALETTE[Math.floor(Math.random() * PALETTE.length)];
-  const baseOpacity = 0.08 + Math.random() * 0.32; // 8-40%
+  const baseOpacity = 0.06 + Math.random() * 0.35; // 6-41% — wide range for random feel
   return {
-    x: canvasW * (0.3 + Math.random() * 0.7),
+    x: canvasW * (0.3 + Math.random() * 0.7), // biased right
     y: Math.random() * canvasH,
     size,
     baseOpacity,
     opacity: baseOpacity * Math.random(),
     fadePhase: Math.random() * Math.PI * 2,
-    fadeSpeed: 0.003 + Math.random() * 0.008, // slow pulse ~4-12s cycle
-    driftX: (Math.random() - 0.5) * 0.06, // barely perceptible
+    fadeSpeed: 0.003 + Math.random() * 0.008,
+    driftX: (Math.random() - 0.5) * 0.06,
     driftY: (Math.random() - 0.5) * 0.04,
     r,
     g,
@@ -61,7 +61,7 @@ function drawDiamond(ctx: CanvasRenderingContext2D, d: Diamond, canvasW: number,
 
   ctx.save();
   ctx.translate(d.x, d.y);
-  ctx.rotate(Math.PI / 4); // fixed 45° — static diamond, no spinning
+  ctx.rotate(Math.PI / 4);
   ctx.globalAlpha = d.opacity * Math.max(0, edgeFade);
 
   const half = d.size / 2;
@@ -113,11 +113,9 @@ export default function DiamondBG({ className = '' }: { className?: string }) {
       ctx.clearRect(0, 0, w, h);
 
       diamondsRef.current.forEach(d => {
-        // Fade in/out pulse
         d.fadePhase += d.fadeSpeed;
         d.opacity = d.baseOpacity * (0.4 + 0.6 * ((Math.sin(d.fadePhase) + 1) / 2));
 
-        // Very slow drift
         d.x += d.driftX;
         d.y += d.driftY;
 
