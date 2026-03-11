@@ -16,14 +16,14 @@ export default function Footer() {
           <h3 className="text-2xl sm:text-3xl font-bold text-[#13251e] font-[Montserrat] mb-6">
             Communities We Serve
           </h3>
-          <p className="text-[#5d6661] text-sm leading-relaxed">
+          <div className="flex flex-wrap justify-center gap-x-1 gap-y-2 text-[#5d6661] text-sm leading-relaxed">
             {communities.map((c, i) => (
-              <span key={c}>
+              <span key={c} className="whitespace-nowrap">
                 {c}
-                {i < communities.length - 1 && <span className="mx-2">•</span>}
+                {i < communities.length - 1 && <span className="mx-1 sm:mx-2">•</span>}
               </span>
             ))}
-          </p>
+          </div>
         </div>
       </div>
 
