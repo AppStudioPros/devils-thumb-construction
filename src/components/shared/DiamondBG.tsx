@@ -36,7 +36,7 @@ function createDiamond(canvasW: number, canvasH: number): Diamond {
   const [r, g, b] = PALETTE[Math.floor(Math.random() * PALETTE.length)];
   const baseOpacity = 0.08 + Math.random() * 0.32; // 8-40%
   return {
-    x: Math.random() * canvasW,
+    x: canvasW * (0.3 + Math.random() * 0.7),
     y: Math.random() * canvasH,
     size,
     baseOpacity,
