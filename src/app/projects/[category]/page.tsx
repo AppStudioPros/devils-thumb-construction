@@ -9,7 +9,7 @@ interface CategoryPageProps {
   params: Promise<{ category: string }>;
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return galleryCategories.map((cat) => ({
     category: cat.slug,
   }));
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: CategoryPageProps) {
   if (!category) return { title: 'Not Found' };
   return {
     title: `${category.name} | Devil's Thumb Construction`,
-    description: `Browse our ${category.name.toLowerCase()} projects — quality craftsmanship by Devil's Thumb Construction.`,
+    description: `Browse our ${category.name.toLowerCase()} projects. Quality craftsmanship by Devil's Thumb Construction.`,
   };
 }
 
@@ -42,17 +42,18 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <FadeIn>
             <Link
               href="/projects"
-              className="inline-flex items-center text-[#2c4b40] hover:text-[#13251e] transition-colors mb-8 font-medium"
+              className="inline-flex items-center text-[#2c4b40] hover:text-[#13251e] transition-colors font-medium mb-8 group"
             >
-              <span className="mr-2">←</span> Back to All Projects
+              <span className="mr-2 transition-transform duration-200 group-hover:-translate-x-1">←</span>
+              Back to All Projects
             </Link>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#13251e] font-[Montserrat] mb-4">
               {category.name}
             </h2>
             <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
-            <p className="text-[#5d6661] mb-12 text-lg">
-              {category.images.length} {category.images.length === 1 ? 'photo' : 'photos'} in this collection. Click any image to view full size.
+            <p className="text-[#5d6661] leading-relaxed mb-12 text-lg">
+              {category.images.length} {category.images.length === 1 ? 'photo' : 'photos'} — click any image to view full size.
             </p>
           </FadeIn>
 
