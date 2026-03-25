@@ -51,10 +51,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#13251e] font-[Montserrat] mb-4">
               {category.name}
             </h2>
-            <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
-            <p className="text-[#5d6661] leading-relaxed mb-12 text-lg">
-              {category.images.length} {category.images.length === 1 ? 'photo' : 'photos'} — click any image to view full size.
-            </p>
+            <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-12" />
           </FadeIn>
 
           <FadeIn delay={100}>
