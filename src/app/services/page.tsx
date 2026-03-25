@@ -16,7 +16,7 @@ const services = [
   {
     title: 'Garages',
     description: 'We design and build garages that go beyond storage. Whether you need a standalone structure, an addition to your home, or a renovation of your current garage, we create spaces that are practical, secure, and built to match the style of your property. From simple car storage to multi-purpose workshops, your garage will be as useful as it is durable.',
-    image: '/images/garage.jpg',
+    image: '/gallery/garages/garage-a1.jpg',
   },
   {
     title: 'Kitchen & Bathroom Remodeling',
