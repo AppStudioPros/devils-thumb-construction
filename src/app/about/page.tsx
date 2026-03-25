@@ -5,7 +5,7 @@ import FadeIn from '@/components/shared/FadeIn';
 export default function AboutPage() {
   return (
     <>
-      <PageHero title="About" bgImage="/images/mountain-bg.jpg" />
+      <PageHero title="About" bgImage="/images/colorado-mountains.jpg" />
 
       <section className="pt-[108px] pb-20 bg-white">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
