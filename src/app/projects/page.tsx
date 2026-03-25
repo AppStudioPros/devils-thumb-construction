@@ -7,7 +7,7 @@ import { galleryCategories } from '@/data/gallery';
 export default function ProjectsPage() {
   return (
     <>
-      <PageHero title="Projects" bgImage="/gallery/exteriors/house-a1.jpg" />
+      <PageHero title="Projects" bgImage="/gallery/dining-spaces/diningroom-c1.jpg" />
 
       <section className="pt-[108px] pb-20 bg-white">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
