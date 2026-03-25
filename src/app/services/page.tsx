@@ -46,7 +46,7 @@ const services = [
   {
     title: 'Licensed Electrical',
     description: 'Safe and reliable electrical work is essential in every home and business. Our licensed electricians handle everything from new wiring and panel upgrades to lighting, outlets, and system installs — ensuring your project meets the highest safety standards.',
-    image: '/images/electrical-panel.jpg',
+    image: '/images/basement.jpg',
   },
   {
     title: 'Licensed Plumbing',
