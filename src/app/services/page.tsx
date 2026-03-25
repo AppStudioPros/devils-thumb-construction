@@ -21,7 +21,7 @@ const services = [
   {
     title: 'Kitchen & Bathroom Remodeling',
     description: 'Kitchens and bathrooms are the most-used spaces in any home, and we specialize in remodeling them for comfort, efficiency, and beauty. We update layouts, replace outdated fixtures, and bring in high-quality finishes that make everyday routines easier and more enjoyable. Whether it\'s a modern kitchen designed for entertaining or a bathroom built for relaxation, we bring function and style together.',
-    image: '/images/kitchen-white.jpg',
+    image: '/gallery/bathrooms/bathroom-a1.jpg',
   },
   {
     title: 'Living & Dining Remodeling',
