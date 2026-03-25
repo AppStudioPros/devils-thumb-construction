@@ -56,7 +56,7 @@ const services = [
   {
     title: 'Heating, Ventilation & Air Conditioning (HVAC)',
     description: 'We provide licensed HVAC installation and service for both residential and commercial projects. From furnaces and air conditioning to ventilation and indoor air quality systems, we ensure your space stays comfortable year-round.',
-    image: '/images/hvac-unit.jpg',
+    image: '/images/kitchen-white.jpg',
   },
 ];
 
