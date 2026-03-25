@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 
 interface LightboxProps {
@@ -11,7 +12,7 @@ interface LightboxProps {
   onNext: () => void;
 }
 
-export default function Lightbox({ images, currentIndex, onClose, onPrev, onNext }: LightboxProps) {
+function LightboxContent({ images, currentIndex, onClose, onPrev, onNext }: LightboxProps) {
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -32,22 +33,66 @@ export default function Lightbox({ images, currentIndex, onClose, onPrev, onNext
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-8"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 9999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        backdropFilter: 'blur(4px)',
+        padding: '1rem',
+      }}
       onClick={onClose}
     >
       {/* Card modal */}
       <div
-        className="relative bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col"
+        style={{
+          position: 'relative',
+          backgroundColor: 'white',
+          borderRadius: '1rem',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          overflow: 'hidden',
+          width: '100%',
+          maxWidth: '56rem',
+          maxHeight: '90vh',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top bar */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-          <span className="text-sm text-[#5d6661] font-[Montserrat]">
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '0.75rem 1rem',
+            borderBottom: '1px solid #f3f4f6',
+          }}
+        >
+          <span style={{ fontSize: '0.875rem', color: '#5d6661', fontFamily: 'Montserrat, sans-serif' }}>
             {currentIndex + 1} / {images.length}
           </span>
           <button
             onClick={onClose}
-            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-[#5d6661] hover:text-[#13251e] text-xl leading-none cursor-pointer"
+            style={{
+              width: '2rem',
+              height: '2rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '50%',
+              border: 'none',
+              background: 'transparent',
+              color: '#5d6661',
+              fontSize: '1.25rem',
+              cursor: 'pointer',
+            }}
             aria-label="Close"
           >
             ✕
@@ -55,31 +100,65 @@ export default function Lightbox({ images, currentIndex, onClose, onPrev, onNext
         </div>
 
         {/* Image container */}
-        <div className="relative flex-1 min-h-0">
-          <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh]">
+        <div style={{ position: 'relative', flex: '1 1 auto', minHeight: 0 }}>
+          <div style={{ position: 'relative', width: '100%', height: '75vh' }}>
             <Image
               src={images[currentIndex]}
               alt={`Image ${currentIndex + 1} of ${images.length}`}
               fill
               className="object-contain"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 56rem"
               priority
             />
           </div>
 
-          {/* Nav arrows inside card */}
+          {/* Nav arrows */}
           {images.length > 1 && (
             <>
               <button
                 onClick={onPrev}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/80 hover:bg-white shadow-md text-[#13251e] text-2xl sm:text-3xl leading-none cursor-pointer transition-all hover:scale-105 select-none"
+                style={{
+                  position: 'absolute',
+                  left: '0.5rem',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  width: '3rem',
+                  height: '3rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: '50%',
+                  border: 'none',
+                  backgroundColor: 'rgba(255,255,255,0.85)',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+                  color: '#13251e',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                }}
                 aria-label="Previous image"
               >
                 ‹
               </button>
               <button
                 onClick={onNext}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/80 hover:bg-white shadow-md text-[#13251e] text-2xl sm:text-3xl leading-none cursor-pointer transition-all hover:scale-105 select-none"
+                style={{
+                  position: 'absolute',
+                  right: '0.5rem',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  width: '3rem',
+                  height: '3rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: '50%',
+                  border: 'none',
+                  backgroundColor: 'rgba(255,255,255,0.85)',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+                  color: '#13251e',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                }}
                 aria-label="Next image"
               >
                 ›
@@ -90,4 +169,8 @@ export default function Lightbox({ images, currentIndex, onClose, onPrev, onNext
       </div>
     </div>
   );
+}
+
+export default function Lightbox(props: LightboxProps) {
+  return createPortal(<LightboxContent {...props} />, document.body);
 }
