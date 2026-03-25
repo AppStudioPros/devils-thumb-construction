@@ -51,7 +51,7 @@ const services = [
   {
     title: 'Licensed Plumbing',
     description: 'From new construction rough-ins to fixture replacements and remodel updates, our licensed plumbers deliver dependable solutions. We handle kitchens, bathrooms, utility lines, and more — keeping water systems efficient and problem-free.',
-    image: '/gallery/bathrooms/bathroom-c1.jpg',
+    image: '/images/cabinetry.jpg',
   },
   {
     title: 'Heating, Ventilation & Air Conditioning (HVAC)',
