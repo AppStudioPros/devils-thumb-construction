@@ -1,18 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import PageHero from '@/components/shared/PageHero';
 import FadeIn from '@/components/shared/FadeIn';
-
-const projects = [
-  { name: 'Custom Home Build', image: '/images/custom-home.png' },
-  { name: 'Kitchen Remodel', image: '/images/kitchen-white.jpg' },
-  { name: 'Mountain Home', image: '/images/mountain-home.jpg' },
-  { name: 'Bathroom Renovation', image: '/images/kitchen-pendant.jpg' },
-  { name: 'Basement Finish', image: '/images/basement.jpg' },
-  { name: 'Exterior Update', image: '/images/cabin-exterior.jpg' },
-  { name: 'Garage Build', image: '/images/garage.jpg' },
-  { name: 'Living Room Remodel', image: '/images/living-room.jpg' },
-  { name: 'HVAC Installation', image: '/images/hvac-unit.jpg' },
-];
+import { galleryCategories } from '@/data/gallery';
 
 export default function ProjectsPage() {
   return (
@@ -35,21 +25,24 @@ export default function ProjectsPage() {
           </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, i) => (
-              <FadeIn key={project.name} delay={(i % 3) * 100}>
-                <div className="aspect-[4/3] relative overflow-hidden group">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[#13251e]/0 group-hover:bg-[#13251e]/70 transition-colors duration-300 flex items-center justify-center">
-                    <span className="text-white font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-[Montserrat]">
-                      {project.name}
-                    </span>
+            {galleryCategories.map((category, i) => (
+              <FadeIn key={category.slug} delay={(i % 3) * 100}>
+                <Link href={`/projects/${category.slug}`}>
+                  <div className="aspect-[4/3] relative overflow-hidden group cursor-pointer">
+                    <Image
+                      src={category.hero}
+                      alt={category.name}
+                      fill
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-[#13251e]/0 group-hover:bg-[#13251e]/70 transition-colors duration-300 flex items-center justify-center">
+                      <span className="text-white font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-[Montserrat] text-center px-4">
+                        {category.name}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </FadeIn>
             ))}
           </div>
