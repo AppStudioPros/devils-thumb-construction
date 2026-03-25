@@ -31,7 +31,7 @@ const services = [
   {
     title: 'Basement Finishing & Interiors',
     description: 'An unfinished basement is full of potential. We transform these spaces into fully functional extensions of your home—whether you need a home theater, office, gym, or guest suite. Our basement finishing services include flooring, walls, lighting, and trim, all designed to make your interiors comfortable and valuable.',
-    image: '/images/basement.jpg',
+    image: '/gallery/details/woodwork-1.jpg',
   },
   {
     title: 'Interior Design & Finishing Touches',
