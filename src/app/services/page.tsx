@@ -36,7 +36,7 @@ const services = [
   {
     title: 'Interior Design & Finishing Touches',
     description: 'Details make the difference in every project. We help bring everything together with carefully selected finishes, including cabinetry, flooring, trim, and paint. Our goal is to create cohesive, stylish interiors that balance beauty and practicality, giving your home a polished and complete look.',
-    image: '/images/cabinetry.jpg',
+    image: '/gallery/dining-spaces/diningroom-a1.jpg',
   },
   {
     title: 'Exterior Renovation',
