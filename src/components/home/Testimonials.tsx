@@ -42,20 +42,20 @@ export default function Testimonials() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          <FadeIn delay={200}>
-            <div className="bg-[#f5f3f0] rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+          <FadeIn delay={200} className="flex">
+            <div className="bg-[#f5f3f0] rounded-lg p-8 hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between w-full">
               <p className="text-[#5d6661] leading-relaxed mb-4">{testimonials[1].text}</p>
               <p className="font-bold text-[#13251e]">{testimonials[1].name}</p>
             </div>
           </FadeIn>
-          <FadeIn delay={300}>
-            <div className="bg-[#f5f3f0] rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+          <FadeIn delay={300} className="flex">
+            <div className="bg-[#f5f3f0] rounded-lg p-8 hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between w-full">
               <p className="text-[#5d6661] leading-relaxed mb-4">{testimonials[2].text}</p>
               <p className="font-bold text-[#13251e]">{testimonials[2].name}</p>
             </div>
           </FadeIn>
-          <FadeIn delay={400}>
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+          <FadeIn delay={400} className="flex">
+            <div className="relative rounded-lg overflow-hidden w-full">
               <Image src="/images/custom-home-2.jpg" alt="Custom home" fill className="object-cover transition-transform duration-500 ease-out hover:scale-105" />
             </div>
           </FadeIn>
