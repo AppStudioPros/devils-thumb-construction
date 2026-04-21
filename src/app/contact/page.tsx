@@ -1,10 +1,51 @@
 'use client';
 
+import { useState, FormEvent } from 'react';
 import Image from 'next/image';
 import PageHero from '@/components/shared/PageHero';
 import FadeIn from '@/components/shared/FadeIn';
 
 export default function ContactPage() {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMsg('');
+
+    const fd = new FormData(e.currentTarget);
+    const data = {
+      name: (fd.get('name') || '').toString().trim(),
+      email: (fd.get('email') || '').toString().trim(),
+      phone: (fd.get('phone') || '').toString().trim(),
+      zip: (fd.get('zip') || '').toString().trim(),
+      callHour: (fd.get('callHour') || '').toString(),
+      callMinute: (fd.get('callMinute') || '').toString(),
+      callAmPm: (fd.get('callAmPm') || '').toString(),
+      message: (fd.get('message') || '').toString().trim(),
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (json.ok) {
+        setStatus('success');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setStatus('error');
+        setErrorMsg(json.error || 'Something went wrong.');
+      }
+    } catch {
+      setStatus('error');
+      setErrorMsg('Network error. Please try again.');
+    }
+  }
+
   return (
     <>
       <PageHero title="Contact" bgImage="/images/kitchen-pendant.jpg" />
@@ -38,8 +79,8 @@ export default function ContactPage() {
                     <svg className="w-5 h-5 text-[#e09f18] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <a href="mailto:info@devilsthumbconstruction.com" className="text-[#13251e] font-medium hover:text-[#e09f18] transition-colors">
-                      info@devilsthumbconstruction.com
+                    <a href="mailto:j.kennedy@devilsthumbconstruction.com" className="text-[#13251e] font-medium hover:text-[#e09f18] transition-colors break-all">
+                      j.kennedy@devilsthumbconstruction.com
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
@@ -53,65 +94,89 @@ export default function ContactPage() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-[#13251e] font-[Montserrat] mb-6">Send Us A Message</h3>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    alert('Thank you! We will be in touch soon.');
-                  }}
-                  className="space-y-5"
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-[#5d6661] mb-1">Name *</label>
-                      <input type="text" id="name" name="name" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+
+                {status === 'success' ? (
+                  <div className="p-8 bg-[#f8f9f8] border-l-4 border-[#e09f18] rounded-lg">
+                    <div className="flex items-center gap-3 mb-3">
+                      <svg className="w-6 h-6 text-[#e09f18]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <h4 className="text-xl font-bold text-[#13251e]">Message Sent!</h4>
                     </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-[#5d6661] mb-1">Email *</label>
-                      <input type="email" id="email" name="email" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
-                    </div>
+                    <p className="text-[#5d6661] mb-4">
+                      Thanks for reaching out. J. Kennedy will be in touch with you shortly to discuss your project.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setStatus('idle')}
+                      className="text-[#e09f18] font-semibold hover:underline"
+                    >
+                      Send another message →
+                    </button>
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-[#5d6661] mb-1">Phone *</label>
-                      <input type="tel" id="phone" name="phone" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-[#5d6661] mb-1">Name *</label>
+                        <input type="text" id="name" name="name" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-[#5d6661] mb-1">Email *</label>
+                        <input type="email" id="email" name="email" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-[#5d6661] mb-1">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+                      </div>
+                      <div>
+                        <label htmlFor="zip" className="block text-sm font-medium text-[#5d6661] mb-1">Zip *</label>
+                        <input type="text" id="zip" name="zip" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+                      </div>
                     </div>
                     <div>
-                      <label htmlFor="zip" className="block text-sm font-medium text-[#5d6661] mb-1">Zip *</label>
-                      <input type="text" id="zip" name="zip" required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]" />
+                      <label htmlFor="callHour" className="block text-sm font-medium text-[#5d6661] mb-1">Schedule a phone call</label>
+                      <div className="grid grid-cols-3 gap-3">
+                        <select id="callHour" name="callHour" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
+                          <option value="">Hour</option>
+                          {Array.from({ length: 12 }, (_, i) => i + 1).map((h) => (
+                            <option key={h} value={h}>{h}</option>
+                          ))}
+                        </select>
+                        <select id="callMinute" name="callMinute" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
+                          <option value="">Minute</option>
+                          {['00', '15', '30', '45'].map((m) => (
+                            <option key={m} value={m}>{m}</option>
+                          ))}
+                        </select>
+                        <select id="callAmPm" name="callAmPm" defaultValue="AM" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
+                          <option value="AM">AM</option>
+                          <option value="PM">PM</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <label htmlFor="callTime" className="block text-sm font-medium text-[#5d6661] mb-1">Schedule a phone call</label>
-                    <div className="grid grid-cols-3 gap-3">
-                      <select id="callHour" name="callHour" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
-                        <option value="">Hour</option>
-                        {Array.from({ length: 12 }, (_, i) => i + 1).map((h) => (
-                          <option key={h} value={h}>{h}</option>
-                        ))}
-                      </select>
-                      <select id="callMinute" name="callMinute" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
-                        <option value="">Minute</option>
-                        {['00', '15', '30', '45'].map((m) => (
-                          <option key={m} value={m}>{m}</option>
-                        ))}
-                      </select>
-                      <select id="callAmPm" name="callAmPm" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
-                      </select>
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-[#5d6661] mb-1">Message *</label>
+                      <textarea id="message" name="message" rows={5} required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40] resize-none" />
                     </div>
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#5d6661] mb-1">Message *</label>
-                    <textarea id="message" name="message" rows={5} required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40] resize-none" />
-                  </div>
-                  <button
-                    type="submit"
-                    className="bg-[#e09f18] text-white px-8 py-3 min-h-[48px] rounded-[30px] font-semibold hover:bg-[#c5860e] hover:scale-105 transition-all w-full sm:w-auto"
-                  >
-                    submit
-                  </button>
-                </form>
+
+                    {status === 'error' && (
+                      <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-800">
+                        {errorMsg}
+                      </div>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={status === 'loading'}
+                      className="bg-[#e09f18] text-white px-8 py-3 min-h-[48px] rounded-[30px] font-semibold hover:bg-[#c5860e] hover:scale-105 transition-all w-full sm:w-auto disabled:opacity-60 disabled:hover:scale-100 disabled:cursor-not-allowed"
+                    >
+                      {status === 'loading' ? 'Sending…' : 'Submit'}
+                    </button>
+                  </form>
+                )}
               </div>
             </FadeIn>
           </div>
