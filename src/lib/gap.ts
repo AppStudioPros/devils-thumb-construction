@@ -39,6 +39,20 @@ export async function getGAPBlogPosts(clientId: string): Promise<GAPBlogPost[]> 
   }
 }
 
+export async function getGAPBlogPostBySlug(clientId: string, slug: string): Promise<GAPBlogPost | null> {
+  const posts = await getGAPBlogPosts(clientId);
+  return posts.find((p) => slugify(p.blog_title) === slug) || null;
+}
+
+export async function getAllGAPSlugs(clientId: string): Promise<string[]> {
+  const posts = await getGAPBlogPosts(clientId);
+  return posts.map((p) => slugify(p.blog_title));
+}
+
+export function formatDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+}
+
 export function slugify(title: string): string {
   return title
     .toLowerCase()
