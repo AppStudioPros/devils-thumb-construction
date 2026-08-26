@@ -93,32 +93,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What We Build */}
-      <section className="py-16 sm:py-20 bg-[#f7f7f5]">
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <p className="text-sm font-bold text-[#e09f18] uppercase tracking-widest mb-3">Services</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#13251e] font-[Montserrat] mb-4">What We Build</h2>
-            <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-8" />
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-              {whatWeBuild.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[#5d6661]">
-                  <span className="mt-1.5 w-2 h-2 rounded-full bg-[#e09f18] shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/services"
-              className="inline-block bg-[#e09f18] text-white px-8 py-3 rounded-[30px] font-semibold hover:bg-[#c5860e] transition-colors"
-            >
-              View All Services
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Mission + Where We Work */}
+      {/* Mission */}
       <section className="bg-white">
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
@@ -156,6 +131,31 @@ export default function AboutPage() {
               </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
+
+      {/* What We Build */}
+      <section className="py-16 sm:py-20 bg-[#f7f7f5]">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-sm font-bold text-[#e09f18] uppercase tracking-widest mb-3">Services</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#13251e] font-[Montserrat] mb-4">What We Build</h2>
+            <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-8" />
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+              {whatWeBuild.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-[#5d6661]">
+                  <span className="mt-1.5 w-2 h-2 rounded-full bg-[#e09f18] shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/services"
+              className="inline-block bg-[#e09f18] text-white px-8 py-3 rounded-[30px] font-semibold hover:bg-[#c5860e] transition-colors"
+            >
+              View All Services
+            </Link>
+          </FadeIn>
         </div>
       </section>
 
