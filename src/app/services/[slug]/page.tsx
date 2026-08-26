@@ -161,20 +161,20 @@ export default async function ServicePage({ params }: Props) {
 
           {/* Back + CTA */}
           <FadeIn>
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-              <Link href="/services" className="text-[#5d6661] hover:text-[#13251e] font-medium transition-colors">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <Link href="/services" className="text-[#5d6661] hover:text-[#13251e] font-medium transition-colors text-center sm:text-left">
                 ← Back to All Services
               </Link>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col xs:flex-row gap-3 w-full sm:w-auto">
                 <a
                   href="tel:720-322-6899"
-                  className="px-8 py-3 rounded-[30px] border-2 border-[#13251e] text-[#13251e] font-semibold hover:bg-[#13251e] hover:text-white transition-all text-center"
+                  className="flex-1 sm:flex-none px-6 py-3 rounded-[30px] border-2 border-[#13251e] text-[#13251e] font-semibold hover:bg-[#13251e] hover:text-white transition-all text-center text-sm sm:text-base"
                 >
                   Call 720-322-6899
                 </a>
                 <Link
                   href="/contact"
-                  className="px-8 py-3 rounded-[30px] bg-[#e09f18] text-white font-semibold hover:bg-[#c5860e] transition-colors text-center"
+                  className="flex-1 sm:flex-none px-6 py-3 rounded-[30px] bg-[#e09f18] text-white font-semibold hover:bg-[#c5860e] transition-colors text-center text-sm sm:text-base"
                 >
                   Request a Quote
                 </Link>

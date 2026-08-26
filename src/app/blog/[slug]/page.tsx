@@ -84,7 +84,7 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <main className="min-h-screen bg-white">
       <JsonLd data={articleSchema as Record<string, unknown>} />
-      <article className="pt-32 pb-24 px-6">
+      <article className="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <Link href="/blog" className="text-sm text-gray-400 hover:text-[#e09f18] transition-colors mb-6 inline-block">
             ← Back to Blog

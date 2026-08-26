@@ -151,7 +151,7 @@ export default function FAQPage() {
       <JsonLd data={faqSchema as Record<string, unknown>} />
       <PageHero title="FAQ" bgImage="/images/dtc-faq-hero.jpg" />
 
-      <section className="pt-[108px] pb-20 bg-white">
+      <section className="pt-16 sm:pt-[108px] pb-16 sm:pb-20 bg-white">
         <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-14">
