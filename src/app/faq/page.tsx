@@ -149,7 +149,7 @@ export default function FAQPage() {
   return (
     <>
       <JsonLd data={faqSchema as Record<string, unknown>} />
-      <PageHero title="FAQ" bgImage="/images/construction-framing.jpg" />
+      <PageHero title="FAQ" bgImage="/images/dtc-faq-hero.jpg" />
 
       <section className="pt-[108px] pb-20 bg-white">
         <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
