@@ -60,7 +60,7 @@ export default function Footer() {
       <div className="bg-[#0f1a0f] py-6">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-sm text-gray-400 text-center sm:text-left">
           <p>
-            © 2025 Devil&apos;s Thumb Construction. All Rights Reserved. Proudly serving Denver, Colorado and surrounding areas.{' '}
+            © 2026 Devil&apos;s Thumb Construction. All Rights Reserved. Proudly serving Denver, Colorado and surrounding areas.{' '}
             <Link href="/privacy" className="text-[#e09f18] hover:text-[#c5860e] transition-colors">
               Privacy Policy
             </Link>

@@ -1,12 +1,44 @@
+import type { Metadata } from "next";
 import Image from 'next/image';
 import Link from 'next/link';
 import PageHero from '@/components/shared/PageHero';
 import FadeIn from '@/components/shared/FadeIn';
 import { galleryCategories } from '@/data/gallery';
+import { JsonLd } from "@/components/JsonLd";
+import { buildWebPageSchema, buildBreadcrumbSchema, toGraph } from "@/lib/seo/schema";
+import { siteConfig } from "@/lib/seo/config";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Browse completed construction projects by Devil's Thumb Construction — custom homes, kitchen remodels, bathrooms, garages, basements, and more across the Colorado Front Range.",
+  alternates: { canonical: "/projects/" },
+  openGraph: {
+    title: "Projects | Devil's Thumb Construction",
+    description:
+      "See our completed work — custom homes, remodels, kitchens, baths, garages, and more across Colorado.",
+    url: "/projects/",
+  },
+};
+
+const projectsSchema = toGraph(
+  buildWebPageSchema({
+    type: "CollectionPage",
+    id: `${siteConfig.url}/projects/#webpage`,
+    url: `${siteConfig.url}/projects/`,
+    name: "Projects — Devil's Thumb Construction",
+    description: "Gallery of completed construction projects across the Colorado Front Range.",
+  }),
+  buildBreadcrumbSchema([
+    { name: "Home", url: `${siteConfig.url}/` },
+    { name: "Projects", url: `${siteConfig.url}/projects/` },
+  ])
+);
 
 export default function ProjectsPage() {
   return (
     <>
+      <JsonLd data={projectsSchema as Record<string, unknown>} />
       <PageHero title="Projects" bgImage="/gallery/dining-spaces/diningroom-c1.jpg" />
 
       <section className="pt-[108px] pb-20 bg-white">

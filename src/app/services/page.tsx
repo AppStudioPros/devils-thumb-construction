@@ -1,6 +1,23 @@
+import type { Metadata } from "next";
 import Image from 'next/image';
 import PageHero from '@/components/shared/PageHero';
 import FadeIn from '@/components/shared/FadeIn';
+import { JsonLd } from "@/components/JsonLd";
+import { buildWebPageSchema, buildBreadcrumbSchema, toGraph } from "@/lib/seo/schema";
+import { siteConfig } from "@/lib/seo/config";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Full-service general contractor in Arvada, CO — custom home construction, remodeling, garages, ADUs, concrete, excavation, architectural design, insurance work, and more across the Colorado Front Range.",
+  alternates: { canonical: "/services/" },
+  openGraph: {
+    title: "Construction Services | Devil's Thumb Construction",
+    description:
+      "Custom homes, remodels, garages, ADUs, concrete, excavation, and more — serving Arvada and 40 miles across the Colorado Front Range.",
+    url: "/services/",
+  },
+};
 
 const services = [
   {
@@ -60,9 +77,25 @@ const services = [
   },
 ];
 
+const servicesSchema = toGraph(
+  buildWebPageSchema({
+    type: "CollectionPage",
+    id: `${siteConfig.url}/services/#webpage`,
+    url: `${siteConfig.url}/services/`,
+    name: "Construction Services — Devil's Thumb Construction",
+    description:
+      "Residential and light commercial construction services across the Colorado Front Range.",
+  }),
+  buildBreadcrumbSchema([
+    { name: "Home", url: `${siteConfig.url}/` },
+    { name: "Services", url: `${siteConfig.url}/services/` },
+  ])
+);
+
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={servicesSchema as Record<string, unknown>} />
       <PageHero title="Services" bgImage="/images/construction-framing.jpg" />
 
       <section className="pt-[108px] pb-20">

@@ -1,10 +1,40 @@
+import type { Metadata } from "next";
 import Image from 'next/image';
 import PageHero from '@/components/shared/PageHero';
 import FadeIn from '@/components/shared/FadeIn';
+import { JsonLd } from "@/components/JsonLd";
+import { buildWebPageSchema, buildOrganizationSchema, toGraph } from "@/lib/seo/schema";
+import { siteConfig } from "@/lib/seo/config";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about Devil's Thumb Construction — a detail-driven Colorado general contractor serving the Front Range with design-build expertise, transparent pricing, and quality craftsmanship.",
+  alternates: { canonical: "/about/" },
+  openGraph: {
+    title: "About Devil's Thumb Construction",
+    description:
+      "Design-build general contractor serving the Colorado Front Range. Built Right. Built Local.",
+    url: "/about/",
+  },
+};
+
+const aboutSchema = toGraph(
+  buildWebPageSchema({
+    type: "AboutPage",
+    id: `${siteConfig.url}/about/#webpage`,
+    url: `${siteConfig.url}/about/`,
+    name: "About Devil's Thumb Construction",
+    description:
+      "Colorado design-build general contractor serving Denver, Arvada, Boulder, and surrounding Front Range communities.",
+  }),
+  buildOrganizationSchema()
+);
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={aboutSchema as Record<string, unknown>} />
       <PageHero title="About" bgImage="/images/colorado-mountains.jpg" />
 
       <section className="pt-[108px] pb-20 bg-white">

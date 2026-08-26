@@ -1,7 +1,21 @@
+import type { Metadata } from "next";
 import Link from 'next/link';
 import PageHero from '@/components/shared/PageHero';
 import FadeIn from '@/components/shared/FadeIn';
 import { getGAPBlogPosts, slugify, estimateReadTime, extractExcerpt } from '@/lib/gap';
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Construction tips, Colorado building insights, and project updates from Devil's Thumb Construction — serving Arvada, Denver, Boulder, and the Front Range.",
+  alternates: { canonical: "/blog/" },
+  openGraph: {
+    title: "Blog | Devil's Thumb Construction",
+    description:
+      "Colorado construction insights, tips, and project updates from Devil's Thumb Construction.",
+    url: "/blog/",
+  },
+};
 
 const GAP_CLIENT_ID = "421db41e-359c-461e-b901-2335687cf336";
 export const revalidate = 60;
