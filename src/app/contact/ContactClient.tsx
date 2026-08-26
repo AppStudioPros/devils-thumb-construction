@@ -66,7 +66,7 @@ export default function ContactClient() {
                   We&apos;re here to answer your questions and guide you through the next steps. Whether you&apos;re planning a custom home, a remodel, or an addition, our team is ready to help. Reach out today to schedule your free consultation.
                 </p>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                  <Image src="/images/kitchen-open.jpg" alt="Kitchen remodel completed by Devil's Thumb Construction" fill className="object-cover transition-transform duration-500 ease-out hover:scale-105" />
+                  <Image src="/images/dtc-brand-card.jpg" alt="Devil's Thumb Construction" fill className="object-cover" />
                 </div>
               </div>
             </FadeIn>
