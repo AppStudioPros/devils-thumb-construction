@@ -7,21 +7,25 @@ const services = [
     title: 'Custom Homes & Additions',
     subtitle: 'Design-Build Excellence',
     description: 'From the ground up or expanding what you have, we deliver custom homes and additions built to last.',
+    href: '/services/new-home-construction',
   },
   {
     title: 'Remodeling & Interiors',
     subtitle: 'Kitchens, Baths & More',
     description: 'Transform your living spaces with expert remodeling that combines style, function, and quality craftsmanship.',
+    href: '/services/remodeling',
   },
   {
     title: 'Electrical & Plumbing',
     subtitle: 'Licensed & Insured',
     description: 'Safe, reliable electrical and plumbing services handled by licensed professionals for every project.',
+    href: '/services/electrical',
   },
   {
     title: 'Residential & Commercial HVAC',
     subtitle: 'Year-Round Comfort',
     description: 'Licensed HVAC installation and service to keep your home or business comfortable in every season.',
+    href: '/services/hvac',
   },
 ];
 
@@ -54,7 +58,7 @@ export default function ServicesOverview() {
                 <p className="text-sm font-bold text-[#13251e] mb-3">{s.subtitle}</p>
                 <p className="text-[#5d6661] text-sm leading-relaxed mb-6 flex-1">{s.description}</p>
                 <Link
-                  href="/services"
+                  href={s.href}
                   className="inline-block bg-[#e09f18] text-white text-center px-6 py-2.5 rounded-[30px] text-sm font-semibold hover:bg-[#c5860e] hover:scale-105 transition-all"
                 >
                   Learn More

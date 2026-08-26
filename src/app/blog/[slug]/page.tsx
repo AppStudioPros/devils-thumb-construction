@@ -2,6 +2,9 @@ import { getGAPBlogPostBySlug, getAllGAPSlugs, estimateReadTime, extractExcerpt,
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
+import { buildWebPageSchema, buildBreadcrumbSchema, buildArticleSchema, toGraph } from "@/lib/seo/schema";
+import { siteConfig } from "@/lib/seo/config";
 
 const GAP_CLIENT_ID = "421db41e-359c-461e-b901-2335687cf336";
 
@@ -25,9 +28,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const post = await getGAPBlogPostBySlug(GAP_CLIENT_ID, slug);
     if (!post) return { title: "Post Not Found — Devil's Thumb Construction" };
+    const description = post.blog_meta || extractExcerpt(post.blog_content, 160);
     return {
-      title: `${post.blog_title} — Devil's Thumb Construction`,
-      description: post.blog_meta || extractExcerpt(post.blog_content, 160),
+      title: post.blog_title,
+      description,
+      alternates: { canonical: `/blog/${slug}/` },
+      openGraph: {
+        title: `${post.blog_title} | Devil's Thumb Construction`,
+        description,
+        url: `/blog/${slug}/`,
+        type: "article",
+        publishedTime: post.created_at,
+      },
     };
   } catch {
     return { title: "Blog — Devil's Thumb Construction" };
@@ -42,9 +54,36 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   const readTime = estimateReadTime(post.blog_content);
+  const pageUrl = `${siteConfig.url}/blog/${slug}/`;
+  const pageId = `${pageUrl}#webpage`;
+  const articleId = `${pageUrl}#article`;
+  const description = post.blog_meta || extractExcerpt(post.blog_content, 160);
+
+  const articleSchema = toGraph(
+    buildWebPageSchema({
+      id: pageId,
+      url: pageUrl,
+      name: post.blog_title,
+      description,
+    }),
+    buildBreadcrumbSchema([
+      { name: "Home", url: `${siteConfig.url}/` },
+      { name: "Blog", url: `${siteConfig.url}/blog/` },
+      { name: post.blog_title, url: pageUrl },
+    ]),
+    buildArticleSchema({
+      id: articleId,
+      url: pageUrl,
+      headline: post.blog_title,
+      description,
+      datePublished: post.created_at,
+      pageId,
+    })
+  );
 
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={articleSchema as Record<string, unknown>} />
       <article className="pt-32 pb-24 px-6">
         <div className="max-w-3xl mx-auto">
           <Link href="/blog" className="text-sm text-gray-400 hover:text-[#e09f18] transition-colors mb-6 inline-block">
