@@ -142,6 +142,48 @@ export default async function ServicePage({ params }: Props) {
             </div>
           </FadeIn>
 
+          {/* Common Questions */}
+          <FadeIn>
+            <div className="mb-20">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#13251e] font-[Montserrat] mb-6">
+                Common Questions
+              </h3>
+              <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-8" />
+              <dl className="space-y-6">
+                <div>
+                  <dt className="text-lg font-bold text-[#13251e] font-[Montserrat] mb-2">
+                    Do you serve my area?
+                  </dt>
+                  <dd className="text-[#5d6661] leading-relaxed">
+                    We serve residential and light commercial projects within approximately 40 miles of Arvada, Colorado — including Denver, Lakewood, Golden, Westminster, Thornton, Broomfield, Boulder, Longmont, Louisville, Superior, Erie, Evergreen, Conifer, Morrison, and Idaho Springs. Call us at{" "}
+                    <a href="tel:720-322-6899" className="text-[#e09f18] font-semibold hover:underline">720-322-6899</a>{" "}
+                    to confirm availability in your specific area.
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-lg font-bold text-[#13251e] font-[Montserrat] mb-2">
+                    Do you handle permits for {service.title.toLowerCase()} projects?
+                  </dt>
+                  <dd className="text-[#5d6661] leading-relaxed">
+                    Yes. We manage permitting as part of our process. All work is completed to Colorado building codes and inspected by the appropriate local authority.
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-lg font-bold text-[#13251e] font-[Montserrat] mb-2">
+                    How do I get started?
+                  </dt>
+                  <dd className="text-[#5d6661] leading-relaxed">
+                    Call us at{" "}
+                    <a href="tel:720-322-6899" className="text-[#e09f18] font-semibold hover:underline">720-322-6899</a>{" "}
+                    or{" "}
+                    <Link href="/contact" className="text-[#e09f18] font-semibold hover:underline">send us a message</Link>.
+                    {" "}We&apos;ll schedule a free consultation to walk through your project and outline next steps.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </FadeIn>
+
           {/* Service area */}
           <FadeIn>
             <div className="bg-[#13251e] rounded-2xl p-8 sm:p-12 mb-12">

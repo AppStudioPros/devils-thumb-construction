@@ -19,13 +19,20 @@ export const metadata: Metadata = {
   },
 };
 
-const faqs = [
+interface FaqItem {
+  q: string;
+  a: string;
+  link?: { text: string; href: string };
+}
+
+const faqs: { category: string; items: FaqItem[] }[] = [
   {
     category: "Service Area",
     items: [
       {
-        q: "Where does Devil's Thumb Construction work?",
-        a: "We serve the Colorado Front Range within approximately 40 miles of Arvada, including Denver, Lakewood, Golden, Westminster, Thornton, Broomfield, Boulder, Longmont, Louisville, Superior, Erie, Evergreen, Conifer, Morrison, and Idaho Springs. Not sure if you're in our range? Call us at 720-322-6899 and we'll let you know.",
+        q: "Where does Devil\'s Thumb Construction work?",
+        a: "We serve the Colorado Front Range within approximately 40 miles of Arvada, including Denver, Lakewood, Golden, Westminster, Thornton, Broomfield, Boulder, Longmont, Louisville, Superior, Erie, Evergreen, Conifer, Morrison, and Idaho Springs. Not sure if you\'re in our range? Call us at 720-322-6899 and we\'ll let you know.",
+        link: { text: "Contact us to confirm your area", href: "/contact" },
       },
       {
         q: "Do you work in the mountains or only on the Front Range?",
@@ -37,20 +44,24 @@ const faqs = [
     category: "Services",
     items: [
       {
-        q: "What types of construction does Devil's Thumb Construction handle?",
-        a: "We handle residential and light commercial construction including new home construction, remodeling, home additions, garages, ADUs (accessory dwelling units), basement finishing, kitchen and bathroom remodels, exterior renovation, concrete flatwork and foundations, excavation, custom stone work, architectural design, project consulting and management, and insurance restoration work. We also carry licensed electrical, plumbing, and HVAC in-house.",
+        q: "What types of construction does Devil\'s Thumb Construction handle?",
+        a: "We handle residential and light commercial construction including new home construction, remodeling, home additions, garages, ADUs (accessory dwelling units), basement finishing, kitchen and bathroom remodeling, exterior renovation, concrete flatwork and foundations, excavation, custom stone work, architectural design, project consulting and management, and insurance restoration work. We also carry licensed electrical, plumbing, and HVAC in-house.",
+        link: { text: "View all services", href: "/services" },
       },
       {
         q: "What is an ADU and do you build them?",
-        a: "An ADU (accessory dwelling unit) is a secondary living space on the same property as a primary home — a detached cottage, a converted garage, or an addition with its own entrance. Yes, we design and build ADUs. They're a popular option in Colorado for generating rental income, housing family members, or adding long-term property value.",
+        a: "An ADU (accessory dwelling unit) is a secondary living space on the same property as a primary home — a detached cottage, a converted garage, or an addition with its own entrance. Yes, we design and build ADUs. They\'re a popular option in Colorado for generating rental income, housing family members, or adding long-term property value.",
+        link: { text: "Learn about our Garage ADU service", href: "/services/garage-adu" },
       },
       {
         q: "Do you handle insurance restoration work?",
         a: "Yes. We work with homeowners on insurance-related repairs and reconstruction — including storm damage, hail damage, and other covered losses. We help coordinate the scope of work and ensure repairs are completed to code and to the standard your home deserves.",
+        link: { text: "Learn about our Insurance Work service", href: "/services/insurance-work" },
       },
       {
         q: "Can you handle the entire project from design to completion?",
         a: "Yes. Our design-build process means we manage architectural design, permits, trade coordination, and construction under one roof. This keeps your project aligned, on schedule, and avoids the miscommunication that often happens when design and construction are handled by separate firms.",
+        link: { text: "Learn about our Architectural Design service", href: "/services/architectural-design" },
       },
     ],
   },
@@ -58,8 +69,9 @@ const faqs = [
     category: "Process",
     items: [
       {
-        q: "How do I get started with Devil's Thumb Construction?",
-        a: "Call us at 720-322-6899 or send a message through our contact form. We'll schedule a free consultation to discuss your project, walk the site if needed, and outline next steps. No commitment required for the initial conversation.",
+        q: "How do I get started with Devil\'s Thumb Construction?",
+        a: "Call us at 720-322-6899 or send a message through our contact form. We\'ll schedule a free consultation to discuss your project, walk the site if needed, and outline next steps. No commitment required for the initial conversation.",
+        link: { text: "Contact us for a free consultation", href: "/contact" },
       },
       {
         q: "Do you pull permits?",
@@ -67,7 +79,8 @@ const faqs = [
       },
       {
         q: "Will I have one point of contact throughout my project?",
-        a: "Yes. We prioritize clear communication and transparent updates throughout every project. You'll know who to call, where things stand, and what's coming next.",
+        a: "Yes. We prioritize clear communication and transparent updates throughout every project. You\'ll know who to call, where things stand, and what\'s coming next.",
+        link: { text: "Learn about our Construction Management service", href: "/services/project-management" },
       },
     ],
   },
@@ -76,15 +89,18 @@ const faqs = [
     items: [
       {
         q: "How long does a kitchen or bathroom remodel take?",
-        a: "Most kitchen or bathroom remodels take between 4 and 10 weeks depending on the scope, material availability, and permit timelines. Larger structural changes or custom work can take longer. We'll give you a realistic schedule before work begins.",
+        a: "Most kitchen or bathroom remodels take between 4 and 10 weeks depending on the scope, material availability, and permit timelines. Larger structural changes or custom work can take longer. We\'ll give you a realistic schedule before work begins.",
+        link: { text: "Learn about our Kitchen & Bathroom Remodeling service", href: "/services/kitchen-bathroom-remodeling" },
       },
       {
         q: "How long does a custom home build take in Colorado?",
-        a: "A custom home build typically takes 10 to 18 months from design through final walkthrough, depending on size, complexity, site conditions, and permit timelines. We'll outline a project schedule during the planning phase so you know what to expect.",
+        a: "A custom home build typically takes 10 to 18 months from design through final walkthrough, depending on size, complexity, site conditions, and permit timelines. We\'ll outline a project schedule during the planning phase so you know what to expect.",
+        link: { text: "Learn about our New Home Construction service", href: "/services/new-home-construction" },
       },
       {
         q: "How long does basement finishing take?",
         a: "A standard basement finish typically takes 6 to 12 weeks. Timeline depends on the size of the space, finish level, and whether plumbing or electrical rough-in is needed.",
+        link: { text: "Learn about our Basement Finishing service", href: "/services/basement-finishing" },
       },
     ],
   },
@@ -93,11 +109,13 @@ const faqs = [
     items: [
       {
         q: "How much does a home addition cost in Colorado?",
-        a: "Home addition costs vary significantly based on size, complexity, finish level, and site conditions. We provide detailed estimates after reviewing your project — contact us for a free consultation and we'll walk through the scope with you.",
+        a: "Home addition costs vary significantly based on size, complexity, finish level, and site conditions. We provide detailed estimates after reviewing your project — contact us for a free consultation and we\'ll walk through the scope with you.",
+        link: { text: "Request a free estimate", href: "/contact" },
       },
       {
         q: "Do you provide free estimates?",
         a: "Yes. We offer a free initial consultation and project discussion. Detailed estimates are provided once we understand the full scope of your project.",
+        link: { text: "Get in touch", href: "/contact" },
       },
     ],
   },
@@ -105,12 +123,13 @@ const faqs = [
     category: "Colorado-Specific",
     items: [
       {
-        q: "Do you build to Colorado's energy codes and weather requirements?",
-        a: "Yes. All our projects meet Colorado's current energy codes. We also build with the Front Range climate in mind — that means proper drainage, insulation appropriate to Colorado's altitude and temperature swings, and exterior materials selected for durability in hail, UV exposure, and freeze-thaw cycles.",
+        q: "Do you build to Colorado\'s energy codes and weather requirements?",
+        a: "Yes. All our projects meet Colorado\'s current energy codes. We also build with the Front Range climate in mind — that means proper drainage, insulation appropriate to Colorado\'s altitude and temperature swings, and exterior materials selected for durability in hail, UV exposure, and freeze-thaw cycles.",
       },
       {
         q: "Can you help with excavation and site prep for a new build?",
         a: "Yes. We provide excavation and site preparation services as part of new construction projects. This includes grading, foundation excavation, and site clearing.",
+        link: { text: "Learn about our Excavation service", href: "/services/excavation" },
       },
     ],
   },
@@ -188,6 +207,11 @@ export default function FAQPage() {
                         </dt>
                         <dd className="text-[#5d6661] leading-relaxed">
                           {item.a}
+                          {item.link && (
+                            <Link href={item.link.href} className="block mt-2 text-sm text-[#e09f18] font-semibold hover:underline">
+                              {item.link.text} →
+                            </Link>
+                          )}
                         </dd>
                       </div>
                     ))}
