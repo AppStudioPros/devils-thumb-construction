@@ -96,6 +96,7 @@ export default async function ServicePage({ params }: Props) {
                   src={service.image}
                   alt={service.title}
                   fill
+                  priority
                   className="object-cover"
                 />
               </div>

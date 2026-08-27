@@ -85,6 +85,7 @@ export default function AboutPage() {
                   src="/images/mountain-home.jpg"
                   alt="Custom mountain home built by Devil's Thumb Construction on the Colorado Front Range"
                   fill
+                  priority
                   className="object-cover"
                 />
               </div>

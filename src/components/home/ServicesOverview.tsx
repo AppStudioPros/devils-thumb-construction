@@ -32,7 +32,7 @@ const services = [
 export default function ServicesOverview() {
   return (
     <section className="relative pt-[108px] pb-24">
-      <Image src="/images/blueprint-bg.jpg" alt="" fill className="object-cover" />
+      <Image src="/images/blueprint-bg.jpg" alt="" fill priority className="object-cover" />
       <div className="absolute inset-0 bg-[#13251e]/85" />
       <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
