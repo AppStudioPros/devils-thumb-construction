@@ -58,7 +58,7 @@ export default function AboutPage() {
 
       <section className="pt-16 sm:pt-[108px] pb-20 bg-white">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center">
             <FadeIn direction="right">
               <div className="py-8 sm:py-12 pr-0 lg:pr-16">
                 <p className="text-sm font-bold text-[#13251e] uppercase tracking-widest mb-3">
@@ -96,7 +96,7 @@ export default function AboutPage() {
       {/* Mission */}
       <section className="bg-white">
         <div className="max-w-[1240px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center">
             <FadeIn direction="right">
               <div className="relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
                 <Image
