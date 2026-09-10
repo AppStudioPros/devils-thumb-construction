@@ -32,3 +32,11 @@ html {
   background: #2c4b40;
   color: #ffffff;
 }
+
+/* ── Blog Article Prose ── */
+.prose-dtc h1 { font-size: 1.75rem; font-weight: 700; color: #13251e; margin: 2rem 0 0.75rem; font-family: Montserrat, sans-serif; }
+.prose-dtc h2 { font-size: 1.35rem; font-weight: 700; color: #13251e; margin: 2rem 0 0.75rem; font-family: Montserrat, sans-serif; border-left: 4px solid #e09f18; padding-left: 0.75rem; }
+.prose-dtc p { color: #3d4d47; line-height: 1.85; margin-bottom: 1.1rem; font-size: 1.05rem; }
+.prose-dtc ul { margin: 0.75rem 0 1.25rem 1.5rem; list-style: disc; }
+.prose-dtc li { color: #3d4d47; line-height: 1.75; margin-bottom: 0.4rem; font-size: 1rem; }
+.prose-dtc strong { color: #13251e; font-weight: 700; }

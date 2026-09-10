@@ -1,125 +1,154 @@
-import { getGAPBlogPostBySlug, getAllGAPSlugs, estimateReadTime, extractExcerpt, formatDate } from "@/lib/gap";
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import type { Metadata } from "next";
-import { JsonLd } from "@/components/JsonLd";
-import { buildWebPageSchema, buildBreadcrumbSchema, buildArticleSchema, toGraph } from "@/lib/seo/schema";
-import { siteConfig } from "@/lib/seo/config";
-
-const GAP_CLIENT_ID = "421db41e-359c-461e-b901-2335687cf336";
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import Image from 'next/image'
+import { blogPosts } from '@/data/blog-posts'
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>
 }
 
-export const revalidate = 60;
-
 export async function generateStaticParams() {
-  try {
-    const slugs = await getAllGAPSlugs(GAP_CLIENT_ID);
-    return slugs.map((slug) => ({ slug }));
-  } catch {
-    return [];
-  }
+  return blogPosts.map(p => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  try {
-    const post = await getGAPBlogPostBySlug(GAP_CLIENT_ID, slug);
-    if (!post) return { title: "Post Not Found — Devil's Thumb Construction" };
-    const description = post.blog_meta || extractExcerpt(post.blog_content, 160);
-    return {
-      title: post.blog_title,
-      description,
-      alternates: { canonical: `/blog/${slug}/` },
-      openGraph: {
-        title: `${post.blog_title} | Devil's Thumb Construction`,
-        description,
-        url: `/blog/${slug}/`,
-        type: "article",
-        publishedTime: post.created_at,
-      },
-    };
-  } catch {
-    return { title: "Blog — Devil's Thumb Construction" };
+  const { slug } = await params
+  const post = blogPosts.find(p => p.slug === slug)
+  if (!post) return { title: "Post Not Found — Devil's Thumb Construction" }
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `https://devilsthumbconstruction.com/blog/${slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://devilsthumbconstruction.com/blog/${slug}`,
+      images: post.image ? [{ url: post.image }] : [],
+    },
   }
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug } = await params
+  const post = blogPosts.find(p => p.slug === slug)
+  if (!post) notFound()
 
-  let post;
-  try { post = await getGAPBlogPostBySlug(GAP_CLIENT_ID, slug); } catch {}
-  if (!post) notFound();
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: { '@type': 'Organization', name: "Devil's Thumb Construction", url: 'https://devilsthumbconstruction.com' },
+    publisher: { '@type': 'Organization', name: "Devil's Thumb Construction", url: 'https://devilsthumbconstruction.com' },
+    url: `https://devilsthumbconstruction.com/blog/${slug}`,
+  }
 
-  const readTime = estimateReadTime(post.blog_content);
-  const pageUrl = `${siteConfig.url}/blog/${slug}/`;
-  const pageId = `${pageUrl}#webpage`;
-  const articleId = `${pageUrl}#article`;
-  const description = post.blog_meta || extractExcerpt(post.blog_content, 160);
-
-  const articleSchema = toGraph(
-    buildWebPageSchema({
-      id: pageId,
-      url: pageUrl,
-      name: post.blog_title,
-      description,
-    }),
-    buildBreadcrumbSchema([
-      { name: "Home", url: `${siteConfig.url}/` },
-      { name: "Blog", url: `${siteConfig.url}/blog/` },
-      { name: post.blog_title, url: pageUrl },
-    ]),
-    buildArticleSchema({
-      id: articleId,
-      url: pageUrl,
-      headline: post.blog_title,
-      description,
-      datePublished: post.created_at,
-      pageId,
+  // Parse markdown-ish content to HTML (basic)
+  const htmlContent = post.content
+    .split('\n')
+    .map(line => {
+      if (line.startsWith('## ')) return `<h2>${line.replace('## ', '')}</h2>`
+      if (line.startsWith('# ')) return `<h1>${line.replace('# ', '')}</h1>`
+      if (line.startsWith('- ')) return `<li>${line.replace('- ', '')}</li>`
+      if (line.trim() === '') return '<br />'
+      return `<p>${line}</p>`
     })
-  );
+    .join('\n')
+    .replace(/(<li>.*<\/li>\n?)+/g, match => `<ul>${match}</ul>`)
+
+  const related = blogPosts.filter(p => p.slug !== slug).slice(0, 3)
 
   return (
-    <main className="min-h-screen bg-white">
-      <JsonLd data={articleSchema as Record<string, unknown>} />
-      <article className="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto">
-          <Link href="/blog" className="text-sm text-gray-400 hover:text-[#e09f18] transition-colors mb-6 inline-block">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+
+      {/* Hero */}
+      <section
+        className="relative flex items-end"
+        style={{ paddingTop: '108px', minHeight: '320px', background: '#13251e' }}
+      >
+        {post.image && (
+          <div className="absolute inset-0">
+            <Image src={post.image} alt={post.title} fill className="object-cover opacity-20" />
+          </div>
+        )}
+        <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
+          <Link href="/blog" className="text-[#e09f18] text-sm font-semibold hover:underline mb-4 inline-block">
             ← Back to Blog
           </Link>
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full border text-[#e09f18] border-[#e09f18]/30 bg-[#e09f18]/5">
-              Blog
+          <div className="flex items-center gap-3 mb-3">
+            <span
+              className="text-xs font-semibold px-2.5 py-0.5 rounded-full border"
+              style={{ color: post.categoryColor, borderColor: `${post.categoryColor}60` }}
+            >
+              {post.category}
             </span>
-            <span className="text-xs text-gray-400">{formatDate(post.created_at)}</span>
-            <span className="text-xs text-gray-400">·</span>
-            <span className="text-xs text-gray-400">{readTime}</span>
+            <span className="text-xs text-gray-300">{post.date}</span>
+            <span className="text-xs text-gray-300">· {post.readTime}</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-[#2c4b40] leading-tight mb-6 font-montserrat">{post.blog_title}</h1>
-          {post.blog_meta && (
-            <p className="text-lg text-gray-500 mb-8 border-l-2 border-[#e09f18] pl-4">{post.blog_meta}</p>
-          )}
-          <div
-            className="prose prose-lg max-w-none
-              prose-headings:text-[#2c4b40] prose-headings:font-bold
-              prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-              prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-              prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-4
-              prose-strong:text-[#2c4b40]
-              prose-blockquote:border-[#e09f18] prose-blockquote:text-gray-500
-              prose-a:text-[#e09f18] prose-a:no-underline hover:prose-a:underline"
-            dangerouslySetInnerHTML={{ __html: post.blog_content }}
-          />
-          <div className="mt-16 pt-8 border-t border-gray-200 text-center">
-            <p className="text-gray-400 text-sm mb-4">Ready to start your construction project?</p>
-            <a href="/contact" className="inline-block text-sm font-semibold bg-[#e09f18] hover:bg-[#c5860e] text-white px-6 py-3 rounded-xl transition-all">
-              Get a Free Estimate
-            </a>
-          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-[Montserrat] max-w-3xl leading-tight">
+            {post.title}
+          </h1>
         </div>
-      </article>
-    </main>
-  );
+      </section>
+
+      {/* Article body */}
+      <section className="py-14 bg-white">
+        <div className="max-w-[780px] mx-auto px-4 sm:px-6">
+          <p className="text-lg text-[#5d6661] leading-relaxed mb-8 font-medium border-l-4 border-[#e09f18] pl-4">
+            {post.excerpt}
+          </p>
+          <div
+            className="prose-dtc"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
+        </div>
+      </section>
+
+      {/* Related posts */}
+      {related.length > 0 && (
+        <section className="py-14 bg-[#f5f6f5]">
+          <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-[#13251e] font-[Montserrat] mb-6">More from the Blog</h2>
+            <div className="grid sm:grid-cols-3 gap-6">
+              {related.map(p => (
+                <Link key={p.slug} href={`/blog/${p.slug}`} className="group block">
+                  <div className="rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow bg-white h-full flex flex-col">
+                    {p.image && (
+                      <div className="relative h-36 overflow-hidden flex-shrink-0">
+                        <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                      </div>
+                    )}
+                    <div className="p-5 flex flex-col flex-1">
+                      <p className="text-xs text-[#5d6661] mb-2">{p.date} · {p.readTime}</p>
+                      <h3 className="text-base font-bold text-[#13251e] group-hover:text-[#2c4b40] transition-colors font-[Montserrat] flex-1">{p.title}</h3>
+                      <span className="text-[#e09f18] text-sm font-semibold mt-3">Read →</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA */}
+      <section className="py-14 bg-[#13251e]">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white font-[Montserrat] mb-3">
+            Ready to Start Your Project?
+          </h2>
+          <p className="text-gray-300 mb-6">Free consultation. No pressure.</p>
+          <Link
+            href="/contact"
+            className="inline-block bg-[#e09f18] text-white px-8 py-3 rounded-[30px] font-semibold hover:bg-[#c5860e] transition-colors"
+          >
+            Get a Free Quote
+          </Link>
+        </div>
+      </section>
+    </>
+  )
 }
