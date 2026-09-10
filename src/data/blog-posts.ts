@@ -19,47 +19,43 @@ export const blogPosts: BlogPost[] = [
     date: 'September 5, 2026',
     readTime: '5 min read',
     image: '/images/blueprints.jpg',
-    excerpt: 'Hiring the right general contractor can make or break your project. Here\'s what to look for — and what to avoid — when choosing a contractor on the Colorado Front Range.',
+    excerpt: 'Hiring the right general contractor can make or break your project. Here\'s what to look for, and a few things that should give you pause, before you sign anything.',
     content: `
-Hiring a general contractor is one of the most important decisions you'll make for your home. The right contractor keeps your project on schedule, on budget, and built to last. The wrong one can cost you far more than the original quote.
+Picking a contractor is one of those decisions that feels straightforward until you're in the middle of a bad one. The right contractor keeps things moving, communicates clearly, and builds work that holds up. The wrong one costs you more than the original quote and leaves you cleaning up the mess.
 
-Here's what to look for when choosing a general contractor in Colorado.
+Before you hire anyone, here are the things that actually matter.
 
-## Verify Their License and Insurance
+## Make Sure They're Licensed and Insured
 
-In Colorado, general contractors are required to be licensed through the state or local municipality. Before signing anything, ask for their license number and verify it at the Colorado Department of Regulatory Agencies (DORA) website.
+In Colorado, general contractors need to be licensed through the state or their local municipality. Ask for their license number and look it up through DORA before you hand over any money. It takes five minutes and it matters.
 
-Just as important: proof of general liability insurance and workers' compensation. If a worker is injured on your property and the contractor isn't properly insured, you could be held liable. Don't skip this step.
+Beyond that, ask for proof of general liability insurance and workers' comp. If someone gets hurt on your property and the contractor isn't properly covered, that problem can land on you. Don't take their word for it. Ask for the certificate.
 
-## Check Their Track Record
+## References Tell You More Than a Portfolio
 
-Reviews and references tell you more than any sales pitch. Look for contractors with a consistent history of completed projects — not just a portfolio of their best work. Ask for references from projects completed in the last 12 months and actually call them.
+A nice portfolio only shows their best work on their best days. References tell you what working with them is actually like.
 
-Ask references:
-- Did the project finish on time?
-- Were there cost overruns, and how were they handled?
-- How did the contractor communicate throughout?
-- Would you hire them again?
+Ask for references from the last 12 months, and actually call them. The question most people forget to ask: would you hire them again? That answer says everything.
 
-## Get a Detailed Written Estimate
+You also want to know how they handled problems, not just whether the project went well. Things come up on every job. What matters is how a contractor deals with it when something doesn't go as planned.
 
-A legitimate contractor will provide a written estimate with itemized costs — labor, materials, permits, and contingencies. Be wary of unusually low bids. They often signal that a contractor plans to cut corners or will hit you with change orders later.
+## Get It in Writing, In Detail
 
-Compare at least three bids before deciding.
+A written estimate should break down labor, materials, permits, and contingencies. If a bid comes in unusually low, that's not a deal, it's a warning. Contractors who underbid projects make up the difference later through change orders or by cutting corners on materials.
 
-## Make Sure They Pull Permits
+Get at least three bids before deciding. Not to find the cheapest option, but to understand what the project should actually cost.
 
-Every significant construction project in Colorado requires permits — building, electrical, plumbing, mechanical. A contractor who suggests skipping permits is a red flag. Unpermitted work can create serious problems when you sell your home, and it may not pass inspection.
+## Permits Are Not Optional
 
-At Devil's Thumb Construction, we handle all permits on every project. It's not optional — it's part of doing the job right.
+Any significant construction in Colorado requires permits, electrical, plumbing, building, sometimes mechanical. A contractor who suggests skipping permits is not saving you time or money. Unpermitted work creates real problems when you go to sell, refinance, or make a claim. We pull every permit we need on every job. It's not up for discussion.
 
-## Communication Is Everything
+## Pay Attention to How They Communicate Before You Hire
 
-A great contractor is also a great communicator. You should know who your point of contact is, how often you'll get updates, and how decisions get made. If a contractor is hard to reach before you hire them, it won't get better after they start.
+If a contractor is slow to return calls, vague on timelines, or hard to pin down during the bidding process, it doesn't get better once they start. That's just who they are.
 
-## Ready to Talk?
+Good communication isn't a bonus feature. It's a basic professional expectation. You should always know who to call, what's happening on your project, and when to expect the next update.
 
-If you're planning a project on the Colorado Front Range, we'd love to hear about it. Contact us for a free consultation and estimate.
+If you're planning a project on the Front Range and want to talk through what it might take, give us a call. No obligation, just a straightforward conversation.
     `.trim(),
   },
   {
@@ -70,51 +66,42 @@ If you're planning a project on the Colorado Front Range, we'd love to hear abou
     date: 'August 18, 2026',
     readTime: '4 min read',
     image: '/images/renovation-progress.jpg',
-    excerpt: 'More space or a better layout? Sometimes the answer is an addition. Sometimes it\'s a remodel. Here\'s how to think through the decision before you commit.',
+    excerpt: 'More space or a better layout? Sometimes the answer is adding square footage. Sometimes you just need to rethink what you already have.',
     content: `
-One of the most common questions homeowners ask us is: should I add on to my house or remodel what I have? The answer depends on your goals, your budget, and the bones of your existing home.
+We get this question a lot. Someone has outgrown their house, or their kitchen stopped working for them five years ago and they've finally had enough. The question is whether they need more space or just a better version of what they already have.
 
-## When a Home Addition Makes Sense
+There's no universal answer. It comes down to what the house needs and what the homeowner actually wants.
 
-An addition is the right move when you genuinely need more square footage. Common scenarios:
+## When an Addition Makes More Sense
 
-- You're growing your family and need bedrooms or bathrooms
-- You want a primary suite that doesn't exist in the current floor plan
-- You need a dedicated home office, studio, or gym
-- Your lot allows expansion and your neighborhood supports it
+If you need bedrooms, bathrooms, or square footage that simply doesn't exist in the house, a remodel can't solve that. You need more space, and that means building it.
 
-Additions give you new, purpose-built space with modern systems, insulation, and finishes. They also typically add more resale value per dollar than a remodel.
+Additions make sense when the lot allows it, the neighborhood supports it, and the existing structure can accommodate the expansion. They're also a strong investment. Adding well-built square footage to a home in the Denver market typically returns well at resale.
 
-The trade-off: additions are usually more expensive per square foot because they involve foundation work, framing, exterior finish, and new mechanical runs.
+The tradeoff is cost. Additions are more expensive per square foot than remodels because you're building foundation, framing, exterior finish, and new mechanical runs from scratch. You're not just refinishing, you're building.
 
-## When a Remodel Is the Better Move
+## When a Remodel Is the Right Call
 
-A remodel makes sense when the space already exists but doesn't work the way you need it to. Common scenarios:
+If the space already exists but it doesn't function the way you need it to, a remodel is the right move. A dated kitchen with a bad layout, bathrooms that feel like they belong in a different decade, a basement that's been sitting unfinished for years, those are remodel problems.
 
-- Your kitchen is dated and inefficient
-- Your bathrooms need a full upgrade
-- You want to open up the floor plan by removing walls
-- Your basement is unfinished and sitting empty
+Remodels cost less per square foot than additions because you're working within the existing envelope. You can dramatically change how a home looks and lives without adding a single square foot.
 
-Remodels are generally less expensive than additions for the same square footage, since the structural shell is already there. They can dramatically change how a home feels and functions without expanding the footprint.
+A lot of homeowners are surprised by how much a remodel can change a house. Opening up a wall between a kitchen and living room, or finally finishing a 900 square foot basement, can make the house feel like a completely different place.
 
-## What About Both?
+## Sometimes It's Both
 
-Some projects combine both — opening up a main floor while adding square footage above or to the side. This is common in Colorado ranch homes that are wide and low, where adding a second story or a rear addition makes sense alongside a main floor refresh.
+We do plenty of projects that combine the two. A ranch home that gets a rear addition and a main floor refresh at the same time. A house that gets a second story added while the kitchen gets rebuilt below. When the scope makes sense and the budget supports it, combining phases can save money on overhead compared to doing them separately.
 
-## Cost Reality on the Front Range
+## Numbers to Know in the Denver Area
 
-In the Denver metro area as of 2026:
-- Home additions: $150–$300+ per square foot depending on complexity
-- Full kitchen remodel: $35,000–$90,000+
-- Master suite addition: $75,000–$180,000+
-- Basement finish: $40–$80 per square foot
+These are rough ranges for 2026, not fixed bids. Every project is different.
 
-These are ranges — your project will depend on finishes, structural conditions, site access, and permitting requirements.
+- Home additions typically run $150 to $300 or more per square foot depending on complexity
+- Full kitchen remodels range from around $35,000 on the modest end to $90,000 and above for custom work
+- Master suite additions usually fall somewhere between $75,000 and $180,000
+- Basement finishes run roughly $40 to $80 per square foot for standard work
 
-## Let's Talk Through Your Project
-
-Not sure which direction makes sense for your home? That's what we're here for. Give us a call or fill out our contact form to schedule a free consultation.
+If you want to talk through what makes sense for your specific situation, reach out. We're happy to give you an honest read before you commit to anything.
     `.trim(),
   },
   {
@@ -125,64 +112,49 @@ Not sure which direction makes sense for your home? That's what we're here for. 
     date: 'July 29, 2026',
     readTime: '6 min read',
     image: '/images/kitchen-island.jpg',
-    excerpt: 'A kitchen remodel is one of the best investments you can make in your home — but it comes with disruption. Here\'s a realistic timeline and what to prepare for.',
+    excerpt: 'A kitchen remodel is one of the best things you can do for your home. It\'s also loud, dusty, and disruptive. Knowing what\'s coming makes it a lot easier to live through.',
     content: `
-A kitchen remodel is exciting and stressful in equal measure. The result — a beautiful, functional kitchen built exactly how you want it — is worth the process. But going in with realistic expectations makes everything smoother.
+Kitchens are the most popular room to remodel, and for good reason. A well-done kitchen adds real value to a home and makes daily life significantly better. But it's also the one room you use every day, which makes the process harder to live through than people expect.
 
-Here's what a kitchen remodel actually looks like from start to finish.
+Going in with a clear picture of what's coming makes a real difference.
 
-## Phase 1: Design and Planning (2–6 Weeks Before Construction)
+## Before Construction Starts: Planning Takes Longer Than People Think
 
-Before a single cabinet comes down, there's planning to do. This phase includes:
+Most of the timeline that surprises homeowners happens before a single cabinet comes down. Selecting cabinets, countertops, appliances, tile, and fixtures takes time, and the decisions you delay in this stage are the ones that cause delays on the job site later.
 
-- Finalizing the layout (are you moving the sink? Changing the island location?)
-- Selecting cabinets, countertops, appliances, fixtures, and tile
-- Drawing construction documents if walls are moving or structural changes are involved
-- Pulling permits — required in Colorado for electrical, plumbing, and structural work
+If walls are moving or structural changes are involved, there are drawings and permits to pull. Colorado requires permits for electrical, plumbing, and structural work. We handle all of that, but it has its own timeline.
 
-Decisions made slowly here cause delays later. We help clients move through this phase efficiently so construction can start on a clear foundation.
+Budget 2 to 6 weeks for planning and permitting before demolition begins. Use that time to make every finish decision you can. Changes during construction cost more and take longer than changes on paper.
 
-## Phase 2: Demolition (Days 1–3)
+## Demolition: Fast, Loud, and Full of Surprises
 
-Demo is fast and loud. Existing cabinets, counters, flooring, and sometimes drywall come out. We protect adjacent areas from dust and debris and haul everything away.
+Once work starts, demo goes quickly. Cabinets, countertops, flooring, drywall if needed, it usually comes out in a couple of days. We protect adjacent spaces from dust and haul everything out.
 
-This phase often reveals surprises — old plumbing, outdated electrical panels, or structural conditions that need addressing. We document everything and discuss any changes to scope before proceeding.
+What demo often uncovers is the part people don't plan for. Old plumbing, electrical panels that are undersized for a modern kitchen, structural conditions that weren't obvious from the outside. We document everything we find and talk through any scope changes before we move forward. Nothing happens without the homeowner knowing about it first.
 
-## Phase 3: Rough Work (1–2 Weeks)
+## Rough Trades: The Invisible Work
 
-With the kitchen stripped down, the trades go in:
+After demo, the trades go in. Electrician runs new circuits for appliances, under-cabinet lighting, and outlets. Plumber relocates supply and drain lines if the sink or dishwasher is moving. HVAC if there are any changes needed.
 
-- Electrician runs new circuits for appliances, under-cabinet lighting, and outlets
-- Plumber relocates supply and drain lines if the sink or dishwasher is moving
-- HVAC adjustments if needed
-- Framing for any new walls or structural modifications
+This work gets inspected before it's closed in. Don't skip inspections. That's what they're for.
 
-All of this gets inspected before it's closed in.
+## Drywall, Cabinets, Countertops
 
-## Phase 4: Drywall and Prep (3–5 Days)
+Drywall goes up, gets taped and finished. Then cabinets get installed and leveled. Then countertop templates get measured and fabricated, which for stone typically takes 7 to 10 days from template to installation. This is often where people get impatient, and it's not a step that can be rushed without showing up in the finished product.
 
-New drywall goes up, gets taped, mudded, and sanded. This phase takes time to do right — rushed drywall shows up in the final finish.
+## Finish Work and the Last Mile
 
-## Phase 5: Cabinets and Countertops (1–2 Weeks)
-
-Cabinet installation is one of the most satisfying phases — the kitchen starts taking shape. After cabinets are set and leveled, countertop templates are measured and fabricated. Stone countertops typically take 7–10 days from template to install.
-
-## Phase 6: Finish Work (1–2 Weeks)
-
-- Tile backsplash
-- Appliance installation
-- Plumbing fixtures and final connections
-- Electrical cover plates, under-cabinet lights, switches
-- Touch-up paint and caulk
-- Final inspections
+Tile backsplash, appliances, plumbing fixtures, electrical cover plates, paint touchup, caulk. The final stretch often feels slow because the big visual changes have already happened and now it's detail work. It matters. Don't rush it.
 
 ## Living Without a Kitchen
 
-Plan for 4–8 weeks without a fully functional kitchen. Set up a temporary kitchen in another room — a microwave, electric skillet, and coffee maker go a long way. We try to minimize the period when you have zero running water, but budget for some takeout.
+Plan to be without a functioning kitchen for 4 to 8 weeks depending on scope. Set up a temporary situation somewhere else in the house. A microwave, a hot plate, a coffee maker. Budget for more takeout than usual.
 
-## Ready to Start?
+The period without running water at the kitchen sink is usually shorter, but it happens. We try to minimize it. We can't always eliminate it entirely.
 
-If a kitchen remodel is on your list for this year, now is the time to start planning. Contact us to set up a free consultation.
+The result is worth it. But knowing what you're getting into ahead of time makes the process much easier to get through.
+
+Ready to start planning? Give us a call and we'll walk through what your kitchen could look like.
     `.trim(),
   },
   {
@@ -193,37 +165,37 @@ If a kitchen remodel is on your list for this year, now is the time to start pla
     date: 'June 14, 2026',
     readTime: '4 min read',
     image: '/images/log-cabin-mountain.jpg',
-    excerpt: 'Colorado winters are no joke — but that doesn\'t mean construction has to stop. Here\'s how we keep projects moving through the cold months on the Front Range.',
+    excerpt: 'A lot of homeowners assume construction stops in Colorado when it gets cold. It doesn\'t. And waiting until spring often costs more time than it saves.',
     content: `
-A lot of homeowners assume construction goes on pause in Colorado from November through March. That's not the case — and waiting until spring can actually cost you more time and money than you'd expect.
+The assumption we hear a lot is that construction shuts down in Colorado from November through March. For most projects, that's just not true, and waiting for spring can actually push your start date further out than you'd expect.
 
-Here's what you need to know about building and remodeling through a Colorado winter.
+Here's what actually changes in winter, and what doesn't.
 
-## Interior Work Is Year-Round
+## Interior Work Doesn't Stop for Snow
 
-The bulk of a remodel — framing, electrical, plumbing, drywall, cabinetry, tile, and finish work — can all happen indoors regardless of what's going on outside. If you're doing a kitchen, bathroom, or basement project, winter is a perfectly reasonable time to start. In fact, contractor schedules often open up in winter, which can mean faster project starts and better pricing on some materials.
+Framing, electrical, plumbing, drywall, insulation, tile, cabinetry, finish work. None of that cares what the weather is doing outside. If your project is mostly interior, winter is a legitimate time to get it done. Contractor schedules often have more availability in the colder months, which can mean a faster start and better scheduling flexibility.
 
-## Exterior Work Requires More Planning
+If you've been putting off a kitchen remodel or basement finish, winter is not the wrong time.
 
-Foundation work, concrete flatwork, and exterior framing are more weather-dependent. Concrete pours require specific temperature conditions — generally above 40°F and rising. In Colorado, that's manageable more days than you'd think, especially along the Front Range where January temperatures frequently reach the 50s and 60s.
+## Exterior Work Is More Weather-Dependent, Not Impossible
 
-For exterior projects, we monitor forecasts closely and schedule temperature-sensitive work during appropriate windows. Heated enclosures, blankets, and admixtures can extend the working season considerably.
+Concrete pours, foundation work, and exterior framing require more planning in cold weather. Fresh concrete needs temperatures above 40 degrees and rising. On the Front Range, that's still achievable most winter days. January temperatures in the Denver area hit the 50s and 60s more often than people remember.
 
-## Snow and Access
+We monitor forecasts closely and schedule temperature-sensitive work during the right windows. Heated enclosures, insulating blankets, and concrete admixtures extend what's possible considerably. Cold weather construction isn't something we avoid. It's something we plan for.
 
-Site access and material delivery can be affected by snow events. We factor this into scheduling and maintain clear communication about weather-related delays. In most cases, a Front Range snowstorm delays work by one to two days — not weeks.
+## Snow Events Cause Short Delays, Not Long Ones
 
-## Mountain Properties
+A Front Range snowstorm typically sets a project back a day or two, not a week or more. We build realistic buffers into winter project schedules and communicate about weather delays as they happen.
 
-If your property is above 7,000 feet, winter construction requires more planning. Longer site access times, higher snowfall, and more extreme temperature swings all factor in. We've built and remodeled at altitude across the Colorado foothills and mountains, and we know how to plan for it.
+If your property is in the foothills or mountains, the calculus changes. Higher elevations, more snowfall, longer site access times. We do a lot of work above 7,000 feet and we know how to approach it. The planning is just different.
 
-## Starting in Winter Means Finishing in Spring
+## The Real Reason to Start in Winter
 
-One of the best reasons to start a project in winter: you finish in spring. Instead of spending your summer and fall in construction, your project wraps right as the weather gets nice. For additions, decks, and outdoor spaces, that timing is hard to beat.
+If you start in winter, you finish in spring. Projects that kick off in January or February are often wrapping up right as the weather turns nice. For outdoor spaces, additions that open onto decks, or anything you want to enjoy in summer, that timing is hard to argue with.
 
-## Let's Plan Your Project
+Starting in the spring sounds appealing, but spring is when everyone else is trying to start too. Schedules fill up. Material lead times stretch. The project that was going to take four months now starts two months later than you planned.
 
-Ready to talk through your timeline? Contact Devil's Thumb Construction for a free consultation — we'll help you figure out the right time to start and what to expect.
+If you want to talk through whether your project makes sense to start before spring, we're glad to have that conversation.
     `.trim(),
   },
 ]
