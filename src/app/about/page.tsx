@@ -160,6 +160,32 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* QR Code — Scan to Visit */}
+      <section className="py-14 bg-[#1a3028]">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
+            <div className="bg-white p-4 rounded-xl shadow-lg flex-shrink-0">
+              <Image
+                src="/images/dtc-qr-code.png"
+                alt="Scan to visit DevilsThumbConstruction.com"
+                width={140}
+                height={140}
+                className="block"
+              />
+            </div>
+            <div>
+              <p className="text-[#e09f18] text-xs font-bold uppercase tracking-widest mb-2">Quick Access</p>
+              <h3 className="text-2xl font-bold text-white font-[Montserrat] mb-2">
+                Scan to Visit Our Website
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Share this QR code or scan it to go straight to devilsthumbconstruction.com — no typing required.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Where We Work */}
       <section className="py-16 sm:py-20 bg-[#13251e]">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
