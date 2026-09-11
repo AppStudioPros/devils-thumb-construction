@@ -179,7 +179,7 @@ export default function AboutPage() {
                 Scan to Visit Our Website
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed">
-                Share this QR code or scan it to go straight to devilsthumbconstruction.com — no typing required.
+                Share this QR code or scan it to go straight to devilsthumbconstruction.com, no typing required.
               </p>
             </div>
           </div>
