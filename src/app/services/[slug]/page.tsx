@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: service.metaDescription,
     alternates: { canonical: `/services/${service.slug}/` },
     openGraph: {
-      title: `${service.title} | Devil's Thumb Construction`,
+      title: `${service.title} | Devils Thumb Construction`,
       description: service.metaDescription,
       url: `/services/${service.slug}/`,
       images: [{ url: service.heroImage, width: 1200, height: 630, alt: service.title }],
@@ -48,7 +48,7 @@ export default async function ServicePage({ params }: Props) {
     buildWebPageSchema({
       id: pageId,
       url: pageUrl,
-      name: `${service.title} — Devil's Thumb Construction`,
+      name: `${service.title} — Devils Thumb Construction`,
       description: service.metaDescription,
     }),
     buildBreadcrumbSchema([

@@ -42,7 +42,7 @@ export default function Header() {
     >
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3">
         <Link href="/">
-          <Image src="/images/logo.png" alt="Devil's Thumb Construction" width={240} height={240} className="w-[160px] sm:w-[240px]" />
+          <Image src="/images/logo.png" alt="Devils Thumb Construction" width={240} height={240} className="w-[160px] sm:w-[240px]" />
         </Link>
 
         {/* Desktop nav */}

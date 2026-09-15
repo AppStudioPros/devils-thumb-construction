@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = blogPosts.find(p => p.slug === slug)
-  if (!post) return { title: "Post Not Found — Devil's Thumb Construction" }
+  if (!post) return { title: "Post Not Found — Devils Thumb Construction" }
   return {
     title: post.title,
     description: post.excerpt,
@@ -40,8 +40,8 @@ export default async function BlogPostPage({ params }: Props) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    author: { '@type': 'Organization', name: "Devil's Thumb Construction", url: 'https://devilsthumbconstruction.com' },
-    publisher: { '@type': 'Organization', name: "Devil's Thumb Construction", url: 'https://devilsthumbconstruction.com' },
+    author: { '@type': 'Organization', name: "Devils Thumb Construction", url: 'https://devilsthumbconstruction.com' },
+    publisher: { '@type': 'Organization', name: "Devils Thumb Construction", url: 'https://devilsthumbconstruction.com' },
     url: `https://devilsthumbconstruction.com/blog/${slug}`,
   }
 

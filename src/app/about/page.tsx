@@ -10,10 +10,10 @@ import { siteConfig } from "@/lib/seo/config";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Devil's Thumb Construction — a detail-driven Colorado general contractor serving the Front Range with design-build expertise, transparent pricing, and quality craftsmanship.",
+    "Learn about Devils Thumb Construction — a detail-driven Colorado general contractor serving the Front Range with design-build expertise, transparent pricing, and quality craftsmanship.",
   alternates: { canonical: "/about/" },
   openGraph: {
-    title: "About Devil's Thumb Construction",
+    title: "About Devils Thumb Construction",
     description:
       "Design-build general contractor serving the Colorado Front Range. Built Right. Built Local.",
     url: "/about/",
@@ -26,7 +26,7 @@ const aboutSchema = toGraph(
     type: "AboutPage",
     id: `${siteConfig.url}/about/#webpage`,
     url: `${siteConfig.url}/about/`,
-    name: "About Devil's Thumb Construction",
+    name: "About Devils Thumb Construction",
     description:
       "Colorado design-build general contractor serving Denver, Arvada, Boulder, and surrounding Front Range communities.",
   })
@@ -83,7 +83,7 @@ export default function AboutPage() {
               <div className="relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
                 <Image
                   src="/images/mountain-home.jpg"
-                  alt="Custom mountain home built by Devil's Thumb Construction on the Colorado Front Range"
+                  alt="Custom mountain home built by Devils Thumb Construction on the Colorado Front Range"
                   fill
                   priority
                   className="object-cover"
@@ -102,7 +102,7 @@ export default function AboutPage() {
               <div className="relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
                 <Image
                   src="/images/living-room.jpg"
-                  alt="Finished living room interior by Devil's Thumb Construction"
+                  alt="Finished living room interior by Devils Thumb Construction"
                   fill
                   className="object-cover"
                 />

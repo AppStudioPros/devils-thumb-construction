@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Full-service general contractor in Arvada, CO — custom home construction, remodeling, garages, ADUs, concrete, excavation, architectural design, insurance work, and more across the Colorado Front Range.",
   alternates: { canonical: "/services/" },
   openGraph: {
-    title: "Construction Services | Devil's Thumb Construction",
+    title: "Construction Services | Devils Thumb Construction",
     description:
       "Custom homes, remodels, garages, ADUs, concrete, excavation, and more — serving Arvada and 40 miles across the Colorado Front Range.",
     url: "/services/",
@@ -28,7 +28,7 @@ const servicesSchema = toGraph(
     type: "CollectionPage",
     id: `${siteConfig.url}/services/#webpage`,
     url: `${siteConfig.url}/services/`,
-    name: "Construction Services — Devil's Thumb Construction",
+    name: "Construction Services — Devils Thumb Construction",
     description:
       "Residential and light commercial construction services across the Colorado Front Range.",
   }),

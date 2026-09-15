@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: CategoryPageProps) {
   const category = galleryCategories.find((c) => c.slug === slug);
   if (!category) return { title: 'Not Found' };
   return {
-    title: `${category.name} | Devil's Thumb Construction`,
-    description: `Browse our ${category.name.toLowerCase()} projects. Quality craftsmanship by Devil's Thumb Construction.`,
+    title: `${category.name} | Devils Thumb Construction`,
+    description: `Browse our ${category.name.toLowerCase()} projects. Quality craftsmanship by Devils Thumb Construction.`,
   };
 }
 

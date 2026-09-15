@@ -9,12 +9,12 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Frequently asked questions about Devil's Thumb Construction — service area, process, timelines, pricing, permits, ADUs, insurance work, and more. Serving the Colorado Front Range.",
+    "Frequently asked questions about Devils Thumb Construction — service area, process, timelines, pricing, permits, ADUs, insurance work, and more. Serving the Colorado Front Range.",
   alternates: { canonical: "/faq/" },
   openGraph: {
-    title: "FAQ | Devil's Thumb Construction",
+    title: "FAQ | Devils Thumb Construction",
     description:
-      "Common questions about working with Devil's Thumb Construction — service area, process, timelines, ADUs, insurance work, and more.",
+      "Common questions about working with Devils Thumb Construction — service area, process, timelines, ADUs, insurance work, and more.",
     url: "/faq/",
   },
 };
@@ -140,9 +140,9 @@ const faqSchema = toGraph(
     type: "FAQPage",
     id: `${siteConfig.url}/faq/#webpage`,
     url: `${siteConfig.url}/faq/`,
-    name: "Frequently Asked Questions | Devil's Thumb Construction",
+    name: "Frequently Asked Questions | Devils Thumb Construction",
     description:
-      "Common questions about Devil's Thumb Construction — service area, process, timelines, pricing, ADUs, insurance work, and more.",
+      "Common questions about Devils Thumb Construction — service area, process, timelines, pricing, ADUs, insurance work, and more.",
   }),
   buildBreadcrumbSchema([
     { name: "Home", url: `${siteConfig.url}/` },

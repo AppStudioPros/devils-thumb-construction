@@ -31,7 +31,7 @@ export default function Footer() {
       <div className="bg-[#13251e] py-16">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center text-center lg:text-left">
           <div className="flex justify-center lg:justify-start">
-            <Image src="/images/logo.png" alt="Devil's Thumb Construction" width={200} height={200} />
+            <Image src="/images/logo.png" alt="Devils Thumb Construction" width={200} height={200} />
           </div>
           <div>
             <h3 className="text-3xl sm:text-4xl font-bold text-white font-[Montserrat] mb-4">

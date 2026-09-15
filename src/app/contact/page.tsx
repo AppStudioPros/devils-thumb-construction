@@ -7,10 +7,10 @@ import ContactClient from "./ContactClient";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Devil's Thumb Construction for a free consultation. Call 720-322-6899 or send a message. Serving Arvada, Denver, Boulder, Golden, and the Colorado Front Range.",
+    "Contact Devils Thumb Construction for a free consultation. Call 720-322-6899 or send a message. Serving Arvada, Denver, Boulder, Golden, and the Colorado Front Range.",
   alternates: { canonical: "/contact/" },
   openGraph: {
-    title: "Contact Devil's Thumb Construction",
+    title: "Contact Devils Thumb Construction",
     description:
       "Request a free consultation — call 720-322-6899 or send a message. Serving the Colorado Front Range.",
     url: "/contact/",
@@ -22,9 +22,9 @@ const contactSchema = toGraph(
     type: "ContactPage",
     id: `${siteConfig.url}/contact/#webpage`,
     url: `${siteConfig.url}/contact/`,
-    name: "Contact Devil's Thumb Construction",
+    name: "Contact Devils Thumb Construction",
     description:
-      "Contact Devil's Thumb Construction for a free consultation. Serving Arvada, Denver, Boulder, Golden, and surrounding Colorado Front Range communities.",
+      "Contact Devils Thumb Construction for a free consultation. Serving Arvada, Denver, Boulder, Golden, and surrounding Colorado Front Range communities.",
   }),
   buildBreadcrumbSchema([
     { name: "Home", url: `${siteConfig.url}/` },

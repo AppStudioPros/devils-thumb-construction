@@ -7,7 +7,7 @@ import { blogPosts } from '@/data/blog-posts'
 
 export const metadata: Metadata = {
   title: 'Blog | Construction Tips & Colorado Building Insights',
-  description: "Construction tips, Colorado building insights, and project updates from Devil's Thumb Construction — serving Denver, Boulder, Arvada, and the Front Range.",
+  description: "Construction tips, Colorado building insights, and project updates from Devils Thumb Construction — serving Denver, Boulder, Arvada, and the Front Range.",
   alternates: { canonical: 'https://devilsthumbconstruction.com/blog' },
 }
 

@@ -13,8 +13,8 @@ import { siteConfig } from "@/lib/seo/config";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Devil's Thumb Construction | Colorado General Contractor",
-    template: "%s | Devil's Thumb Construction",
+    default: "Devils Thumb Construction | Colorado General Contractor",
+    template: "%s | Devils Thumb Construction",
   },
   description: siteConfig.description,
   alternates: {
@@ -25,20 +25,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Devil's Thumb Construction | Colorado General Contractor",
+    title: "Devils Thumb Construction | Colorado General Contractor",
     description: siteConfig.description,
     images: [
       {
         url: "/images/mountain-bg.jpg",
         width: 1200,
         height: 630,
-        alt: "Devil's Thumb Construction — Colorado Front Range construction company",
+        alt: "Devils Thumb Construction — Colorado Front Range construction company",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Devil's Thumb Construction | Colorado General Contractor",
+    title: "Devils Thumb Construction | Colorado General Contractor",
     description: siteConfig.description,
     images: ["/images/mountain-bg.jpg"],
   },

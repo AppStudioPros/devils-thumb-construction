@@ -11,10 +11,10 @@ import { siteConfig } from "@/lib/seo/config";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Browse completed construction projects by Devil's Thumb Construction — custom homes, kitchen remodels, bathrooms, garages, basements, and more across the Colorado Front Range.",
+    "Browse completed construction projects by Devils Thumb Construction — custom homes, kitchen remodels, bathrooms, garages, basements, and more across the Colorado Front Range.",
   alternates: { canonical: "/projects/" },
   openGraph: {
-    title: "Projects | Devil's Thumb Construction",
+    title: "Projects | Devils Thumb Construction",
     description:
       "See our completed work — custom homes, remodels, kitchens, baths, garages, and more across Colorado.",
     url: "/projects/",
@@ -26,7 +26,7 @@ const projectsSchema = toGraph(
     type: "CollectionPage",
     id: `${siteConfig.url}/projects/#webpage`,
     url: `${siteConfig.url}/projects/`,
-    name: "Projects — Devil's Thumb Construction",
+    name: "Projects — Devils Thumb Construction",
     description: "Gallery of completed construction projects across the Colorado Front Range.",
   }),
   buildBreadcrumbSchema([

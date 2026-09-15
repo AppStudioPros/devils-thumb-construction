@@ -4,7 +4,7 @@
  */
 
 export const siteConfig = {
-  name: "Devil's Thumb Construction",
+  name: "Devils Thumb Construction",
   url: "https://devilsthumbconstruction.com",
   description:
     "Residential and light commercial construction across the Colorado Front Range. Design-build, custom homes, remodels, additions, garages, ADUs, concrete, excavation, and more.",
