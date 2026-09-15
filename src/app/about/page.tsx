@@ -69,7 +69,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
                 <p className="text-[#5d6661] leading-relaxed mb-8">
-                  Devils Thumb Construction is a residential and light commercial general contractor serving the Colorado Front Range. We provide design-build construction services — managing architectural design, permits, trade coordination, and construction under one roof. Our service area covers approximately 40 miles from Arvada, Colorado, including Denver, Boulder, Golden, Lakewood, Westminster, Broomfield, Thornton, Longmont, and surrounding communities.
+                  Devils Thumb Construction is a residential and light commercial general contractor serving the Colorado Front Range. We provide design-build construction services, handling architectural design, permits, trade coordination, and construction under one roof. Our service area covers approximately 40 miles from Arvada, Colorado, including Denver, Boulder, Golden, Lakewood, Westminster, Broomfield, Thornton, Longmont, and surrounding communities.
                 </p>
                 <ul className="space-y-3">
                   <li className="font-bold text-[#13251e]">Clarity: Transparent Scopes, Schedules, And Pricing.</li>
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
                 <p className="italic text-[#e09f18] leading-relaxed mb-6">
-                  We believe in honest communication, clear expectations, and transparent pricing—so our clients always know where their project stands.
+                  We believe in honest communication, clear expectations, and transparent pricing, so our clients always know where their project stands.
                 </p>
                 <h3 className="text-xl font-bold text-[#13251e] font-[Montserrat] mb-3">
                   Craftsmanship That Lasts
@@ -194,7 +194,7 @@ export default function AboutPage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-white font-[Montserrat] mb-4">Where We Work</h2>
             <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
             <p className="text-gray-300 leading-relaxed mb-8 max-w-2xl">
-              We serve residential and light commercial projects within approximately 40 miles of Arvada, Colorado — covering the following Front Range communities and beyond:
+              We serve residential and light commercial projects within approximately 40 miles of Arvada, Colorado, covering the following Front Range communities and beyond:
             </p>
             <div className="flex flex-wrap gap-3 mb-10">
               {siteConfig.serviceAreas.map((city) => (

@@ -21,7 +21,7 @@ export default function AboutSection() {
           </h2>
           <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
           <p className="text-[#5d6661] leading-relaxed max-w-3xl text-lg">
-            Devils Thumb Construction delivers dependable, detail-driven building across the Colorado Front Range. Our design-build process keeps architects, trades, and owners aligned—so projects move efficiently and finish strong. We prioritize craftsmanship, safety, and clear communication, backing every job with a professional warranty and a clean, respectful jobsite.
+            Devils Thumb Construction delivers dependable, detail-driven building across the Colorado Front Range. Our design-build process keeps architects, trades, and owners aligned, so projects move efficiently and finish strong. We prioritize craftsmanship, safety, and clear communication, backing every job with a professional warranty and a clean, respectful jobsite.
           </p>
         </FadeIn>
       </div>

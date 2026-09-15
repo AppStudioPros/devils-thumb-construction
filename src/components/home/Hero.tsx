@@ -17,7 +17,7 @@ export default function Hero() {
         </FadeIn>
         <FadeIn delay={200}>
           <p className="text-[#e09f18] text-lg sm:text-xl max-w-2xl mb-10 leading-relaxed">
-            Residential &amp; light commercial construction—design-build, remodels, additions, kitchens, baths, exteriors, and more.
+            Residential &amp; light commercial construction: design-build, remodels, additions, kitchens, baths, exteriors, and more.
           </p>
         </FadeIn>
         <FadeIn delay={400}>

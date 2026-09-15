@@ -36,7 +36,7 @@ const faqs: { category: string; items: FaqItem[] }[] = [
       },
       {
         q: "Do you work in the mountains or only on the Front Range?",
-        a: "We serve communities in and around the foothills including Evergreen, Conifer, Morrison, and Idaho Springs. We build mountain-ready — our work accounts for Colorado weather, drainage, and energy efficiency requirements specific to higher elevations.",
+        a: "We serve communities in and around the foothills including Evergreen, Conifer, Morrison, and Idaho Springs. We build mountain-ready. Our work accounts for Colorado weather, drainage, and energy efficiency requirements specific to higher elevations.",
       },
     ],
   },
@@ -50,12 +50,12 @@ const faqs: { category: string; items: FaqItem[] }[] = [
       },
       {
         q: "What is an ADU and do you build them?",
-        a: "An ADU (accessory dwelling unit) is a secondary living space on the same property as a primary home — a detached cottage, a converted garage, or an addition with its own entrance. Yes, we design and build ADUs. They\'re a popular option in Colorado for generating rental income, housing family members, or adding long-term property value.",
+        a: "An ADU (accessory dwelling unit) is a secondary living space on the same property as a primary home, like a detached cottage, a converted garage, or an addition with its own entrance. Yes, we design and build ADUs. They\'re a popular option in Colorado for generating rental income, housing family members, or adding long-term property value.",
         link: { text: "Learn about our Garage ADU service", href: "/services/garage-adu" },
       },
       {
         q: "Do you handle insurance restoration work?",
-        a: "Yes. We work with homeowners on insurance-related repairs and reconstruction — including storm damage, hail damage, and other covered losses. We help coordinate the scope of work and ensure repairs are completed to code and to the standard your home deserves.",
+        a: "Yes. We work with homeowners on insurance-related repairs and reconstruction, including storm damage, hail damage, and other covered losses. We coordinate the scope of work and make sure repairs are completed to code and to the standard your home deserves.",
         link: { text: "Learn about our Insurance Work service", href: "/services/insurance-work" },
       },
       {
@@ -109,7 +109,7 @@ const faqs: { category: string; items: FaqItem[] }[] = [
     items: [
       {
         q: "How much does a home addition cost in Colorado?",
-        a: "Home addition costs vary significantly based on size, complexity, finish level, and site conditions. We provide detailed estimates after reviewing your project — contact us for a free consultation and we\'ll walk through the scope with you.",
+        a: "Home addition costs vary significantly based on size, complexity, finish level, and site conditions. We provide detailed estimates after reviewing your project. Contact us for a free consultation and we\'ll walk through the scope with you.",
         link: { text: "Request a free estimate", href: "/contact" },
       },
       {
@@ -124,7 +124,7 @@ const faqs: { category: string; items: FaqItem[] }[] = [
     items: [
       {
         q: "Do you build to Colorado\'s energy codes and weather requirements?",
-        a: "Yes. All our projects meet Colorado\'s current energy codes. We also build with the Front Range climate in mind — that means proper drainage, insulation appropriate to Colorado\'s altitude and temperature swings, and exterior materials selected for durability in hail, UV exposure, and freeze-thaw cycles.",
+        a: "Yes. All our projects meet Colorado\'s current energy codes. We also build with the Front Range climate in mind. That means proper drainage, insulation appropriate to Colorado\'s altitude and temperature swings, and exterior materials selected for durability in hail, UV exposure, and freeze-thaw cycles.",
       },
       {
         q: "Can you help with excavation and site prep for a new build?",
@@ -138,7 +138,7 @@ const faqs: { category: string; items: FaqItem[] }[] = [
     items: [
       {
         q: "Who is Devils Thumb Construction?",
-        a: "Devils Thumb Construction is a Colorado LLC-registered general contractor based in Nederland, CO, serving the Front Range within approximately 40 miles of Arvada. Founded in 2024, the company handles residential and light commercial construction — including new homes, remodels, additions, garages, ADUs, basement finishing, and licensed electrical, plumbing, and HVAC work. Contact: 720-322-6899.",
+        a: "Devils Thumb Construction is a Colorado LLC-registered general contractor based in Nederland, CO, serving the Front Range within approximately 40 miles of Arvada. Founded in 2024, the company handles residential and light commercial construction, including new homes, remodels, additions, garages, ADUs, basement finishing, and licensed electrical, plumbing, and HVAC work. Contact: 720-322-6899.",
         link: { text: "Learn more about us", href: "/about" },
       },
       {
@@ -210,7 +210,7 @@ export default function FAQPage() {
                 <Link href="/contact" className="text-[#e09f18] font-semibold hover:underline">
                   Reach out directly
                 </Link>{" "}
-                — we&apos;re happy to help.
+                and we&apos;re happy to help.
               </p>
             </div>
           </FadeIn>
