@@ -59,7 +59,7 @@ export default function ContactClient() {
                   Let&apos;s Talk About Your Project
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-[#13251e] font-[Montserrat] mb-4">
-                  Contact Devil&apos;s Thumb Construction
+                  Contact Devils Thumb Construction
                 </h2>
                 <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
                 <p className="text-[#5d6661] leading-relaxed mb-10 text-lg">

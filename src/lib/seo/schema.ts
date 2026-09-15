@@ -14,15 +14,27 @@ export function buildWebSiteSchema() {
 
 export function buildOrganizationSchema() {
   return {
-    "@type": "GeneralContractor",
+    "@type": ["GeneralContractor", "LocalBusiness"],
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
+    alternateName: "Devils Thumb Construction LLC",
     url: `${siteConfig.url}/`,
     telephone: siteConfig.phoneE164,
     email: siteConfig.email,
+    foundingDate: "2024",
+    slogan: "Built to Last. Crafted for Colorado.",
+    priceRange: "$$",
     logo: {
       "@type": "ImageObject",
       url: siteConfig.logo,
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "22047 Highway 119",
+      addressLocality: "Nederland",
+      addressRegion: "CO",
+      postalCode: "80466",
+      addressCountry: "US",
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -35,7 +47,29 @@ export function buildOrganizationSchema() {
     areaServed: siteConfig.serviceAreas.map((city) => ({
       "@type": "City",
       name: city,
+      containedInPlace: { "@type": "State", name: "Colorado" },
     })),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Construction Services",
+      itemListElement: [
+        "Custom Home Construction",
+        "Home Renovations and Additions",
+        "Garage Construction and ADU Conversion",
+        "Kitchen and Bathroom Remodeling",
+        "Basement Finishing",
+        "Exterior Renovation",
+        "Architectural Design",
+        "Project Management",
+        "Concrete Flatwork and Foundations",
+        "Excavation and Site Preparation",
+        "Custom Stone Work and Masonry",
+        "Insurance Restoration",
+        "Licensed Electrical",
+        "Licensed Plumbing",
+        "HVAC Installation",
+      ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
+    },
     knowsAbout: [
       "Custom home construction",
       "New home construction",

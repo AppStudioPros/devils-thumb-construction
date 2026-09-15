@@ -28,7 +28,7 @@ export default function Testimonials() {
               </h2>
               <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
               <p className="text-[#5d6661] leading-relaxed text-lg">
-                Don&apos;t just take our word for it. Here&apos;s what our clients have to say about working with Devil&apos;s Thumb Construction.
+                Don&apos;t just take our word for it. Here&apos;s what our clients have to say about working with Devils Thumb Construction.
               </p>
             </div>
           </FadeIn>

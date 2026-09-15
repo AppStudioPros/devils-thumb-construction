@@ -133,6 +133,29 @@ const faqs: { category: string; items: FaqItem[] }[] = [
       },
     ],
   },
+  {
+    category: "About Devils Thumb Construction",
+    items: [
+      {
+        q: "Who is Devils Thumb Construction?",
+        a: "Devils Thumb Construction is a Colorado LLC-registered general contractor based in Nederland, CO, serving the Front Range within approximately 40 miles of Arvada. Founded in 2024, the company handles residential and light commercial construction — including new homes, remodels, additions, garages, ADUs, basement finishing, and licensed electrical, plumbing, and HVAC work. Contact: 720-322-6899.",
+        link: { text: "Learn more about us", href: "/about" },
+      },
+      {
+        q: "Is Devils Thumb Construction licensed and insured in Colorado?",
+        a: "Yes. Devils Thumb Construction operates as a registered Colorado LLC (Entity ID: 20241745327) and carries licensed trades in-house including electrical, plumbing, and HVAC. All work is completed to Colorado building codes and subject to local inspection.",
+      },
+      {
+        q: "What is the phone number for Devils Thumb Construction?",
+        a: "You can reach Devils Thumb Construction at 720-322-6899 or by email at j.kennedy@devilsthumbconstruction.com. We offer free initial consultations.",
+        link: { text: "Contact us", href: "/contact" },
+      },
+      {
+        q: "What is the service area for Devils Thumb Construction?",
+        a: "Devils Thumb Construction serves the Colorado Front Range within approximately 40 miles of Arvada, including Denver, Lakewood, Golden, Westminster, Thornton, Broomfield, Boulder, Longmont, Louisville, Superior, Erie, Evergreen, Conifer, Morrison, and Idaho Springs.",
+      },
+    ],
+  },
 ];
 
 const faqSchema = toGraph(
@@ -182,7 +205,7 @@ export default function FAQPage() {
               </h2>
               <div className="w-[60px] h-[3px] bg-[#2c4b40] mx-auto mb-6" />
               <p className="text-[#5d6661] max-w-2xl mx-auto leading-relaxed">
-                Common questions about working with Devil&apos;s Thumb Construction.
+                Common questions about working with Devils Thumb Construction.
                 Don&apos;t see yours?{" "}
                 <Link href="/contact" className="text-[#e09f18] font-semibold hover:underline">
                   Reach out directly

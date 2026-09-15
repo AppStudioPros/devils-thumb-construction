@@ -52,7 +52,7 @@ export default function ProjectsPage() {
             </h2>
             <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
             <p className="text-[#5d6661] max-w-3xl leading-relaxed mb-12 text-lg">
-              From custom homes to remodels and additions, every project we complete reflects our commitment to quality and detail. Explore our portfolio to see how Devil&apos;s Thumb Construction transforms ideas into spaces that are functional, beautiful, and built to last.
+              From custom homes to remodels and additions, every project we complete reflects our commitment to quality and detail. Explore our portfolio to see how Devils Thumb Construction transforms ideas into spaces that are functional, beautiful, and built to last.
             </p>
           </FadeIn>
 

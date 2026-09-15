@@ -76,7 +76,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center mb-20">
             <FadeIn direction="right" className="lg:col-span-3">
               <p className="text-sm font-bold text-[#e09f18] uppercase tracking-widest mb-3">
-                Devil&apos;s Thumb Construction
+                Devils Thumb Construction
               </p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#13251e] font-[Montserrat] mb-4 leading-tight">
                 {service.title}

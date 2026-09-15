@@ -62,14 +62,14 @@ export default function AboutPage() {
             <FadeIn direction="right">
               <div className="py-8 sm:py-12 pr-0 lg:pr-16">
                 <p className="text-sm font-bold text-[#13251e] uppercase tracking-widest mb-3">
-                  Devil&apos;s Thumb Construction
+                  Devils Thumb Construction
                 </p>
                 <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#13251e] font-[Montserrat] leading-tight mb-4">
                   Built Right.<br />Built Local.
                 </h2>
                 <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
                 <p className="text-[#5d6661] leading-relaxed mb-8">
-                  Devil&apos;s Thumb Construction is a residential and light commercial general contractor serving the Colorado Front Range. We provide design-build construction services — managing architectural design, permits, trade coordination, and construction under one roof. Our service area covers approximately 40 miles from Arvada, Colorado, including Denver, Boulder, Golden, Lakewood, Westminster, Broomfield, Thornton, Longmont, and surrounding communities.
+                  Devils Thumb Construction is a residential and light commercial general contractor serving the Colorado Front Range. We provide design-build construction services — managing architectural design, permits, trade coordination, and construction under one roof. Our service area covers approximately 40 miles from Arvada, Colorado, including Denver, Boulder, Golden, Lakewood, Westminster, Broomfield, Thornton, Longmont, and surrounding communities.
                 </p>
                 <ul className="space-y-3">
                   <li className="font-bold text-[#13251e]">Clarity: Transparent Scopes, Schedules, And Pricing.</li>

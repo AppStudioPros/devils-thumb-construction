@@ -52,7 +52,7 @@ export async function POST(req: Request) {
       <div style="font-family: Inter, system-ui, sans-serif; color: #13251e; max-width: 600px; margin: 0 auto;">
         <div style="background: #13251e; color: #fff; padding: 24px 28px; border-radius: 8px 8px 0 0;">
           <h1 style="margin: 0; font-size: 22px; color: #e09f18; font-weight: 700; letter-spacing: 0.5px;">New Contact Inquiry</h1>
-          <p style="margin: 4px 0 0; font-size: 14px; color: rgba(255,255,255,0.8);">Devil&apos;s Thumb Construction · devilsthumbconstruction.com</p>
+          <p style="margin: 4px 0 0; font-size: 14px; color: rgba(255,255,255,0.8);">Devils Thumb Construction · devilsthumbconstruction.com</p>
         </div>
         <div style="background: #fff; padding: 28px; border: 1px solid #e5e7eb; border-top: 0; border-radius: 0 0 8px 8px;">
           <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
@@ -84,7 +84,7 @@ export async function POST(req: Request) {
           )}</div>
         </div>
         <p style="font-size: 11px; color: #9ca3af; text-align: center; margin-top: 14px;">
-          Submitted via the Devil&apos;s Thumb Construction website contact form.
+          Submitted via the Devils Thumb Construction website contact form.
         </p>
       </div>
     `;
