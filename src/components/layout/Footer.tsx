@@ -2,9 +2,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const communities = [
-  'Denver', 'Lakewood', 'Golden', 'Arvada', 'Westminster', 'Thornton',
-  'Broomfield', 'Boulder', 'Longmont', 'Louisville', 'Superior', 'Erie',
-  'Evergreen', 'Conifer', 'Morrison', 'Idaho Springs',
+  { name: 'Denver', slug: 'denver' },
+  { name: 'Lakewood', slug: 'lakewood' },
+  { name: 'Golden', slug: 'golden' },
+  { name: 'Arvada', slug: 'arvada' },
+  { name: 'Westminster', slug: 'westminster' },
+  { name: 'Thornton', slug: 'thornton' },
+  { name: 'Broomfield', slug: 'broomfield' },
+  { name: 'Boulder', slug: 'boulder' },
+  { name: 'Longmont', slug: 'longmont' },
+  { name: 'Louisville', slug: 'louisville' },
+  { name: 'Superior', slug: 'superior' },
+  { name: 'Erie', slug: 'erie' },
+  { name: 'Evergreen', slug: 'evergreen' },
+  { name: 'Conifer', slug: 'conifer' },
+  { name: 'Morrison', slug: 'morrison' },
+  { name: 'Idaho Springs', slug: 'idaho-springs' },
 ];
 
 export default function Footer() {
@@ -16,10 +29,15 @@ export default function Footer() {
           <h3 className="text-2xl sm:text-3xl font-bold text-[#13251e] font-[Montserrat] mb-6">
             Communities We Serve
           </h3>
-          <div className="flex flex-wrap justify-center gap-x-2 gap-y-2 text-[#5d6661] text-sm leading-relaxed">
+          <div className="flex flex-wrap justify-center gap-x-2 gap-y-2 text-sm leading-relaxed">
             {communities.map((c, i) => (
-              <span key={c} className="whitespace-nowrap">
-                {c}
+              <span key={c.slug} className="whitespace-nowrap">
+                <Link
+                  href={`/locations/${c.slug}`}
+                  className="text-[#5d6661] hover:text-[#e09f18] transition-colors"
+                >
+                  {c.name}
+                </Link>
                 {i < communities.length - 1 && <span className="ml-2 text-[#5d6661]/40">•</span>}
               </span>
             ))}
