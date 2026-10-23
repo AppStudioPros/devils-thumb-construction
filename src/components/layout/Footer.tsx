@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import MadeByWDP365 from '@/components/layout/MadeByWDP365';
 
 const communities = [
   { name: 'Denver', slug: 'denver' },
@@ -87,12 +88,7 @@ export default function Footer() {
             <span className="text-gray-600">|</span>
             <Link href="/cookie-policy" className="text-[#e09f18] hover:text-[#c5860e] transition-colors">Cookie Policy</Link>
           </div>
-          <p>
-            Created by{' '}
-            <a href="https://wdp365.com" target="_blank" rel="noopener noreferrer" className="text-[#e09f18] hover:text-[#c5860e] transition-colors">
-              WDP365
-            </a>
-          </p>
+          <MadeByWDP365 theme="dark" projectCode="devils-thumb-construction" size="compact" />
         </div>
       </div>
     </footer>
