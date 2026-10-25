@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     categoryColor: '#1a5276',
     date: 'October 28, 2026',
     readTime: '5 min read',
-    image: '/images/dtc-exterior-renovation.jpg',
+    image: '/images/blog-wildfire-code.jpg',
     excerpt: 'As of July 1, 2026, the Colorado Wildfire Resiliency Code applies to new construction and major renovations in wildland-urban interface communities, including Nederland and most of Boulder County. If you\'re planning any significant exterior work, here\'s what it actually requires.',
     content: `
 Most people planning a mountain home renovation in 2026 haven't heard of the Colorado Wildfire Resiliency Code yet. By the time they're pulling permits, they're hearing about it for the first time from a building department. That's not where you want to be introduced to a new code.
@@ -69,7 +69,7 @@ We work in Nederland, Boulder County, and the Front Range mountain communities r
     categoryColor: '#2c4b40',
     date: 'November 4, 2026',
     readTime: '4 min read',
-    image: '/images/living-room-3.jpg',
+    image: '/images/blog-mountain-modern.jpg',
     excerpt: 'Mountain Modern is the dominant aesthetic in Boulder County right now, and it\'s not what most people picture. Here\'s what it actually looks like, why the materials hold up at elevation, and why it matters when you go to sell.',
     content: `
 You see it on every listing that sells fast in Boulder County right now. Warm wood on the ceiling, local stone on the fireplace, big windows facing the ridge, matte black fixtures, some brass in the kitchen. It's called Mountain Modern, and if you're thinking about a renovation or addition on a Colorado mountain home, it's worth understanding what it actually is.
@@ -114,7 +114,7 @@ We work in this style regularly throughout Boulder County and the Front Range. I
     categoryColor: '#2c4b40',
     date: 'November 11, 2026',
     readTime: '5 min read',
-    image: '/images/basement.jpg',
+    image: '/images/blog-basement.jpg',
     excerpt: 'Finishing a basement in a Colorado mountain home isn\'t the same as a Denver metro finish. Radon, egress windows, insulation that performs at elevation: there\'s more to plan for than most guides cover.',
     content: `
 Most of what you'll read about finishing a basement doesn't account for a mountain home in Boulder County. The advice is written for metro conditions, which means it skips the problems that actually matter up here. Before you start planning, here's what's different.
@@ -169,7 +169,7 @@ Every basement is different. Get an honest assessment of what yours would actual
     categoryColor: '#2c4b40',
     date: 'September 5, 2026',
     readTime: '5 min read',
-    image: '/images/construction-framing.jpg',
+    image: '/images/blog-choose-contractor.jpg',
     excerpt: 'Hiring the right general contractor can make or break your project. Here\'s what to look for, and a few things that should give you pause, before you sign anything.',
     content: `
 Picking a contractor is one of those decisions that feels straightforward until you're in the middle of a bad one. The right contractor keeps things moving, communicates clearly, and builds work that holds up. The wrong one costs you more than the original quote and leaves you cleaning up the mess.
@@ -216,7 +216,7 @@ If you're planning a project on the Front Range and want to talk through what it
     categoryColor: '#b07c1e',
     date: 'August 18, 2026',
     readTime: '4 min read',
-    image: '/images/mountain-home.jpg',
+    image: '/images/blog-addition-remodel.jpg',
     excerpt: 'More space or a better layout? Sometimes the answer is adding square footage. Sometimes you just need to rethink what you already have.',
     content: `
 We get this question a lot. Someone has outgrown their house, or their kitchen stopped working for them five years ago and they've finally had enough. The question is whether they need more space or just a better version of what they already have.
@@ -262,7 +262,7 @@ If you want to talk through what makes sense for your specific situation, reach 
     categoryColor: '#2c4b40',
     date: 'July 29, 2026',
     readTime: '6 min read',
-    image: '/images/kitchen-open.jpg',
+    image: '/images/blog-kitchen-remodel.jpg',
     excerpt: 'A kitchen remodel is one of the best things you can do for your home. It\'s also loud, dusty, and disruptive. Knowing what\'s coming makes it a lot easier to live through.',
     content: `
 Kitchens are the most popular room to remodel, and for good reason. A well-done kitchen adds real value to a home and makes daily life significantly better. But it's also the one room you use every day, which makes the process harder to live through than people expect.
@@ -315,7 +315,7 @@ Ready to start planning? Give us a call and we'll walk through what your kitchen
     categoryColor: '#1a5276',
     date: 'June 14, 2026',
     readTime: '4 min read',
-    image: '/images/mountain-bg.jpg',
+    image: '/images/blog-winter-construction.jpg',
     excerpt: 'A lot of homeowners assume construction stops in Colorado when it gets cold. It doesn\'t. And waiting until spring often costs more time than it saves.',
     content: `
 The assumption we hear a lot is that construction shuts down in Colorado from November through March. For most projects, that's just not true, and waiting for spring can actually push your start date further out than you'd expect.
