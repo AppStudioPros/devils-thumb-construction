@@ -12,6 +12,157 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'colorado-wildfire-resiliency-code-2026-what-homeowners-need-to-know',
+    title: "Colorado's New Wildfire Building Code: What It Means for Your Mountain Home Renovation",
+    category: 'Colorado Building',
+    categoryColor: '#1a5276',
+    date: 'October 28, 2026',
+    readTime: '5 min read',
+    image: '/images/log-cabin-mountain.jpg',
+    excerpt: 'As of July 1, 2026, the Colorado Wildfire Resiliency Code applies to new construction and major renovations in wildland-urban interface communities, including Nederland and most of Boulder County. If you\'re planning any significant exterior work, here\'s what it actually requires.',
+    content: `
+Most people planning a mountain home renovation in 2026 haven't heard of the Colorado Wildfire Resiliency Code yet. By the time they're pulling permits, they're hearing about it for the first time from a building department. That's not where you want to be introduced to a new code.
+
+Here's what the CWRC is, who it affects, and what changes you're looking at if you're planning any significant work on a home in Nederland, Boulder County, or the Front Range foothills.
+
+## Why This Code Exists
+
+Colorado has always been wildfire country. But the 2021 Marshall Fire, which destroyed nearly 1,100 homes in Boulder County, changed how seriously lawmakers approached the problem. It wasn't a remote wildland fire. It burned through suburban neighborhoods fast, and that event, along with subsequent fire seasons, pushed the legislature to act.
+
+The Colorado Wildfire Resiliency Code took effect July 1, 2026. It's not voluntary guidance or a county option. It's a statewide code, and it applies to any permit application submitted on or after that date.
+
+## Who It Applies To
+
+The CWRC applies in Colorado's wildland-urban interface, known as the WUI. That's the term for areas where developed land meets or mixes with undeveloped wildland. Most Front Range foothills communities fall inside the WUI. Nederland does. Most of Boulder County does. Evergreen, areas above Golden, the mountain corridor along 119, 72, and 285.
+
+If you're not sure whether your property is in the WUI, your county assessor or building department can confirm it. Most mountain homeowners are inside the boundary.
+
+The threshold for renovations is 500 square feet. Any new construction, or any major renovation exceeding that threshold, requires CWRC compliance. So a large deck replacement, an addition, a full exterior remodel: those projects all trigger requirements now.
+
+## What Specifically Changes
+
+The code focuses on ignition-resistant construction. In plain terms, it targets the places where embers land and where fire can find a way in.
+
+Roofing is the biggest change for most homeowners. Class A fire-rated roofing is required in WUI zones. That rules out untreated cedar shake and most wood shingles. Composite shingles, metal roofing, and tile all qualify. If you're planning a roof replacement on a mountain home, settle the product question before you apply for permits.
+
+Vents are a known ignition point. Embers enter through soffit vents, crawl space vents, and attic vents and can ignite fires from the inside. The CWRC requires ember-resistant vent products and enclosed eaves where the existing design allows. These are specific manufactured products, not just better workmanship.
+
+Windows matter in high-risk zones. The code requires multi-pane windows with tempered glass. Single-pane windows are an easy entry point for radiant heat and ember exposure. If window replacement is part of a larger project, plan for this.
+
+Decks and exterior structures require ignition-resistant materials: composite decking, concrete, or fire-rated wood. Standard untreated lumber decking no longer meets code for covered projects in the WUI.
+
+Siding is addressed as well. The specifics depend on which risk zone your property falls into, but ignition-resistant siding is now part of the compliance picture for any covered project.
+
+## If You're Planning a Project
+
+First: pull the permit. Don't try to scope around it. Unpermitted work that doesn't meet the CWRC creates real problems. Insurance companies are already asking questions about WUI compliance on mountain homes, and unpermitted work surfaces at inspection and sale. The short-term convenience isn't worth it.
+
+Second: work with a contractor who already knows these requirements and factors them into the scope from the start. CWRC compliance isn't something to add on after the bid is written. It should be built into how the project is designed and estimated.
+
+We work in Nederland, Boulder County, and the Front Range mountain communities regularly. We know which zones require what, and we handle the permit process. If you're starting to plan a project, call us before you finalize anything. (720) 322-6899.
+    `.trim(),
+  },
+  {
+    slug: 'mountain-modern-design-boulder-county-2026',
+    title: 'Mountain Modern: What Boulder County Homeowners Are Actually Building in 2026',
+    category: 'Design & Trends',
+    categoryColor: '#2c4b40',
+    date: 'November 4, 2026',
+    readTime: '4 min read',
+    image: '/images/renovation-progress.jpg',
+    excerpt: 'Mountain Modern is the dominant aesthetic in Boulder County right now, and it\'s not what most people picture. Here\'s what it actually looks like, why the materials hold up at elevation, and why it matters when you go to sell.',
+    content: `
+You see it on every listing that sells fast in Boulder County right now. Warm wood on the ceiling, local stone on the fireplace, big windows facing the ridge, matte black fixtures, some brass in the kitchen. It's called Mountain Modern, and if you're thinking about a renovation or addition on a Colorado mountain home, it's worth understanding what it actually is.
+
+## Not Log Cabin. Not Minimalist.
+
+Mountain Modern doesn't belong to either end of the spectrum. It's not the rustic log-cabin style that peaked a few decades ago, all knotty pine and heavy timber with nothing refined about it. But it's not cold minimalism either: the all-white interiors with chrome fixtures and nothing that says anything about where the house actually sits.
+
+It lives somewhere between those two. Natural materials, but used with intention. Warm without being heavy. Connected to the landscape, but clearly a well-built contemporary home.
+
+## What It Actually Looks Like
+
+The materials do most of the work. White oak and walnut show up a lot, on floors, cabinetry, or ceiling treatments. Reclaimed beams when the structure supports it. Natural stone: quartzite, slate, local fieldstone where the project calls for it. And glass, a lot of it. South-facing windows, clerestory windows, great rooms where the mountain view is the focal point rather than an afterthought.
+
+Open layouts are standard. Kitchen, dining, and living flowing together with good natural light and a clear connection to the outdoors.
+
+Hardware and fixtures: matte black is dominant right now, brass is making a real comeback, and mixing the two is common. Chrome reads suburban. Warm metals feel right at elevation.
+
+What's gone: cold all-white interiors, grey laminate floors, matching chrome fixtures throughout, tight choppy floor plans with no relationship to what's outside. Anything that looks like it was built for a tract home and then hauled up a mountain road.
+
+## Why the Materials Make Sense Here
+
+A lot of Mountain Modern choices aren't just aesthetic. They perform in the mountain climate.
+
+At elevation, UV exposure degrades materials faster than at lower altitudes. Temperature swings stress anything that expands and contracts significantly. Snow loads require real structural planning for decks, overhangs, and rooflines. Stone, quality wood, metal, concrete: those materials look right here and also tend to hold up better than lighter alternatives.
+
+Covered outdoor spaces, decks built with ignition-resistant composite or hardwood, fire pits integrated into the landscaping rather than dropped in as an afterthought. That integration with the site is part of the aesthetic too. The goal is a home that looks like it belongs where it's sitting.
+
+## The Resale Reality
+
+Honestly, this matters if you're planning a significant renovation. Mountain homes built or remodeled in this style are selling faster and at better prices in Boulder County right now. Buyers in this market at higher price points expect a certain level of finish. A home that reads dated or generic takes longer to move and often leaves money on the table.
+
+If you're spending on a renovation anyway, the incremental cost of doing it in a way that reads well in this market is almost always worth it.
+
+We work in this style regularly throughout Boulder County and the Front Range. If you want to talk through what a project might look like in a home similar to yours, give us a call. (720) 322-6899.
+    `.trim(),
+  },
+  {
+    slug: 'finishing-your-mountain-home-basement-colorado-guide',
+    title: 'Finishing a Basement in the Colorado Mountains: What to Know Before You Start',
+    category: 'Remodeling',
+    categoryColor: '#2c4b40',
+    date: 'November 11, 2026',
+    readTime: '5 min read',
+    image: '/images/blueprints.jpg',
+    excerpt: 'Finishing a basement in a Colorado mountain home isn\'t the same as a Denver metro finish. Radon, egress windows, insulation that performs at elevation: there\'s more to plan for than most guides cover.',
+    content: `
+Most of what you'll read about finishing a basement doesn't account for a mountain home in Boulder County. The advice is written for metro conditions, which means it skips the problems that actually matter up here. Before you start planning, here's what's different.
+
+## Start With Radon
+
+Colorado has some of the highest radon levels in the country, and mountain homes frequently test higher than metro properties. An unfinished basement with good air movement can mask radon levels that become a serious problem once the space is closed in and occupied.
+
+Test before you do anything else. If results come back above 4 pCi/L, a mitigation system needs to go in before you finish. This isn't an optional upgrade. Rough it in during construction rather than after. It's cheaper, less disruptive, and it protects whoever uses the space.
+
+Moisture management matters at elevation too. A vapor barrier between the concrete wall and any finished surface needs to be installed correctly. Done right, it holds up for decades. Done wrong or skipped entirely, you're looking at a moisture problem that shows up gradually and gets expensive.
+
+## Egress Is Not Negotiable
+
+If there's any possibility someone will sleep in the basement, it needs egress windows. Colorado requires a minimum 5.7 square foot clear opening with the sill no higher than 44 inches from the floor. Boulder County enforces this consistently.
+
+Labeling it a "bonus room" or "flex space" doesn't get around the requirement. If people sleep there, it's a bedroom. Plan for egress from the start.
+
+Cutting egress windows into a mountain home foundation takes real work. The excavation alone adds cost. But skipping egress either limits how the space can legally be used or creates a disclosure problem at sale. Neither outcome is good.
+
+## Insulation at Elevation
+
+Fiberglass batts pressed against a concrete wall don't perform well in mountain conditions. The concrete acts as a thermal bridge and the insulation underperforms. At 8,000 feet, an uninsulated or poorly insulated basement wall costs you real money every winter.
+
+The sequence that works: rigid foam board against the concrete first, or spray foam applied directly, then your framing and whatever finish layer you want. That's how you get basement walls that actually hold heat at elevation.
+
+## Check Your Ceiling Height First
+
+Colorado requires a minimum of 7 feet for habitable basement space. Some older mountain homes have tighter clearances, especially if mechanical equipment was added to the basement after the original build.
+
+Measure before you design anything. If you're at 6'10", that's not close enough for a building inspector. Confirm the ceiling height before you get attached to a floor plan that won't pass.
+
+## Pull the Permits
+
+Boulder County requires permits for any basement finish that includes electrical, plumbing, or HVAC. So, almost every basement finish.
+
+Pull them. Unpermitted basement work has a way of surfacing at exactly the wrong time: the week before a sale closes, or when an insurance claim triggers an inspection. The inspector who finds it doesn't care when it was done or by whom. That problem lands on the current owner.
+
+## What People Are Building
+
+Home offices are still the most-requested basement finish in the mountain market, and that demand has held steady since 2020. Guest suites come second, especially on properties that see short-term rental income. Workout rooms, home theaters, bonus rooms. Every project is different.
+
+On cost: expect $40 to $80 per square foot for a standard finish in Boulder County. Radon mitigation, egress window excavation, and higher elevation material and labor costs push that number up compared to metro averages. Budget conservatively and confirm before you commit.
+
+Every basement is different. Get an honest assessment of what yours would actually take before you finalize any plans. Call us at (720) 322-6899.
+    `.trim(),
+  },
+  {
     slug: 'how-to-choose-a-general-contractor-in-colorado',
     title: 'How to Choose a General Contractor in Colorado',
     category: 'Tips & Advice',
