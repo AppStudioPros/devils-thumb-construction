@@ -3,7 +3,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PageHero from '@/components/shared/PageHero'
 import FadeIn from '@/components/shared/FadeIn'
-import { blogPosts } from '@/data/blog-posts'
+import { blogPosts as rawPosts } from '@/data/blog-posts'
+
+const blogPosts = [...rawPosts].sort((a, b) =>
+  new Date(b.date).getTime() - new Date(a.date).getTime()
+)
 
 export const metadata: Metadata = {
   title: 'Blog | Construction Tips & Colorado Building Insights',
