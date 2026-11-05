@@ -12,6 +12,87 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'colorado-home-addition-what-homeowners-should-know',
+    title: 'What Colorado Homeowners Should Know Before Building a Home Addition',
+    category: 'Home Additions',
+    categoryColor: '#1a5276',
+    date: 'November 5, 2026',
+    readTime: '7 min read',
+    image: '/images/blog-home-addition-colorado.jpg',
+    excerpt: "Adding square footage sounds straightforward until the planning starts. Here's what to know before the first nail goes in — from permits and Colorado soil to utilities, budget, and why the boring part prevents most of the expensive mistakes.",
+    content: `
+Adding onto your house sounds simple when you say it fast. "We just want another bedroom." "We need a bigger kitchen." "We're thinking about pushing this wall out." Cool. And then the house looks at you like, you wanna do what now?
+
+A home addition is one of those projects that can completely change how your house works, increase usable space, and save you from moving. It can also turn into an expensive mess if the planning stage is treated like the boring part everyone wants to skip. The boring part is where most of the expensive mistakes get prevented.
+
+At Devil's Thumb Construction, we work on additions, remodels, structural projects, ADUs, and larger construction projects across the Denver area and Colorado Front Range. If you are thinking about adding square footage to your home, here are the things worth knowing before somebody starts swinging a hammer.
+
+## 1. Start With the Problem, Not the Pinterest Board
+
+Before you start choosing flooring or deciding whether your new kitchen needs a pot filler because apparently we all became restaurant chefs overnight, figure out what problem the addition is actually solving.
+
+Do you need another bedroom, a home office, more living space, a larger kitchen, an in-law suite, a second-story addition, better flow between rooms, space for aging parents, or more room because your family has somehow accumulated 47 pairs of shoes?
+
+The clearer the goal, the easier it is to design the right project. An addition should make the house function better, not just make it bigger.
+
+## 2. Your Existing House Gets a Vote
+
+You are not building on an empty lot. You are attaching new construction to an existing structure that already has foundations, framing, electrical systems, plumbing, HVAC, rooflines, drainage patterns, and decades of previous decisions hiding behind drywall. Sometimes those decisions are good. Sometimes you open a wall and discover somebody in 1987 had a very creative relationship with building codes.
+
+That is why additions need to be designed around the existing house, not treated like a completely separate project. Structural connections, rooflines, floor elevations, utilities, foundation design, and load paths all have to work together.
+
+## 3. Colorado Soil and Weather Matter
+
+Colorado is beautiful. Colorado is also extremely good at beating the hell out of buildings. Freeze-thaw cycles, expansive soils, snow loads, hail, intense UV exposure, temperature swings, drainage issues, and elevation differences all matter when you are designing foundations, exterior materials, roofing, waterproofing, grading, insulation, and drainage.
+
+What works perfectly in another state may not be the smartest choice here. A good addition should look like it belongs on the house and perform like it belongs in Colorado.
+
+## 4. Permits Are Part of the Project
+
+Yes, permits can be annoying. No, ignoring them is not a clever life hack. Depending on the scope of the addition, the project may require architectural drawings, structural engineering, zoning review, building permits, electrical permits, plumbing permits, mechanical permits, and inspections. Cities and counties throughout the Denver metro area can have different requirements.
+
+Finding out halfway through construction that something does not meet setback requirements is the construction version of realizing you left your passport at home after arriving at the airport. Nobody has fun.
+
+## 5. Bigger Does Not Automatically Mean Better
+
+A well-designed 300-square-foot addition can completely transform a house. A poorly designed 700-square-foot addition can make the home feel awkward and disconnected.
+
+Good additions consider traffic flow, natural light, storage, ceiling height, existing room layout, exterior appearance, rooflines, window placement, furniture placement, and resale value. The goal is not just more square footage. The goal is useful square footage.
+
+## 6. Matching the Existing House Takes Work
+
+You probably do not want your addition to look like somebody parked another house against yours. Exterior transitions matter. Roof pitch, siding, stone, trim, windows, fascia, paint, and architectural details should feel intentional. Inside, flooring transitions, ceiling heights, door styles, trim, lighting, and wall layouts need the same attention. The best additions make visitors wonder where the original house ended.
+
+## 7. Utilities May Need Upgrades
+
+Adding space can also mean adding demand. A larger house may require upgrades to electrical service, HVAC capacity, plumbing, water heaters, drain lines, ventilation, or gas service. This is especially important when additions include kitchens, bathrooms, laundry rooms, or additional bedrooms. You do not want to finish a beautiful addition and then discover your existing HVAC system is working harder than a roofer in July.
+
+## 8. Budget for the Whole Project
+
+Homeowners sometimes focus on the obvious construction costs — framing, drywall, windows, flooring. But additions can also involve architecture, engineering, permits, excavation, foundations, utility relocation, electrical upgrades, HVAC modifications, roofing, drainage, exterior repairs, and landscaping restoration. A realistic budget needs to account for the complete project. Not just the fun parts you can see on Instagram.
+
+## 9. Expect Some Surprises
+
+Existing homes are very good at keeping secrets. Once walls are opened or excavation begins, contractors may discover old wiring, plumbing issues, hidden water damage, foundation problems, structural modifications, or other conditions nobody could see beforehand. That does not mean the project was poorly planned. It means houses are complicated.
+
+The important thing is having a contractor who explains what was found, what needs to happen next, and what the options are. Clear communication matters a lot more when something unexpected happens.
+
+## 10. Choose a Contractor Who Can Manage the Entire Project
+
+A home addition usually involves multiple trades. Excavation, concrete, framing, roofing, electrical, plumbing, HVAC, insulation, drywall, flooring, painting, finish carpentry. Somebody has to coordinate all of it.
+
+A good general contractor keeps the project moving, coordinates trades, handles inspections, manages scheduling, communicates with the homeowner, and makes sure the project is being built according to the plans. Otherwise you are basically running a construction company from your kitchen table. Most homeowners already have jobs.
+
+## Thinking About Adding Onto Your Colorado Home?
+
+A well-planned addition can give you the space you need without leaving the neighborhood or home you already love. The key is getting the planning, design, structure, permitting, and construction right from the beginning.
+
+Devil's Thumb Construction handles major renovations, additions, ADUs, basement finishing, structural work, excavation, and full construction projects throughout the Denver area and Colorado Front Range. If you are considering a serious addition or renovation, we can help you figure out what makes sense before the sawdust starts flying.
+
+Because fixing a bad plan after construction starts is significantly more expensive than fixing it on paper. Funny how that works.
+    `.trim(),
+  },
+  {
     slug: 'colorado-wildfire-resiliency-code-2026-what-homeowners-need-to-know',
     title: "Colorado's New Wildfire Building Code: What It Means for Your Mountain Home Renovation",
     category: 'Colorado Building',
