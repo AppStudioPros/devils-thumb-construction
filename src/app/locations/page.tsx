@@ -11,27 +11,27 @@ export const metadata: Metadata = {
   title: "Service Areas | Devils Thumb Construction",
   description:
     "Devils Thumb Construction serves 16 communities across the Colorado Front Range and foothills. Find your city to learn what we build in your area.",
-  alternates: { canonical: "/locations/" },
+  alternates: { canonical: "/locations" },
   openGraph: {
     title: "Service Areas | Devils Thumb Construction",
     description:
       "General contractor serving Denver, Boulder, Golden, Evergreen, and 12 more Colorado Front Range communities.",
-    url: "/locations/",
+    url: "/locations",
   },
 };
 
 const schema = toGraph(
   buildWebPageSchema({
     type: "WebPage",
-    id: `${siteConfig.url}/locations/#webpage`,
-    url: `${siteConfig.url}/locations/`,
+    id: `${siteConfig.url}/locations#webpage`,
+    url: `${siteConfig.url}/locations`,
     name: "Service Areas | Devils Thumb Construction",
     description:
       "Devils Thumb Construction serves 16 communities across the Colorado Front Range and mountain foothills.",
   }),
   buildBreadcrumbSchema([
     { name: "Home", url: `${siteConfig.url}/` },
-    { name: "Service Areas", url: `${siteConfig.url}/locations/` },
+    { name: "Service Areas", url: `${siteConfig.url}/locations` },
   ])
 );
 

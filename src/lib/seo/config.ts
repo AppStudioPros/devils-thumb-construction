@@ -5,13 +5,13 @@
 
 export const siteConfig = {
   name: "Devils Thumb Construction",
-  url: "https://devilsthumbconstruction.com",
+  url: "https://www.devilsthumbconstruction.com",
   description:
     "Residential and light commercial construction across the Colorado Front Range. Design-build, custom homes, remodels, additions, garages, ADUs, concrete, excavation, and more.",
   phone: "720-322-6899",
   phoneE164: "+17203226899",
   email: "j.kennedy@devilsthumbconstruction.com",
-  logo: "https://devilsthumbconstruction.com/images/logo.png",
+  logo: "https://www.devilsthumbconstruction.com/images/logo.png",
   /** Communities listed in the site footer — verified */
   serviceAreas: [
     "Denver",

@@ -7,27 +7,25 @@ const base = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const servicePages = services.map((s) => ({
-    url: `${base}/services/${s.slug}/`,
-    lastModified: new Date(),
+    url: `${base}/services/${s.slug}`,
   }));
 
   const locationPages = locations.map((l) => ({
-    url: `${base}/locations/${l.slug}/`,
-    lastModified: new Date(),
+    url: `${base}/locations/${l.slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   return [
-    { url: `${base}/`, lastModified: new Date() },
-    { url: `${base}/about/`, lastModified: new Date() },
-    { url: `${base}/services/`, lastModified: new Date() },
+    { url: `${base}/` },
+    { url: `${base}/about` },
+    { url: `${base}/services` },
     ...servicePages,
-    { url: `${base}/locations/`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${base}/locations`, changeFrequency: "monthly" as const, priority: 0.7 },
     ...locationPages,
-    { url: `${base}/projects/`, lastModified: new Date() },
-    { url: `${base}/blog/`, lastModified: new Date() },
-    { url: `${base}/faq/`, lastModified: new Date() },
-    { url: `${base}/contact/`, lastModified: new Date() },
+    { url: `${base}/projects` },
+    { url: `${base}/blog` },
+    { url: `${base}/faq` },
+    { url: `${base}/contact` },
   ];
 }

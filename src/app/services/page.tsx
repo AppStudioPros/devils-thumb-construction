@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Full-service general contractor in Arvada, CO — custom home construction, remodeling, garages, ADUs, concrete, excavation, architectural design, insurance work, and more across the Colorado Front Range.",
-  alternates: { canonical: "/services/" },
+  alternates: { canonical: "/services" },
   openGraph: {
     title: "Construction Services | Devils Thumb Construction",
     description:
       "Custom homes, remodels, garages, ADUs, concrete, excavation, and more — serving Arvada and 40 miles across the Colorado Front Range.",
-    url: "/services/",
+    url: "/services",
   },
 };
 
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
 const servicesSchema = toGraph(
   buildWebPageSchema({
     type: "CollectionPage",
-    id: `${siteConfig.url}/services/#webpage`,
-    url: `${siteConfig.url}/services/`,
+    id: `${siteConfig.url}/services#webpage`,
+    url: `${siteConfig.url}/services`,
     name: "Construction Services — Devils Thumb Construction",
     description:
       "Residential and light commercial construction services across the Colorado Front Range.",
   }),
   buildBreadcrumbSchema([
     { name: "Home", url: `${siteConfig.url}/` },
-    { name: "Services", url: `${siteConfig.url}/services/` },
+    { name: "Services", url: `${siteConfig.url}/services` },
   ])
 );
 

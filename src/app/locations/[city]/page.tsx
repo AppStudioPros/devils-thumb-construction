@@ -14,6 +14,8 @@ import { siteConfig } from "@/lib/seo/config";
 import { locations, getLocationBySlug } from "@/data/locations";
 import { services } from "@/data/services";
 
+import { getPriorityMarket, priorityServices } from "@/data/priority-markets";
+
 interface Props {
   params: Promise<{ city: string }>;
 }
@@ -27,14 +29,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const location = getLocationBySlug(city);
   if (!location) return { title: "Location Not Found" };
 
+  const market = getPriorityMarket(city);
+
   return {
-    title: `Construction Services in ${location.name}, Colorado | Devils Thumb Construction`,
-    description: `Devils Thumb Construction serves ${location.name}, ${location.county}. Design-build general contractor handling remodels, new construction, additions, and licensed trades. Call 720-322-6899.`,
-    alternates: { canonical: `/locations/${location.slug}/` },
+    title: market?.heading ?? `Construction Services in ${location.name}, Colorado`,
+    description: market?.description ?? `Devils Thumb Construction serves ${location.name}, ${location.county}. Design-build general contractor handling remodels, new construction, additions, and licensed trades. Call 720-322-6899.`,
+    alternates: { canonical: `/locations/${location.slug}` },
     openGraph: {
-      title: `Construction Services in ${location.name}, CO | Devils Thumb Construction`,
-      description: `General contractor serving ${location.name}, Colorado. Remodels, new construction, kitchen and bathroom updates, basement finishing, and more.`,
-      url: `/locations/${location.slug}/`,
+      title: market ? `${market.heading} | ${siteConfig.name}` : `Construction Services in ${location.name}, CO | ${siteConfig.name}`,
+      description: market?.description ?? `General contractor serving ${location.name}, Colorado. Remodels, new construction, kitchen and bathroom updates, basement finishing, and more.`,
+      url: `/locations/${location.slug}`,
     },
   };
 }
@@ -67,8 +71,8 @@ const locationFaqs: Record<string, [{ q: string; a: string }, { q: string; a: st
       a: "Yes. We work in Golden on hillside builds, remodels, excavation, concrete flatwork, stone work, and exterior renovations. The sloped terrain and rock in Golden requires site planning that we build into every estimate.",
     },
     {
-      q: "Do you build retaining walls in Golden?",
-      a: "Yes. Retaining walls are common in Golden given the sloped lots. We design and build structural retaining walls using natural stone, concrete block, or poured concrete depending on the site conditions.",
+      q: "What should I share about a Golden home addition?",
+      a: "Send your project ZIP code, what you want to add, and any plans you have. If the lot slopes or equipment access is tight, mention that too.",
     },
   ],
   arvada: [
@@ -78,7 +82,7 @@ const locationFaqs: Record<string, [{ q: string; a: string }, { q: string; a: st
     },
     {
       q: "Who handles permits for construction projects in Arvada?",
-      a: "Arvada has its own building department for projects inside city limits. Unincorporated areas on the Arvada perimeter permit through Jefferson County. We confirm the correct jurisdiction for every project before submitting.",
+      a: "We confirm the permitting office based on your project address and coordinate the application.",
     },
   ],
   westminster: [
@@ -117,8 +121,8 @@ const locationFaqs: Record<string, [{ q: string; a: string }, { q: string; a: st
       a: "Yes. We work in Boulder on remodels, home additions, kitchen and bathroom updates, architectural design, and exterior renovations. Boulder's building department has detailed review requirements, and we come prepared with complete documentation.",
     },
     {
-      q: "Can you handle the design review process for Boulder projects?",
-      a: "Yes. We offer architectural design services in-house, which helps navigate Boulder's design review process for additions and significant exterior changes. Having design and construction under one roof keeps the project consistent from drawings through build.",
+      q: "Can you convert a Boulder garage into an ADU?",
+      a: "We handle garage ADU conversions. Share your address and how you want to use the space so we can discuss feasibility before you commit to plans.",
     },
   ],
   longmont: [
@@ -234,24 +238,28 @@ export default async function LocationPage({ params }: Props) {
 
   if (!location) notFound();
 
+  const market = getPriorityMarket(city);
   const faqs = locationFaqs[location.slug] ?? null;
-  const featuredServiceData = location.featuredServices
+  const featuredServiceData = [...new Set([
+    ...(market ? Object.keys(priorityServices) : []),
+    ...location.featuredServices,
+  ])]
     .map((slug) => services.find((s) => s.slug === slug))
     .filter(Boolean);
 
-  const pageUrl = `${siteConfig.url}/locations/${location.slug}/`;
+  const pageUrl = `${siteConfig.url}/locations/${location.slug}`;
 
   const schema = toGraph(
     buildWebPageSchema({
       type: "WebPage",
       id: `${pageUrl}#webpage`,
       url: pageUrl,
-      name: `Construction Services in ${location.name}, Colorado | Devils Thumb Construction`,
-      description: `Devils Thumb Construction serves ${location.name}, ${location.county}. General contractor handling remodels, new construction, additions, and licensed trades.`,
+      name: market ? `${market.heading} | ${siteConfig.name}` : `Construction Services in ${location.name}, Colorado | ${siteConfig.name}`,
+      description: market?.description ?? `Devils Thumb Construction serves ${location.name}, ${location.county}. General contractor handling remodels, new construction, additions, and licensed trades.`,
     }),
     buildBreadcrumbSchema([
       { name: "Home", url: `${siteConfig.url}/` },
-      { name: "Service Areas", url: `${siteConfig.url}/locations/` },
+      { name: "Service Areas", url: `${siteConfig.url}/locations` },
       { name: location.name, url: pageUrl },
     ]),
     buildOrganizationSchema(),
@@ -276,7 +284,7 @@ export default async function LocationPage({ params }: Props) {
 
       {/* Hero */}
       <PageHero
-        title={`Construction Services in ${location.name}, Colorado`}
+        title={market?.heading ?? `Construction Services in ${location.name}, Colorado`}
         bgImage="/images/colorado-mountains.jpg"
       />
 
@@ -292,11 +300,22 @@ export default async function LocationPage({ params }: Props) {
             </h2>
             <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
             <p className="text-[#5d6661] leading-relaxed max-w-3xl mb-4">
-              {location.description}
+              {market?.intro ?? location.description}
             </p>
-            <p className="text-[#5d6661] leading-relaxed max-w-3xl text-sm italic">
-              {location.localNote}
-            </p>
+            {market ? (
+              <div className="mt-6 flex flex-wrap gap-4">
+                <Link href="/contact#project-inquiry" className="rounded-[30px] bg-[#13251e] px-6 py-3 font-semibold text-white hover:bg-[#2c4b40]">
+                  Request a Free Consultation
+                </Link>
+                <a href="tel:+17203226899" className="rounded-[30px] border border-[#13251e] px-6 py-3 font-semibold text-[#13251e]">
+                  Call 720-322-6899
+                </a>
+              </div>
+            ) : (
+              <p className="text-[#5d6661] leading-relaxed max-w-3xl text-sm italic">
+                {location.localNote}
+              </p>
+            )}
           </FadeIn>
         </div>
       </section>
@@ -325,7 +344,7 @@ export default async function LocationPage({ params }: Props) {
                     className="group block bg-white rounded-xl p-6 border border-gray-100 hover:border-[#e09f18] hover:shadow-md transition-all h-full"
                   >
                     <h3 className="text-lg font-bold text-[#13251e] font-[Montserrat] mb-2 group-hover:text-[#e09f18] transition-colors">
-                      {service.title}
+                      {(market && priorityServices[service.slug]) || service.title}
                     </h3>
                     <p className="text-[#5d6661] text-sm leading-relaxed mb-4">
                       {description}
@@ -366,10 +385,9 @@ export default async function LocationPage({ params }: Props) {
               <li className="flex items-start gap-4">
                 <span className="mt-2 w-2 h-2 rounded-full bg-[#e09f18] shrink-0" />
                 <div>
-                  <span className="font-bold text-[#13251e]">Licensed trades in-house.</span>{" "}
+                  <span className="font-bold text-[#13251e]">Licensed trade work.</span>{" "}
                   <span className="text-[#5d6661]">
-                    We carry electrical, plumbing, and HVAC under one license, which keeps
-                    coordination tight and quality consistent across every system in your home.
+                    We coordinate electrical, plumbing, and HVAC work as part of your project.
                   </span>
                 </div>
               </li>
@@ -389,7 +407,7 @@ export default async function LocationPage({ params }: Props) {
                 <div>
                   <span className="font-bold text-[#13251e]">Warranty on our work.</span>{" "}
                   <span className="text-[#5d6661]">
-                    We stand behind what we build. If something isn't right, we fix it.
+                    We stand behind what we build. Ask us what the warranty covers for your project.
                   </span>
                 </div>
               </li>
@@ -399,8 +417,7 @@ export default async function LocationPage({ params }: Props) {
                   <span className="font-bold text-[#13251e]">Free initial consultation.</span>{" "}
                   <span className="text-[#5d6661]">
                     We talk through your project before you commit. No pressure, no obligation.
-                    You'll know what's involved and what it will realistically cost before any
-                    contracts are signed.
+                    We discuss scope and budget before you sign a contract.
                   </span>
                 </div>
               </li>
@@ -455,12 +472,11 @@ export default async function LocationPage({ params }: Props) {
               >
                 720-322-6899
               </a>{" "}
-              or send a message and we'll get back to you promptly. The first consultation
-              is free.
+              or send your project details for a free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contact"
+                href="/contact#project-inquiry"
                 className="inline-block bg-[#e09f18] text-white px-8 py-3 rounded-[30px] font-semibold hover:bg-[#c5860e] transition-colors text-center"
               >
                 Get a Free Consultation

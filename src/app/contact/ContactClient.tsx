@@ -63,7 +63,7 @@ export default function ContactClient() {
                 </h2>
                 <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
                 <p className="text-[#5d6661] leading-relaxed mb-10 text-lg">
-                  We&apos;re here to answer your questions and guide you through the next steps. Whether you&apos;re planning a custom home, a remodel, or an addition, our team is ready to help. Reach out today to schedule your free consultation.
+                  Tell us what you want to build or remodel. We&apos;ll discuss the scope, timing, and next steps on a free consultation.
                 </p>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                   <Image src="/images/dtc-brand-card.jpg" alt="Devils Thumb Construction" fill className="object-cover" />
@@ -93,7 +93,7 @@ export default function ContactClient() {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#13251e] font-[Montserrat] mb-6">Send Us A Message</h3>
+                <h3 id="project-inquiry" className="scroll-mt-32 text-2xl font-bold text-[#13251e] font-[Montserrat] mb-6">Request a Free Consultation</h3>
 
                 {status === 'success' ? (
                   <div className="p-8 bg-[#f8f9f8] border-l-4 border-[#e09f18] rounded-lg">
@@ -137,7 +137,7 @@ export default function ContactClient() {
                       </div>
                     </div>
                     <div>
-                      <label htmlFor="callHour" className="block text-sm font-medium text-[#5d6661] mb-1">Schedule a phone call</label>
+                      <label htmlFor="callHour" className="block text-sm font-medium text-[#5d6661] mb-1">Preferred callback time (optional, Mountain Time)</label>
                       <div className="grid grid-cols-3 gap-3">
                         <select id="callHour" name="callHour" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
                           <option value="">Hour</option>
@@ -145,21 +145,22 @@ export default function ContactClient() {
                             <option key={h} value={h}>{h}</option>
                           ))}
                         </select>
-                        <select id="callMinute" name="callMinute" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
+                        <select aria-label="Callback minute" id="callMinute" name="callMinute" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
                           <option value="">Minute</option>
                           {['00', '15', '30', '45'].map((m) => (
                             <option key={m} value={m}>{m}</option>
                           ))}
                         </select>
-                        <select id="callAmPm" name="callAmPm" defaultValue="AM" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
+                        <select aria-label="Callback AM or PM" id="callAmPm" name="callAmPm" defaultValue="AM" className="px-3 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40]">
                           <option value="AM">AM</option>
                           <option value="PM">PM</option>
                         </select>
                       </div>
                     </div>
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-[#5d6661] mb-1">Message *</label>
-                      <textarea id="message" name="message" rows={5} required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40] resize-none" />
+                      <label htmlFor="message" className="block text-sm font-medium text-[#5d6661] mb-1">Tell us about your project *</label>
+                      <p id="project-details" className="mb-2 text-sm text-[#5d6661]">Include the project type, what you want to change, and when you hope to start. If you have a budget range or plans, mention those too.</p>
+                      <textarea id="message" name="message" aria-describedby="project-details" rows={5} required className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c4b40] resize-none" />
                     </div>
 
                     {status === 'error' && (
@@ -173,7 +174,7 @@ export default function ContactClient() {
                       disabled={status === 'loading'}
                       className="bg-[#e09f18] text-white px-8 py-3 min-h-[48px] rounded-[30px] font-semibold hover:bg-[#c5860e] hover:scale-105 transition-all w-full sm:w-auto disabled:opacity-60 disabled:hover:scale-100 disabled:cursor-not-allowed"
                     >
-                      {status === 'loading' ? 'Sending…' : 'Submit'}
+                      {status === 'loading' ? 'Sending…' : 'Send Project Details'}
                     </button>
                   </form>
                 )}

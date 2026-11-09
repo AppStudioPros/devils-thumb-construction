@@ -9,6 +9,8 @@ import { buildWebPageSchema, buildBreadcrumbSchema, buildServiceSchema, toGraph 
 import { siteConfig } from "@/lib/seo/config";
 import { services, getServiceBySlug } from "@/data/services";
 
+import { priorityMarkets, priorityServices } from "@/data/priority-markets";
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -23,13 +25,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return { title: "Service Not Found" };
 
   return {
-    title: service.title,
+    title: priorityServices[service.slug] ?? service.title,
     description: service.metaDescription,
-    alternates: { canonical: `/services/${service.slug}/` },
+    alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
-      title: `${service.title} | Devils Thumb Construction`,
+      title: `${priorityServices[service.slug] ?? service.title} | Devils Thumb Construction`,
       description: service.metaDescription,
-      url: `/services/${service.slug}/`,
+      url: `/services/${service.slug}`,
       images: [{ url: service.heroImage, width: 1200, height: 630, alt: service.title }],
     },
   };
@@ -40,7 +42,7 @@ export default async function ServicePage({ params }: Props) {
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
-  const pageUrl = `${siteConfig.url}/services/${service.slug}/`;
+  const pageUrl = `${siteConfig.url}/services/${service.slug}`;
   const pageId = `${pageUrl}#webpage`;
   const serviceId = `${pageUrl}#service`;
 
@@ -67,7 +69,17 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <JsonLd data={schema as Record<string, unknown>} />
-      <PageHero title={service.title} bgImage={service.heroImage} />
+      <PageHero title={priorityServices[service.slug] ?? service.title} bgImage={service.heroImage} />
+      {priorityServices[service.slug] && (
+        <nav aria-label="Service areas" className="mx-auto flex max-w-[1240px] flex-wrap gap-x-5 gap-y-2 px-4 pt-6 text-sm sm:px-6 lg:px-8">
+          <span className="font-semibold">Serving</span>
+          {Object.entries(priorityMarkets).map(([slug, market]) => (
+            <Link key={slug} href={`/locations/${slug}`} className="text-[#13251e] underline underline-offset-4">
+              {market.name}, CO
+            </Link>
+          ))}
+        </nav>
+      )}
 
       <section className="pt-[108px] pb-20 bg-white">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,7 +96,7 @@ export default async function ServicePage({ params }: Props) {
               <div className="w-[60px] h-[3px] bg-[#2c4b40] mb-6" />
               <p className="text-[#5d6661] leading-relaxed text-lg mb-6">{service.intro}</p>
               <Link
-                href="/contact"
+                href="/contact#project-inquiry"
                 className="inline-block bg-[#e09f18] text-white px-8 py-3 rounded-[30px] font-semibold hover:bg-[#c5860e] transition-colors"
               >
                 Get a Free Consultation
@@ -177,7 +189,7 @@ export default async function ServicePage({ params }: Props) {
                     Call us at{" "}
                     <a href="tel:720-322-6899" className="text-[#e09f18] font-semibold hover:underline">720-322-6899</a>{" "}
                     or{" "}
-                    <Link href="/contact" className="text-[#e09f18] font-semibold hover:underline">send us a message</Link>.
+                    <Link href="/contact#project-inquiry" className="text-[#e09f18] font-semibold hover:underline">send us a message</Link>.
                     {" "}We&apos;ll schedule a free consultation to walk through your project and outline next steps.
                   </dd>
                 </div>
@@ -216,7 +228,7 @@ export default async function ServicePage({ params }: Props) {
                   Call 720-322-6899
                 </a>
                 <Link
-                  href="/contact"
+                  href="/contact#project-inquiry"
                   className="flex-1 sm:flex-none px-6 py-3 rounded-[30px] bg-[#e09f18] text-white font-semibold hover:bg-[#c5860e] transition-colors text-center text-sm sm:text-base"
                 >
                   Request a Quote
